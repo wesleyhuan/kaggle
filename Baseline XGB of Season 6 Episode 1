@@ -1,1 +1,614 @@
-{"metadata":{"kernelspec":{"language":"python","display_name":"Python 3","name":"python3"},"language_info":{"name":"python","version":"3.12.12","mimetype":"text/x-python","codemirror_mode":{"name":"ipython","version":3},"pygments_lexer":"ipython3","nbconvert_exporter":"python","file_extension":".py"},"kaggle":{"accelerator":"none","dataSources":[{"sourceId":119082,"databundleVersionId":14993753,"sourceType":"competition"}],"dockerImageVersionId":31234,"isInternetEnabled":true,"language":"python","sourceType":"notebook","isGpuEnabled":false}},"nbformat_minor":4,"nbformat":4,"cells":[{"cell_type":"markdown","source":"# Outline\n\nThis notebook include model training process and with optuna hyperparameter finding.\n\nPreprocess and feature Engineering is base on previous notebook.\n\nlink : [https://www.kaggle.com/code/wesleyhuan/eda-of-season-6-episode-1](http://)\n\nInclude these steps:\n\n* Load data\n* Preprocess data\n* Train model with Hyper parameter (OPTUNA)\n* Submission","metadata":{}},{"cell_type":"markdown","source":"# Load data","metadata":{}},{"cell_type":"code","source":"# import necessary library\nimport numpy as np # linear algebra\nimport pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\nfrom sklearn.preprocessing import OrdinalEncoder,LabelEncoder\n\nfrom xgboost import XGBRegressor\nfrom sklearn.metrics import mean_squared_error\nfrom sklearn.model_selection import train_test_split","metadata":{"trusted":true,"execution":{"iopub.status.busy":"2026-01-03T10:07:54.767180Z","iopub.execute_input":"2026-01-03T10:07:54.767524Z","iopub.status.idle":"2026-01-03T10:07:54.772737Z","shell.execute_reply.started":"2026-01-03T10:07:54.767494Z","shell.execute_reply":"2026-01-03T10:07:54.771888Z"}},"outputs":[],"execution_count":47},{"cell_type":"markdown","source":"# Load data","metadata":{}},{"cell_type":"code","source":"# config\nclass CFG:\n    train_csv = '/kaggle/input/playground-series-s6e1/train.csv'\n    test_csv = '/kaggle/input/playground-series-s6e1/test.csv'\n    sample_submission_csv = '/kaggle/input/playground-series-s6e1/sample_submission.csv'\n    N_FOLDS = 5\n    RANDOM_SEED = 42\n    \n#torch.device('cuda' if torch.cuda.is_available() else 'cpu')\n#device = 'cuda' if torch.cuda.is_available() else 'cpu'","metadata":{"trusted":true,"execution":{"iopub.status.busy":"2026-01-03T10:07:54.774692Z","iopub.execute_input":"2026-01-03T10:07:54.775328Z","iopub.status.idle":"2026-01-03T10:07:54.794930Z","shell.execute_reply.started":"2026-01-03T10:07:54.775297Z","shell.execute_reply":"2026-01-03T10:07:54.793901Z"}},"outputs":[],"execution_count":48},{"cell_type":"code","source":"train = pd.read_csv(CFG.train_csv)\ntest = pd.read_csv(CFG.test_csv)","metadata":{"trusted":true,"execution":{"iopub.status.busy":"2026-01-03T10:07:54.796697Z","iopub.execute_input":"2026-01-03T10:07:54.797129Z","iopub.status.idle":"2026-01-03T10:07:55.925276Z","shell.execute_reply.started":"2026-01-03T10:07:54.797099Z","shell.execute_reply":"2026-01-03T10:07:55.924113Z"}},"outputs":[],"execution_count":49},{"cell_type":"markdown","source":"# Preprocess data","metadata":{}},{"cell_type":"code","source":"class Preprocessor:\n    def __init__(self):\n        self.medians = {}\n        self.encoders = {}\n        self.numeric_cols = []\n        self.all_non_numeric = []\n        self.categorical_cols = []\n        self.level_mapping = {'easy': 1, 'moderate': 2, 'hard': 3,\n                              'low': 1, 'medium': 2, 'high': 3,\n                              'poor': 1, 'average': 2, 'good': 3}\n        self.level_cols = ['sleep_quality', 'facility_rating', 'exam_difficulty']\n        \n    def fit(self, df):\n        \"\"\"\n        Learn the parameters (medians, categories) from the TRAINING data.\n        \"\"\"\n        # Identify columns\n        self.numeric_cols = df.select_dtypes(include=[np.number]).columns.tolist()\n        self.all_non_numeric = df.select_dtypes(exclude=[np.number]).columns.tolist()\n        self.categorical_cols = [c for c in self.all_non_numeric if c not in self.level_cols]\n        \n        # Learn Medians for numeric columns\n        for col in self.numeric_cols:\n            self.medians[col] = df[col].median()\n            \n        # Fit Encoders for categorical columns\n        # handle_unknown='use_encoded_value' prevents crashes if Test data has new categories\n        for col in self.categorical_cols:\n            enc = OrdinalEncoder(handle_unknown='use_encoded_value', unknown_value=-1)\n            enc.fit(df[[col]].astype(str)) \n            self.encoders[col] = enc\n            \n        return self\n\n    def transform(self, df):\n        \"\"\"\n        Apply the learned parameters to the data (Train or Test).\n        \"\"\"\n        df = df.copy()\n        \n        # Drop irrelevant columns (ID is usually dropped, Target handled separately)\n        # Note: We don't drop target here to keep X and y aligned until the end\n        if 'id' in df.columns:\n            df = df.drop(columns=['id'])\n        if 'exam_score' in df.columns:\n            df = df.drop(columns=['exam_score'])\n\n        # level encoding\n        for col in self.level_cols:\n            if col in df.columns:\n                # ues mapping rule fillna with 0 \n                df[col] = df[col].map(self.level_mapping).fillna(0).astype(int)\n        # Impute Missing Values using LEARNED medians\n        for col in self.numeric_cols:\n            if col in df.columns:\n                df[col] = df[col].fillna(self.medians.get(col, 0))\n        \n        # Apply Encoding\n        for col in self.categorical_cols:\n            if col in df.columns:\n                # Fill NaN in categoricals with 'Missing' before encoding to be safe\n                df[col] = df[col].astype(str).fillna('Missing')\n                df[col] = self.encoders[col].transform(df[[col]]).flatten()\n        \n        return df\n        \n    def create_interaction_features(self, df):# add because of the Correlation matrix\n        df = df.copy()\n        \n        # sleep_hours * sleep_quality\n        # assumption : sleep_quality might increase value of sleep_hours\n        if 'sleep_hours' in df.columns and 'sleep_quality' in df.columns:\n            df['sleep_hours_quality'] = df['sleep_hours'] * df['sleep_quality']\n            \n        # class_attendance * facility_rating\n        # assumption : better facility_rating with increase the effect class_attendance\n        if 'class_attendance' in df.columns and 'facility_rating' in df.columns:\n            df['facility_rating_attendance'] = df['class_attendance'] * df['facility_rating']\n            \n        # study_method * study_hours\n        # study_method might increase value of study_hours\n        if 'study_method' in df.columns and 'study_hours' in df.columns:\n            df['study_method_hours'] = df['study_method'] * df['study_hours']\n        \n        return df","metadata":{"trusted":true,"execution":{"iopub.status.busy":"2026-01-03T10:07:55.926339Z","iopub.execute_input":"2026-01-03T10:07:55.926600Z","iopub.status.idle":"2026-01-03T10:07:55.940852Z","shell.execute_reply.started":"2026-01-03T10:07:55.926576Z","shell.execute_reply":"2026-01-03T10:07:55.939944Z"}},"outputs":[],"execution_count":50},{"cell_type":"code","source":"preprocessor = Preprocessor()\n\nX_train_raw = train#.drop(columns=['exam_score'])\ny_train = train['exam_score']\n\n# learn the rule (median value...)\npreprocessor.fit(X_train_raw)\n\n# preprocess data\nX_train_processed = preprocessor.transform(X_train_raw)\n# feature engineering\nX_train_interact_feature = preprocessor.create_interaction_features(X_train_processed)","metadata":{"trusted":true,"execution":{"iopub.status.busy":"2026-01-03T10:07:55.943180Z","iopub.execute_input":"2026-01-03T10:07:55.943905Z","iopub.status.idle":"2026-01-03T10:07:57.291568Z","shell.execute_reply.started":"2026-01-03T10:07:55.943870Z","shell.execute_reply":"2026-01-03T10:07:57.290498Z"}},"outputs":[],"execution_count":51},{"cell_type":"markdown","source":"# Train model with Hyper parameter (OPTUNA) (on going)","metadata":{}},{"cell_type":"code","source":"# split train data into train and val\nX_train, X_val, y_train, y_val = train_test_split(\n    X_train_interact_feature, y_train, test_size=0.2, random_state=CFG.RANDOM_SEED\n)\n\n# initial XGBClassifier\nreg_model = XGBRegressor()\n# fit model\nreg_model.fit(X_train, y_train)\n\n# predict\ny_pred_val = reg_model.predict(X_val)\n\n# eval\nmse = mean_squared_error(y_val, y_pred_val)\nprint(f\"MSE: {mse}\")","metadata":{"trusted":true,"execution":{"iopub.status.busy":"2026-01-03T10:07:57.292863Z","iopub.execute_input":"2026-01-03T10:07:57.293234Z","iopub.status.idle":"2026-01-03T10:07:59.928818Z","shell.execute_reply.started":"2026-01-03T10:07:57.293197Z","shell.execute_reply":"2026-01-03T10:07:59.928193Z"}},"outputs":[{"name":"stdout","text":"MSE: 77.46297365384952\n","output_type":"stream"}],"execution_count":52},{"cell_type":"markdown","source":"# Submission","metadata":{}},{"cell_type":"code","source":"test_id = test[\"id\"]\n# preprocess data\nX_test_processed = preprocessor.transform(test)\n# feature engineering\nX_test_interact_feature = preprocessor.create_interaction_features(X_test_processed)\nX_test_interact_feature.head()\n\ny_pred = reg_model.predict(X_test_interact_feature)\n#y_pred_round = np.round(y_pred, 1)","metadata":{"trusted":true,"execution":{"iopub.status.busy":"2026-01-03T10:07:59.929576Z","iopub.execute_input":"2026-01-03T10:07:59.929841Z","iopub.status.idle":"2026-01-03T10:08:00.827147Z","shell.execute_reply.started":"2026-01-03T10:07:59.929814Z","shell.execute_reply":"2026-01-03T10:08:00.826489Z"}},"outputs":[],"execution_count":53},{"cell_type":"code","source":"submission = pd.read_csv(CFG.sample_submission_csv)\n\nsubmission = pd.DataFrame({\n    'Id': test_id, \n    'Target': y_pred   \n})\n\nsubmission.to_csv('submission.csv', index=False)","metadata":{"trusted":true,"execution":{"iopub.status.busy":"2026-01-03T10:08:00.827926Z","iopub.execute_input":"2026-01-03T10:08:00.828176Z","iopub.status.idle":"2026-01-03T10:08:01.299781Z","shell.execute_reply.started":"2026-01-03T10:08:00.828149Z","shell.execute_reply":"2026-01-03T10:08:01.298867Z"}},"outputs":[],"execution_count":54},{"cell_type":"code","source":"submission.head()","metadata":{"trusted":true,"execution":{"iopub.status.busy":"2026-01-03T10:08:01.301070Z","iopub.execute_input":"2026-01-03T10:08:01.301901Z","iopub.status.idle":"2026-01-03T10:08:01.310626Z","shell.execute_reply.started":"2026-01-03T10:08:01.301871Z","shell.execute_reply":"2026-01-03T10:08:01.309849Z"}},"outputs":[{"execution_count":55,"output_type":"execute_result","data":{"text/plain":"       Id     Target\n0  630000  71.457550\n1  630001  69.616669\n2  630002  88.374496\n3  630003  55.940994\n4  630004  46.879143","text/html":"<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>Id</th>\n      <th>Target</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>630000</td>\n      <td>71.457550</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>630001</td>\n      <td>69.616669</td>\n    </tr>\n    <tr>\n      <th>2</th>\n      <td>630002</td>\n      <td>88.374496</td>\n    </tr>\n    <tr>\n      <th>3</th>\n      <td>630003</td>\n      <td>55.940994</td>\n    </tr>\n    <tr>\n      <th>4</th>\n      <td>630004</td>\n      <td>46.879143</td>\n    </tr>\n  </tbody>\n</table>\n</div>"},"metadata":{}}],"execution_count":55}]}
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "c61d3e3b",
+   "metadata": {
+    "papermill": {
+     "duration": 0.004788,
+     "end_time": "2026-01-03T10:14:23.673582",
+     "exception": false,
+     "start_time": "2026-01-03T10:14:23.668794",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "# Outline\n",
+    "\n",
+    "This notebook include model training process and with optuna hyperparameter finding.\n",
+    "\n",
+    "Preprocess and feature Engineering is base on previous notebook.\n",
+    "\n",
+    "link : [https://www.kaggle.com/code/wesleyhuan/eda-of-season-6-episode-1](http://)\n",
+    "\n",
+    "Include these steps:\n",
+    "\n",
+    "* Load data\n",
+    "* Preprocess data\n",
+    "* Train model with Hyper parameter (OPTUNA)\n",
+    "* Submission"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "3bc964b8",
+   "metadata": {
+    "papermill": {
+     "duration": 0.00284,
+     "end_time": "2026-01-03T10:14:23.679659",
+     "exception": false,
+     "start_time": "2026-01-03T10:14:23.676819",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "# Load data"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "ef5b8c61",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-01-03T10:14:23.688995Z",
+     "iopub.status.busy": "2026-01-03T10:14:23.688284Z",
+     "iopub.status.idle": "2026-01-03T10:14:29.246456Z",
+     "shell.execute_reply": "2026-01-03T10:14:29.245191Z"
+    },
+    "papermill": {
+     "duration": 5.566358,
+     "end_time": "2026-01-03T10:14:29.249017",
+     "exception": false,
+     "start_time": "2026-01-03T10:14:23.682659",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "# import necessary library\n",
+    "import numpy as np # linear algebra\n",
+    "import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)\n",
+    "import matplotlib.pyplot as plt\n",
+    "import seaborn as sns\n",
+    "\n",
+    "from sklearn.preprocessing import OrdinalEncoder,LabelEncoder\n",
+    "\n",
+    "from xgboost import XGBRegressor\n",
+    "from sklearn.metrics import mean_squared_error\n",
+    "from sklearn.model_selection import train_test_split"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "0e2ebbdb",
+   "metadata": {
+    "papermill": {
+     "duration": 0.004355,
+     "end_time": "2026-01-03T10:14:29.256439",
+     "exception": false,
+     "start_time": "2026-01-03T10:14:29.252084",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "# Load data"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "f0905a6c",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-01-03T10:14:29.265235Z",
+     "iopub.status.busy": "2026-01-03T10:14:29.264582Z",
+     "iopub.status.idle": "2026-01-03T10:14:29.270701Z",
+     "shell.execute_reply": "2026-01-03T10:14:29.269354Z"
+    },
+    "papermill": {
+     "duration": 0.012943,
+     "end_time": "2026-01-03T10:14:29.272750",
+     "exception": false,
+     "start_time": "2026-01-03T10:14:29.259807",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "# config\n",
+    "class CFG:\n",
+    "    train_csv = '/kaggle/input/playground-series-s6e1/train.csv'\n",
+    "    test_csv = '/kaggle/input/playground-series-s6e1/test.csv'\n",
+    "    sample_submission_csv = '/kaggle/input/playground-series-s6e1/sample_submission.csv'\n",
+    "    N_FOLDS = 5\n",
+    "    RANDOM_SEED = 42\n",
+    "    \n",
+    "#torch.device('cuda' if torch.cuda.is_available() else 'cpu')\n",
+    "#device = 'cuda' if torch.cuda.is_available() else 'cpu'"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "7e175815",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-01-03T10:14:29.280408Z",
+     "iopub.status.busy": "2026-01-03T10:14:29.280023Z",
+     "iopub.status.idle": "2026-01-03T10:14:31.274915Z",
+     "shell.execute_reply": "2026-01-03T10:14:31.273544Z"
+    },
+    "papermill": {
+     "duration": 2.002016,
+     "end_time": "2026-01-03T10:14:31.277742",
+     "exception": false,
+     "start_time": "2026-01-03T10:14:29.275726",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "train = pd.read_csv(CFG.train_csv)\n",
+    "test = pd.read_csv(CFG.test_csv)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "114b214d",
+   "metadata": {
+    "papermill": {
+     "duration": 0.003543,
+     "end_time": "2026-01-03T10:14:31.284355",
+     "exception": false,
+     "start_time": "2026-01-03T10:14:31.280812",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "# Preprocess data"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "f340d13d",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-01-03T10:14:31.294614Z",
+     "iopub.status.busy": "2026-01-03T10:14:31.294096Z",
+     "iopub.status.idle": "2026-01-03T10:14:31.311904Z",
+     "shell.execute_reply": "2026-01-03T10:14:31.310415Z"
+    },
+    "papermill": {
+     "duration": 0.02721,
+     "end_time": "2026-01-03T10:14:31.314659",
+     "exception": false,
+     "start_time": "2026-01-03T10:14:31.287449",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "class Preprocessor:\n",
+    "    def __init__(self):\n",
+    "        self.medians = {}\n",
+    "        self.encoders = {}\n",
+    "        self.numeric_cols = []\n",
+    "        self.all_non_numeric = []\n",
+    "        self.categorical_cols = []\n",
+    "        self.level_mapping = {'easy': 1, 'moderate': 2, 'hard': 3,\n",
+    "                              'low': 1, 'medium': 2, 'high': 3,\n",
+    "                              'poor': 1, 'average': 2, 'good': 3}\n",
+    "        self.level_cols = ['sleep_quality', 'facility_rating', 'exam_difficulty']\n",
+    "        \n",
+    "    def fit(self, df):\n",
+    "        \"\"\"\n",
+    "        Learn the parameters (medians, categories) from the TRAINING data.\n",
+    "        \"\"\"\n",
+    "        # Identify columns\n",
+    "        self.numeric_cols = df.select_dtypes(include=[np.number]).columns.tolist()\n",
+    "        self.all_non_numeric = df.select_dtypes(exclude=[np.number]).columns.tolist()\n",
+    "        self.categorical_cols = [c for c in self.all_non_numeric if c not in self.level_cols]\n",
+    "        \n",
+    "        # Learn Medians for numeric columns\n",
+    "        for col in self.numeric_cols:\n",
+    "            self.medians[col] = df[col].median()\n",
+    "            \n",
+    "        # Fit Encoders for categorical columns\n",
+    "        # handle_unknown='use_encoded_value' prevents crashes if Test data has new categories\n",
+    "        for col in self.categorical_cols:\n",
+    "            enc = OrdinalEncoder(handle_unknown='use_encoded_value', unknown_value=-1)\n",
+    "            enc.fit(df[[col]].astype(str)) \n",
+    "            self.encoders[col] = enc\n",
+    "            \n",
+    "        return self\n",
+    "\n",
+    "    def transform(self, df):\n",
+    "        \"\"\"\n",
+    "        Apply the learned parameters to the data (Train or Test).\n",
+    "        \"\"\"\n",
+    "        df = df.copy()\n",
+    "        \n",
+    "        # Drop irrelevant columns (ID is usually dropped, Target handled separately)\n",
+    "        # Note: We don't drop target here to keep X and y aligned until the end\n",
+    "        if 'id' in df.columns:\n",
+    "            df = df.drop(columns=['id'])\n",
+    "        if 'exam_score' in df.columns:\n",
+    "            df = df.drop(columns=['exam_score'])\n",
+    "\n",
+    "        # level encoding\n",
+    "        for col in self.level_cols:\n",
+    "            if col in df.columns:\n",
+    "                # ues mapping rule fillna with 0 \n",
+    "                df[col] = df[col].map(self.level_mapping).fillna(0).astype(int)\n",
+    "        # Impute Missing Values using LEARNED medians\n",
+    "        for col in self.numeric_cols:\n",
+    "            if col in df.columns:\n",
+    "                df[col] = df[col].fillna(self.medians.get(col, 0))\n",
+    "        \n",
+    "        # Apply Encoding\n",
+    "        for col in self.categorical_cols:\n",
+    "            if col in df.columns:\n",
+    "                # Fill NaN in categoricals with 'Missing' before encoding to be safe\n",
+    "                df[col] = df[col].astype(str).fillna('Missing')\n",
+    "                df[col] = self.encoders[col].transform(df[[col]]).flatten()\n",
+    "        \n",
+    "        return df\n",
+    "        \n",
+    "    def create_interaction_features(self, df):# add because of the Correlation matrix\n",
+    "        df = df.copy()\n",
+    "        \n",
+    "        # sleep_hours * sleep_quality\n",
+    "        # assumption : sleep_quality might increase value of sleep_hours\n",
+    "        if 'sleep_hours' in df.columns and 'sleep_quality' in df.columns:\n",
+    "            df['sleep_hours_quality'] = df['sleep_hours'] * df['sleep_quality']\n",
+    "            \n",
+    "        # class_attendance * facility_rating\n",
+    "        # assumption : better facility_rating with increase the effect class_attendance\n",
+    "        if 'class_attendance' in df.columns and 'facility_rating' in df.columns:\n",
+    "            df['facility_rating_attendance'] = df['class_attendance'] * df['facility_rating']\n",
+    "            \n",
+    "        # study_method * study_hours\n",
+    "        # study_method might increase value of study_hours\n",
+    "        if 'study_method' in df.columns and 'study_hours' in df.columns:\n",
+    "            df['study_method_hours'] = df['study_method'] * df['study_hours']\n",
+    "        \n",
+    "        return df"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "e2e1f774",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-01-03T10:14:31.325672Z",
+     "iopub.status.busy": "2026-01-03T10:14:31.325277Z",
+     "iopub.status.idle": "2026-01-03T10:14:32.980446Z",
+     "shell.execute_reply": "2026-01-03T10:14:32.979248Z"
+    },
+    "papermill": {
+     "duration": 1.664581,
+     "end_time": "2026-01-03T10:14:32.982973",
+     "exception": false,
+     "start_time": "2026-01-03T10:14:31.318392",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "preprocessor = Preprocessor()\n",
+    "\n",
+    "X_train_raw = train#.drop(columns=['exam_score'])\n",
+    "y_train = train['exam_score']\n",
+    "\n",
+    "# learn the rule (median value...)\n",
+    "preprocessor.fit(X_train_raw)\n",
+    "\n",
+    "# preprocess data\n",
+    "X_train_processed = preprocessor.transform(X_train_raw)\n",
+    "# feature engineering\n",
+    "X_train_interact_feature = preprocessor.create_interaction_features(X_train_processed)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "60a35ec8",
+   "metadata": {
+    "papermill": {
+     "duration": 0.003489,
+     "end_time": "2026-01-03T10:14:32.989575",
+     "exception": false,
+     "start_time": "2026-01-03T10:14:32.986086",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "# Train model with Hyper parameter (OPTUNA) (on going)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "05c8867b",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-01-03T10:14:32.997725Z",
+     "iopub.status.busy": "2026-01-03T10:14:32.997298Z",
+     "iopub.status.idle": "2026-01-03T10:14:36.447282Z",
+     "shell.execute_reply": "2026-01-03T10:14:36.445428Z"
+    },
+    "papermill": {
+     "duration": 3.458142,
+     "end_time": "2026-01-03T10:14:36.450730",
+     "exception": false,
+     "start_time": "2026-01-03T10:14:32.992588",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "MSE: 77.46297365384952\n"
+     ]
+    }
+   ],
+   "source": [
+    "# split train data into train and val\n",
+    "X_train, X_val, y_train, y_val = train_test_split(\n",
+    "    X_train_interact_feature, y_train, test_size=0.2, random_state=CFG.RANDOM_SEED\n",
+    ")\n",
+    "\n",
+    "# initial XGBClassifier\n",
+    "reg_model = XGBRegressor()\n",
+    "# fit model\n",
+    "reg_model.fit(X_train, y_train)\n",
+    "\n",
+    "# predict\n",
+    "y_pred_val = reg_model.predict(X_val)\n",
+    "\n",
+    "# eval\n",
+    "mse = mean_squared_error(y_val, y_pred_val)\n",
+    "print(f\"MSE: {mse}\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "9d4260d2",
+   "metadata": {
+    "papermill": {
+     "duration": 0.00326,
+     "end_time": "2026-01-03T10:14:36.457194",
+     "exception": false,
+     "start_time": "2026-01-03T10:14:36.453934",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "# Submission"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "07572207",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-01-03T10:14:36.469255Z",
+     "iopub.status.busy": "2026-01-03T10:14:36.468777Z",
+     "iopub.status.idle": "2026-01-03T10:14:37.495538Z",
+     "shell.execute_reply": "2026-01-03T10:14:37.494674Z"
+    },
+    "papermill": {
+     "duration": 1.035933,
+     "end_time": "2026-01-03T10:14:37.498507",
+     "exception": false,
+     "start_time": "2026-01-03T10:14:36.462574",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "test_id = test[\"id\"]\n",
+    "# preprocess data\n",
+    "X_test_processed = preprocessor.transform(test)\n",
+    "# feature engineering\n",
+    "X_test_interact_feature = preprocessor.create_interaction_features(X_test_processed)\n",
+    "X_test_interact_feature.head()\n",
+    "\n",
+    "y_pred = reg_model.predict(X_test_interact_feature)\n",
+    "#y_pred_round = np.round(y_pred, 1)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "id": "8cd79463",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-01-03T10:14:37.506722Z",
+     "iopub.status.busy": "2026-01-03T10:14:37.506306Z",
+     "iopub.status.idle": "2026-01-03T10:14:38.045296Z",
+     "shell.execute_reply": "2026-01-03T10:14:38.044245Z"
+    },
+    "papermill": {
+     "duration": 0.546614,
+     "end_time": "2026-01-03T10:14:38.048095",
+     "exception": false,
+     "start_time": "2026-01-03T10:14:37.501481",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "submission = pd.read_csv(CFG.sample_submission_csv)\n",
+    "\n",
+    "submission = pd.DataFrame({\n",
+    "    'Id': test_id, \n",
+    "    'exam_score': y_pred   \n",
+    "})\n",
+    "\n",
+    "submission.to_csv('submission.csv', index=False)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "id": "5dbd62f1",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-01-03T10:14:38.056543Z",
+     "iopub.status.busy": "2026-01-03T10:14:38.056099Z",
+     "iopub.status.idle": "2026-01-03T10:14:38.082287Z",
+     "shell.execute_reply": "2026-01-03T10:14:38.081175Z"
+    },
+    "papermill": {
+     "duration": 0.033931,
+     "end_time": "2026-01-03T10:14:38.085213",
+     "exception": false,
+     "start_time": "2026-01-03T10:14:38.051282",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>Id</th>\n",
+       "      <th>exam_score</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>630000</td>\n",
+       "      <td>71.457550</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>630001</td>\n",
+       "      <td>69.616669</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>630002</td>\n",
+       "      <td>88.374496</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>630003</td>\n",
+       "      <td>55.940994</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4</th>\n",
+       "      <td>630004</td>\n",
+       "      <td>46.879143</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "       Id  exam_score\n",
+       "0  630000   71.457550\n",
+       "1  630001   69.616669\n",
+       "2  630002   88.374496\n",
+       "3  630003   55.940994\n",
+       "4  630004   46.879143"
+      ]
+     },
+     "execution_count": 9,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "submission.head()"
+   ]
+  }
+ ],
+ "metadata": {
+  "kaggle": {
+   "accelerator": "none",
+   "dataSources": [
+    {
+     "databundleVersionId": 14993753,
+     "sourceId": 119082,
+     "sourceType": "competition"
+    }
+   ],
+   "dockerImageVersionId": 31234,
+   "isGpuEnabled": false,
+   "isInternetEnabled": true,
+   "language": "python",
+   "sourceType": "notebook"
+  },
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.12.12"
+  },
+  "papermill": {
+   "default_parameters": {},
+   "duration": 19.698065,
+   "end_time": "2026-01-03T10:14:39.214737",
+   "environment_variables": {},
+   "exception": null,
+   "input_path": "__notebook__.ipynb",
+   "output_path": "__notebook__.ipynb",
+   "parameters": {},
+   "start_time": "2026-01-03T10:14:19.516672",
+   "version": "2.6.0"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
