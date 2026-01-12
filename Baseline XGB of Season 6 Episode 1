@@ -2,13 +2,13 @@
  "cells": [
   {
    "cell_type": "markdown",
-   "id": "c61d3e3b",
+   "id": "caa3e0d8",
    "metadata": {
     "papermill": {
-     "duration": 0.004788,
-     "end_time": "2026-01-03T10:14:23.673582",
+     "duration": 0.004166,
+     "end_time": "2026-01-12T14:30:40.286731",
      "exception": false,
-     "start_time": "2026-01-03T10:14:23.668794",
+     "start_time": "2026-01-12T14:30:40.282565",
      "status": "completed"
     },
     "tags": []
@@ -32,13 +32,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "3bc964b8",
+   "id": "985e44f1",
    "metadata": {
     "papermill": {
-     "duration": 0.00284,
-     "end_time": "2026-01-03T10:14:23.679659",
+     "duration": 0.003113,
+     "end_time": "2026-01-12T14:30:40.293164",
      "exception": false,
-     "start_time": "2026-01-03T10:14:23.676819",
+     "start_time": "2026-01-12T14:30:40.290051",
      "status": "completed"
     },
     "tags": []
@@ -50,24 +50,33 @@
   {
    "cell_type": "code",
    "execution_count": 1,
-   "id": "ef5b8c61",
+   "id": "68cc1a63",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-03T10:14:23.688995Z",
-     "iopub.status.busy": "2026-01-03T10:14:23.688284Z",
-     "iopub.status.idle": "2026-01-03T10:14:29.246456Z",
-     "shell.execute_reply": "2026-01-03T10:14:29.245191Z"
+     "iopub.execute_input": "2026-01-12T14:30:40.300851Z",
+     "iopub.status.busy": "2026-01-12T14:30:40.300538Z",
+     "iopub.status.idle": "2026-01-12T14:30:46.325324Z",
+     "shell.execute_reply": "2026-01-12T14:30:46.324466Z"
     },
     "papermill": {
-     "duration": 5.566358,
-     "end_time": "2026-01-03T10:14:29.249017",
+     "duration": 6.03148,
+     "end_time": "2026-01-12T14:30:46.327581",
      "exception": false,
-     "start_time": "2026-01-03T10:14:23.682659",
+     "start_time": "2026-01-12T14:30:40.296101",
      "status": "completed"
     },
     "tags": []
    },
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "/usr/local/lib/python3.12/dist-packages/sqlalchemy/orm/query.py:195: SyntaxWarning: \"is not\" with 'tuple' literal. Did you mean \"!=\"?\n",
+      "  if entities is not ():\n"
+     ]
+    }
+   ],
    "source": [
     "# import necessary library\n",
     "import numpy as np # linear algebra\n",
@@ -79,18 +88,24 @@
     "\n",
     "from xgboost import XGBRegressor\n",
     "from sklearn.metrics import mean_squared_error\n",
-    "from sklearn.model_selection import train_test_split"
+    "from sklearn.model_selection import train_test_split\n",
+    "\n",
+    "#for optuna pipline\n",
+    "import optuna\n",
+    "from sklearn.pipeline import Pipeline\n",
+    "from sklearn.model_selection import KFold, cross_val_score\n",
+    "from sklearn.base import BaseEstimator, TransformerMixin"
    ]
   },
   {
    "cell_type": "markdown",
-   "id": "0e2ebbdb",
+   "id": "ea56067e",
    "metadata": {
     "papermill": {
-     "duration": 0.004355,
-     "end_time": "2026-01-03T10:14:29.256439",
+     "duration": 0.003581,
+     "end_time": "2026-01-12T14:30:46.334914",
      "exception": false,
-     "start_time": "2026-01-03T10:14:29.252084",
+     "start_time": "2026-01-12T14:30:46.331333",
      "status": "completed"
     },
     "tags": []
@@ -102,19 +117,19 @@
   {
    "cell_type": "code",
    "execution_count": 2,
-   "id": "f0905a6c",
+   "id": "91ee8088",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-03T10:14:29.265235Z",
-     "iopub.status.busy": "2026-01-03T10:14:29.264582Z",
-     "iopub.status.idle": "2026-01-03T10:14:29.270701Z",
-     "shell.execute_reply": "2026-01-03T10:14:29.269354Z"
+     "iopub.execute_input": "2026-01-12T14:30:46.343102Z",
+     "iopub.status.busy": "2026-01-12T14:30:46.342655Z",
+     "iopub.status.idle": "2026-01-12T14:30:46.347483Z",
+     "shell.execute_reply": "2026-01-12T14:30:46.346541Z"
     },
     "papermill": {
-     "duration": 0.012943,
-     "end_time": "2026-01-03T10:14:29.272750",
+     "duration": 0.010983,
+     "end_time": "2026-01-12T14:30:46.349159",
      "exception": false,
-     "start_time": "2026-01-03T10:14:29.259807",
+     "start_time": "2026-01-12T14:30:46.338176",
      "status": "completed"
     },
     "tags": []
@@ -136,19 +151,19 @@
   {
    "cell_type": "code",
    "execution_count": 3,
-   "id": "7e175815",
+   "id": "f4ce14c7",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-03T10:14:29.280408Z",
-     "iopub.status.busy": "2026-01-03T10:14:29.280023Z",
-     "iopub.status.idle": "2026-01-03T10:14:31.274915Z",
-     "shell.execute_reply": "2026-01-03T10:14:31.273544Z"
+     "iopub.execute_input": "2026-01-12T14:30:46.357373Z",
+     "iopub.status.busy": "2026-01-12T14:30:46.357030Z",
+     "iopub.status.idle": "2026-01-12T14:30:48.012863Z",
+     "shell.execute_reply": "2026-01-12T14:30:48.012009Z"
     },
     "papermill": {
-     "duration": 2.002016,
-     "end_time": "2026-01-03T10:14:31.277742",
+     "duration": 1.662462,
+     "end_time": "2026-01-12T14:30:48.014912",
      "exception": false,
-     "start_time": "2026-01-03T10:14:29.275726",
+     "start_time": "2026-01-12T14:30:46.352450",
      "status": "completed"
     },
     "tags": []
@@ -160,14 +175,182 @@
    ]
   },
   {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "f60762e6",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-01-12T14:30:48.023268Z",
+     "iopub.status.busy": "2026-01-12T14:30:48.022921Z",
+     "iopub.status.idle": "2026-01-12T14:30:48.052713Z",
+     "shell.execute_reply": "2026-01-12T14:30:48.051809Z"
+    },
+    "papermill": {
+     "duration": 0.036226,
+     "end_time": "2026-01-12T14:30:48.054538",
+     "exception": false,
+     "start_time": "2026-01-12T14:30:48.018312",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>id</th>\n",
+       "      <th>age</th>\n",
+       "      <th>gender</th>\n",
+       "      <th>course</th>\n",
+       "      <th>study_hours</th>\n",
+       "      <th>class_attendance</th>\n",
+       "      <th>internet_access</th>\n",
+       "      <th>sleep_hours</th>\n",
+       "      <th>sleep_quality</th>\n",
+       "      <th>study_method</th>\n",
+       "      <th>facility_rating</th>\n",
+       "      <th>exam_difficulty</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>630000</td>\n",
+       "      <td>24</td>\n",
+       "      <td>other</td>\n",
+       "      <td>ba</td>\n",
+       "      <td>6.85</td>\n",
+       "      <td>65.2</td>\n",
+       "      <td>yes</td>\n",
+       "      <td>5.2</td>\n",
+       "      <td>poor</td>\n",
+       "      <td>group study</td>\n",
+       "      <td>high</td>\n",
+       "      <td>easy</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>630001</td>\n",
+       "      <td>18</td>\n",
+       "      <td>male</td>\n",
+       "      <td>diploma</td>\n",
+       "      <td>6.61</td>\n",
+       "      <td>45.0</td>\n",
+       "      <td>no</td>\n",
+       "      <td>9.3</td>\n",
+       "      <td>poor</td>\n",
+       "      <td>coaching</td>\n",
+       "      <td>low</td>\n",
+       "      <td>easy</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>630002</td>\n",
+       "      <td>24</td>\n",
+       "      <td>female</td>\n",
+       "      <td>b.tech</td>\n",
+       "      <td>6.60</td>\n",
+       "      <td>98.5</td>\n",
+       "      <td>yes</td>\n",
+       "      <td>6.2</td>\n",
+       "      <td>good</td>\n",
+       "      <td>group study</td>\n",
+       "      <td>medium</td>\n",
+       "      <td>moderate</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>630003</td>\n",
+       "      <td>24</td>\n",
+       "      <td>male</td>\n",
+       "      <td>diploma</td>\n",
+       "      <td>3.03</td>\n",
+       "      <td>66.3</td>\n",
+       "      <td>yes</td>\n",
+       "      <td>5.7</td>\n",
+       "      <td>average</td>\n",
+       "      <td>mixed</td>\n",
+       "      <td>medium</td>\n",
+       "      <td>moderate</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4</th>\n",
+       "      <td>630004</td>\n",
+       "      <td>20</td>\n",
+       "      <td>female</td>\n",
+       "      <td>b.tech</td>\n",
+       "      <td>2.03</td>\n",
+       "      <td>42.4</td>\n",
+       "      <td>yes</td>\n",
+       "      <td>9.2</td>\n",
+       "      <td>average</td>\n",
+       "      <td>coaching</td>\n",
+       "      <td>low</td>\n",
+       "      <td>moderate</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "       id  age  gender   course  study_hours  class_attendance  \\\n",
+       "0  630000   24   other       ba         6.85              65.2   \n",
+       "1  630001   18    male  diploma         6.61              45.0   \n",
+       "2  630002   24  female   b.tech         6.60              98.5   \n",
+       "3  630003   24    male  diploma         3.03              66.3   \n",
+       "4  630004   20  female   b.tech         2.03              42.4   \n",
+       "\n",
+       "  internet_access  sleep_hours sleep_quality study_method facility_rating  \\\n",
+       "0             yes          5.2          poor  group study            high   \n",
+       "1              no          9.3          poor     coaching             low   \n",
+       "2             yes          6.2          good  group study          medium   \n",
+       "3             yes          5.7       average        mixed          medium   \n",
+       "4             yes          9.2       average     coaching             low   \n",
+       "\n",
+       "  exam_difficulty  \n",
+       "0            easy  \n",
+       "1            easy  \n",
+       "2        moderate  \n",
+       "3        moderate  \n",
+       "4        moderate  "
+      ]
+     },
+     "execution_count": 4,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "test.head()"
+   ]
+  },
+  {
    "cell_type": "markdown",
-   "id": "114b214d",
+   "id": "77ce6516",
    "metadata": {
     "papermill": {
-     "duration": 0.003543,
-     "end_time": "2026-01-03T10:14:31.284355",
+     "duration": 0.003522,
+     "end_time": "2026-01-12T14:30:48.061559",
      "exception": false,
-     "start_time": "2026-01-03T10:14:31.280812",
+     "start_time": "2026-01-12T14:30:48.058037",
      "status": "completed"
     },
     "tags": []
@@ -178,27 +361,27 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 4,
-   "id": "f340d13d",
+   "execution_count": 5,
+   "id": "94688a5d",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-03T10:14:31.294614Z",
-     "iopub.status.busy": "2026-01-03T10:14:31.294096Z",
-     "iopub.status.idle": "2026-01-03T10:14:31.311904Z",
-     "shell.execute_reply": "2026-01-03T10:14:31.310415Z"
+     "iopub.execute_input": "2026-01-12T14:30:48.070045Z",
+     "iopub.status.busy": "2026-01-12T14:30:48.069695Z",
+     "iopub.status.idle": "2026-01-12T14:30:48.082925Z",
+     "shell.execute_reply": "2026-01-12T14:30:48.082122Z"
     },
     "papermill": {
-     "duration": 0.02721,
-     "end_time": "2026-01-03T10:14:31.314659",
+     "duration": 0.019871,
+     "end_time": "2026-01-12T14:30:48.084767",
      "exception": false,
-     "start_time": "2026-01-03T10:14:31.287449",
+     "start_time": "2026-01-12T14:30:48.064896",
      "status": "completed"
     },
     "tags": []
    },
    "outputs": [],
    "source": [
-    "class Preprocessor:\n",
+    "class Preprocessor(BaseEstimator, TransformerMixin):\n",
     "    def __init__(self):\n",
     "        self.medians = {}\n",
     "        self.encoders = {}\n",
@@ -210,7 +393,7 @@
     "                              'poor': 1, 'average': 2, 'good': 3}\n",
     "        self.level_cols = ['sleep_quality', 'facility_rating', 'exam_difficulty']\n",
     "        \n",
-    "    def fit(self, df):\n",
+    "    def fit(self, df, y=None):\n",
     "        \"\"\"\n",
     "        Learn the parameters (medians, categories) from the TRAINING data.\n",
     "        \"\"\"\n",
@@ -261,6 +444,9 @@
     "                # Fill NaN in categoricals with 'Missing' before encoding to be safe\n",
     "                df[col] = df[col].astype(str).fillna('Missing')\n",
     "                df[col] = self.encoders[col].transform(df[[col]]).flatten()\n",
+    "\n",
+    "        # 🔥 interaction features\n",
+    "        df = self.create_interaction_features(df)\n",
     "        \n",
     "        return df\n",
     "        \n",
@@ -287,49 +473,49 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 5,
-   "id": "e2e1f774",
+   "execution_count": 6,
+   "id": "1f77a4ff",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-03T10:14:31.325672Z",
-     "iopub.status.busy": "2026-01-03T10:14:31.325277Z",
-     "iopub.status.idle": "2026-01-03T10:14:32.980446Z",
-     "shell.execute_reply": "2026-01-03T10:14:32.979248Z"
+     "iopub.execute_input": "2026-01-12T14:30:48.093186Z",
+     "iopub.status.busy": "2026-01-12T14:30:48.092884Z",
+     "iopub.status.idle": "2026-01-12T14:30:48.098142Z",
+     "shell.execute_reply": "2026-01-12T14:30:48.097198Z"
     },
     "papermill": {
-     "duration": 1.664581,
-     "end_time": "2026-01-03T10:14:32.982973",
+     "duration": 0.01166,
+     "end_time": "2026-01-12T14:30:48.099945",
      "exception": false,
-     "start_time": "2026-01-03T10:14:31.318392",
+     "start_time": "2026-01-12T14:30:48.088285",
      "status": "completed"
     },
     "tags": []
    },
    "outputs": [],
    "source": [
-    "preprocessor = Preprocessor()\n",
+    "#preprocessor = Preprocessor()\n",
     "\n",
     "X_train_raw = train#.drop(columns=['exam_score'])\n",
     "y_train = train['exam_score']\n",
     "\n",
     "# learn the rule (median value...)\n",
-    "preprocessor.fit(X_train_raw)\n",
+    "#preprocessor.fit(X_train_raw)\n",
     "\n",
     "# preprocess data\n",
-    "X_train_processed = preprocessor.transform(X_train_raw)\n",
+    "#X_train_processed = preprocessor.transform(X_train_raw)\n",
     "# feature engineering\n",
-    "X_train_interact_feature = preprocessor.create_interaction_features(X_train_processed)"
+    "#X_train_interact_feature = preprocessor.create_interaction_features(X_train_processed)"
    ]
   },
   {
    "cell_type": "markdown",
-   "id": "60a35ec8",
+   "id": "52c5945a",
    "metadata": {
     "papermill": {
-     "duration": 0.003489,
-     "end_time": "2026-01-03T10:14:32.989575",
+     "duration": 0.003398,
+     "end_time": "2026-01-12T14:30:48.106867",
      "exception": false,
-     "start_time": "2026-01-03T10:14:32.986086",
+     "start_time": "2026-01-12T14:30:48.103469",
      "status": "completed"
     },
     "tags": []
@@ -340,20 +526,186 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 6,
-   "id": "05c8867b",
+   "execution_count": 7,
+   "id": "01a473e5",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-03T10:14:32.997725Z",
-     "iopub.status.busy": "2026-01-03T10:14:32.997298Z",
-     "iopub.status.idle": "2026-01-03T10:14:36.447282Z",
-     "shell.execute_reply": "2026-01-03T10:14:36.445428Z"
+     "iopub.execute_input": "2026-01-12T14:30:48.115980Z",
+     "iopub.status.busy": "2026-01-12T14:30:48.115001Z",
+     "iopub.status.idle": "2026-01-12T14:30:48.122082Z",
+     "shell.execute_reply": "2026-01-12T14:30:48.121172Z"
     },
     "papermill": {
-     "duration": 3.458142,
-     "end_time": "2026-01-03T10:14:36.450730",
+     "duration": 0.013636,
+     "end_time": "2026-01-12T14:30:48.123896",
      "exception": false,
-     "start_time": "2026-01-03T10:14:32.992588",
+     "start_time": "2026-01-12T14:30:48.110260",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "def objective(trial):\n",
+    "\n",
+    "    model_params = {\n",
+    "        \"n_estimators\": trial.suggest_int(\"n_estimators\", 300, 2000),\n",
+    "        \"max_depth\": trial.suggest_int(\"max_depth\", 3, 10),\n",
+    "        \"learning_rate\": trial.suggest_float(\"learning_rate\", 0.01, 0.2, log=True),\n",
+    "        \"subsample\": trial.suggest_float(\"subsample\", 0.6, 1.0),\n",
+    "        \"colsample_bytree\": trial.suggest_float(\"colsample_bytree\", 0.6, 1.0),\n",
+    "        \"min_child_weight\": trial.suggest_int(\"min_child_weight\", 1, 10),\n",
+    "        \"reg_alpha\": trial.suggest_float(\"reg_alpha\", 1e-8, 10.0, log=True),\n",
+    "        \"reg_lambda\": trial.suggest_float(\"reg_lambda\", 1e-8, 10.0, log=True),\n",
+    "    }\n",
+    "\n",
+    "    pipeline = Pipeline(\n",
+    "        steps=[\n",
+    "            (\"preprocess\", Preprocessor()),\n",
+    "            (\"model\", XGBRegressor(\n",
+    "                objective=\"reg:squarederror\",\n",
+    "                random_state=CFG.RANDOM_SEED,\n",
+    "                n_jobs=-1,\n",
+    "                **model_params\n",
+    "            ))\n",
+    "        ]\n",
+    "    )\n",
+    "\n",
+    "    scores = cross_val_score(\n",
+    "        pipeline,\n",
+    "        X_train_raw,\n",
+    "        y_train,\n",
+    "        cv=5,\n",
+    "        scoring=\"neg_root_mean_squared_error\",\n",
+    "        n_jobs=-1\n",
+    "    )\n",
+    "\n",
+    "    return -scores.mean()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "id": "92db1db3",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-01-12T14:30:48.132409Z",
+     "iopub.status.busy": "2026-01-12T14:30:48.131827Z",
+     "iopub.status.idle": "2026-01-12T16:02:13.927199Z",
+     "shell.execute_reply": "2026-01-12T16:02:13.926274Z"
+    },
+    "papermill": {
+     "duration": 5485.805619,
+     "end_time": "2026-01-12T16:02:13.933006",
+     "exception": false,
+     "start_time": "2026-01-12T14:30:48.127387",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "\u001b[32m[I 2026-01-12 14:30:48,134]\u001b[0m A new study created in memory with name: no-name-1610ef7a-ba18-4085-b615-1c467d102ced\u001b[0m\n",
+      "\u001b[32m[I 2026-01-12 14:34:23,172]\u001b[0m Trial 0 finished with value: 8.950130470595807 and parameters: {'n_estimators': 937, 'max_depth': 10, 'learning_rate': 0.08960785365368121, 'subsample': 0.8394633936788146, 'colsample_bytree': 0.6624074561769746, 'min_child_weight': 2, 'reg_alpha': 3.3323645788192616e-08, 'reg_lambda': 0.6245760287469893}. Best is trial 0 with value: 8.950130470595807.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-12 14:38:22,341]\u001b[0m Trial 1 finished with value: 8.770065009991196 and parameters: {'n_estimators': 1322, 'max_depth': 8, 'learning_rate': 0.010636066512540286, 'subsample': 0.9879639408647978, 'colsample_bytree': 0.9329770563201687, 'min_child_weight': 3, 'reg_alpha': 4.329370014459266e-07, 'reg_lambda': 4.4734294104626844e-07}. Best is trial 1 with value: 8.770065009991196.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-12 14:40:22,512]\u001b[0m Trial 2 finished with value: 8.757329529627253 and parameters: {'n_estimators': 817, 'max_depth': 7, 'learning_rate': 0.03647316284911211, 'subsample': 0.7164916560792167, 'colsample_bytree': 0.8447411578889518, 'min_child_weight': 2, 'reg_alpha': 4.258943089524393e-06, 'reg_lambda': 1.9826980964985924e-05}. Best is trial 2 with value: 8.757329529627253.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-12 14:44:02,123]\u001b[0m Trial 3 finished with value: 8.757541663382053 and parameters: {'n_estimators': 1075, 'max_depth': 9, 'learning_rate': 0.018187859051288217, 'subsample': 0.8056937753654446, 'colsample_bytree': 0.836965827544817, 'min_child_weight': 1, 'reg_alpha': 0.0029369981104377003, 'reg_lambda': 3.425445902633376e-07}. Best is trial 2 with value: 8.757329529627253.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-12 14:45:35,197]\u001b[0m Trial 4 finished with value: 9.058066854761176 and parameters: {'n_estimators': 410, 'max_depth': 10, 'learning_rate': 0.18043311207136256, 'subsample': 0.9233589392465844, 'colsample_bytree': 0.7218455076693483, 'min_child_weight': 1, 'reg_alpha': 0.014391207615728067, 'reg_lambda': 9.148975058772307e-05}. Best is trial 2 with value: 8.757329529627253.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-12 14:46:56,468]\u001b[0m Trial 5 finished with value: 8.823041954301715 and parameters: {'n_estimators': 507, 'max_depth': 6, 'learning_rate': 0.011085122517311707, 'subsample': 0.9637281608315128, 'colsample_bytree': 0.7035119926400067, 'min_child_weight': 7, 'reg_alpha': 6.388511557344611e-06, 'reg_lambda': 0.0004793052550782129}. Best is trial 2 with value: 8.757329529627253.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-12 14:48:36,567]\u001b[0m Trial 6 finished with value: 8.760576198511002 and parameters: {'n_estimators': 1229, 'max_depth': 4, 'learning_rate': 0.18258230439200238, 'subsample': 0.9100531293444458, 'colsample_bytree': 0.9757995766256756, 'min_child_weight': 9, 'reg_alpha': 0.002404915432737351, 'reg_lambda': 1.9809253750493907}. Best is trial 2 with value: 8.757329529627253.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-12 14:49:28,335]\u001b[0m Trial 7 finished with value: 8.907984271503377 and parameters: {'n_estimators': 450, 'max_depth': 4, 'learning_rate': 0.011450964268326641, 'subsample': 0.7301321323053057, 'colsample_bytree': 0.7554709158757928, 'min_child_weight': 3, 'reg_alpha': 0.28749982347407854, 'reg_lambda': 1.6247252885719427e-05}. Best is trial 2 with value: 8.757329529627253.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-12 14:51:35,544]\u001b[0m Trial 8 finished with value: 8.774622546519518 and parameters: {'n_estimators': 777, 'max_depth': 7, 'learning_rate': 0.015252697030515175, 'subsample': 0.9208787923016158, 'colsample_bytree': 0.6298202574719083, 'min_child_weight': 10, 'reg_alpha': 0.08916674715636537, 'reg_lambda': 6.143857495033091e-07}. Best is trial 2 with value: 8.757329529627253.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-12 14:52:38,639]\u001b[0m Trial 9 finished with value: 8.786469388577654 and parameters: {'n_estimators': 309, 'max_depth': 9, 'learning_rate': 0.08310795711416077, 'subsample': 0.8916028672163949, 'colsample_bytree': 0.9085081386743783, 'min_child_weight': 1, 'reg_alpha': 1.683416412018213e-05, 'reg_lambda': 1.1036250149900698e-07}. Best is trial 2 with value: 8.757329529627253.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-12 14:56:17,387]\u001b[0m Trial 10 finished with value: 8.751551060887357 and parameters: {'n_estimators': 1773, 'max_depth': 6, 'learning_rate': 0.030180553031924493, 'subsample': 0.6071847502459278, 'colsample_bytree': 0.8277250010609204, 'min_child_weight': 5, 'reg_alpha': 4.344469108550388, 'reg_lambda': 0.010039786460205676}. Best is trial 10 with value: 8.751551060887357.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-12 15:00:14,618]\u001b[0m Trial 11 finished with value: 8.750703508392224 and parameters: {'n_estimators': 1910, 'max_depth': 6, 'learning_rate': 0.030364484777630107, 'subsample': 0.6041532519630008, 'colsample_bytree': 0.83445433467569, 'min_child_weight': 5, 'reg_alpha': 4.188416507348488, 'reg_lambda': 0.008427137829973086}. Best is trial 11 with value: 8.750703508392224.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-12 15:03:39,019]\u001b[0m Trial 12 finished with value: 8.754860645484007 and parameters: {'n_estimators': 1954, 'max_depth': 5, 'learning_rate': 0.033259005086604364, 'subsample': 0.6014245292403245, 'colsample_bytree': 0.7957611591204394, 'min_child_weight': 5, 'reg_alpha': 8.964592852736434, 'reg_lambda': 0.014790975660203091}. Best is trial 11 with value: 8.750703508392224.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-12 15:07:45,635]\u001b[0m Trial 13 finished with value: 8.75061264772189 and parameters: {'n_estimators': 1984, 'max_depth': 6, 'learning_rate': 0.024795758443471035, 'subsample': 0.6039698962347247, 'colsample_bytree': 0.8604063212686378, 'min_child_weight': 6, 'reg_alpha': 9.868745464853761, 'reg_lambda': 0.018313125916897974}. Best is trial 13 with value: 8.75061264772189.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-12 15:09:48,242]\u001b[0m Trial 14 finished with value: 8.807984279207366 and parameters: {'n_estimators': 1594, 'max_depth': 3, 'learning_rate': 0.022793276266251813, 'subsample': 0.6638123593227386, 'colsample_bytree': 0.8919339318126805, 'min_child_weight': 7, 'reg_alpha': 0.6263415587377541, 'reg_lambda': 0.04394253214905615}. Best is trial 13 with value: 8.75061264772189.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-12 15:13:13,541]\u001b[0m Trial 15 finished with value: 8.750995969045647 and parameters: {'n_estimators': 2000, 'max_depth': 5, 'learning_rate': 0.056680812250788054, 'subsample': 0.6743111737417404, 'colsample_bytree': 0.7809305251510433, 'min_child_weight': 7, 'reg_alpha': 0.00016314022735956427, 'reg_lambda': 0.0012602438198154038}. Best is trial 13 with value: 8.75061264772189.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-12 15:15:58,913]\u001b[0m Trial 16 finished with value: 8.752461619286114 and parameters: {'n_estimators': 1591, 'max_depth': 5, 'learning_rate': 0.053309249936217905, 'subsample': 0.6517327282408382, 'colsample_bytree': 0.9980085299979685, 'min_child_weight': 6, 'reg_alpha': 1.4327280108234954, 'reg_lambda': 0.2818936773599518}. Best is trial 13 with value: 8.75061264772189.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-12 15:19:56,609]\u001b[0m Trial 17 finished with value: 8.752828305459934 and parameters: {'n_estimators': 1440, 'max_depth': 8, 'learning_rate': 0.024422696775104804, 'subsample': 0.754935807554969, 'colsample_bytree': 0.8813641111154343, 'min_child_weight': 4, 'reg_alpha': 0.040262466210226146, 'reg_lambda': 4.966554570452669}. Best is trial 13 with value: 8.75061264772189.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-12 15:23:36,374]\u001b[0m Trial 18 finished with value: 8.75376591647751 and parameters: {'n_estimators': 1780, 'max_depth': 6, 'learning_rate': 0.044513380330428655, 'subsample': 0.6412545650370052, 'colsample_bytree': 0.9469236812814982, 'min_child_weight': 8, 'reg_alpha': 9.863818452504152, 'reg_lambda': 0.002479139707980859}. Best is trial 13 with value: 8.75061264772189.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-12 15:25:53,014]\u001b[0m Trial 19 finished with value: 8.812666003856156 and parameters: {'n_estimators': 1796, 'max_depth': 3, 'learning_rate': 0.017317522727622218, 'subsample': 0.7174578137346916, 'colsample_bytree': 0.8658599058549207, 'min_child_weight': 6, 'reg_alpha': 0.4385329933199028, 'reg_lambda': 0.07597722560775576}. Best is trial 13 with value: 8.75061264772189.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-12 15:29:37,612]\u001b[0m Trial 20 finished with value: 8.74900260181839 and parameters: {'n_estimators': 1625, 'max_depth': 7, 'learning_rate': 0.022868032935380388, 'subsample': 0.7716870468962868, 'colsample_bytree': 0.7581014414297597, 'min_child_weight': 4, 'reg_alpha': 0.00022496116000185, 'reg_lambda': 0.004939392464663163}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-12 15:33:12,442]\u001b[0m Trial 21 finished with value: 8.749319419971398 and parameters: {'n_estimators': 1578, 'max_depth': 7, 'learning_rate': 0.027422903328062274, 'subsample': 0.782297495743992, 'colsample_bytree': 0.7458679725121594, 'min_child_weight': 4, 'reg_alpha': 0.00040519641183382776, 'reg_lambda': 0.007032817545601335}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-12 15:37:21,202]\u001b[0m Trial 22 finished with value: 8.7517627302806 and parameters: {'n_estimators': 1549, 'max_depth': 8, 'learning_rate': 0.022347612865955793, 'subsample': 0.7817169487923574, 'colsample_bytree': 0.7431112214919918, 'min_child_weight': 4, 'reg_alpha': 0.0001323396274404741, 'reg_lambda': 0.00020927676986852277}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-12 15:41:23,049]\u001b[0m Trial 23 finished with value: 8.755578070491081 and parameters: {'n_estimators': 1690, 'max_depth': 7, 'learning_rate': 0.01372401531709809, 'subsample': 0.8251323334561256, 'colsample_bytree': 0.6872276215369536, 'min_child_weight': 4, 'reg_alpha': 3.476165864326454e-05, 'reg_lambda': 0.1187343263341507}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-12 15:44:37,263]\u001b[0m Trial 24 finished with value: 8.752494921268896 and parameters: {'n_estimators': 1409, 'max_depth': 7, 'learning_rate': 0.020566861211876807, 'subsample': 0.8599468950521574, 'colsample_bytree': 0.7797424104871398, 'min_child_weight': 3, 'reg_alpha': 0.0014155659426371198, 'reg_lambda': 0.0026672170943320373}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-12 15:49:26,903]\u001b[0m Trial 25 finished with value: 8.785673260357674 and parameters: {'n_estimators': 1848, 'max_depth': 8, 'learning_rate': 0.04375049057725918, 'subsample': 0.765836702637975, 'colsample_bytree': 0.6057575681173106, 'min_child_weight': 6, 'reg_alpha': 8.24833150057588e-07, 'reg_lambda': 2.768593678489984e-05}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-12 15:54:46,657]\u001b[0m Trial 26 finished with value: 8.775631424857206 and parameters: {'n_estimators': 1655, 'max_depth': 9, 'learning_rate': 0.02606098381759018, 'subsample': 0.7015208315314028, 'colsample_bytree': 0.754485754334079, 'min_child_weight': 4, 'reg_alpha': 0.0005539202839193363, 'reg_lambda': 0.027544334881823448}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-12 15:57:58,387]\u001b[0m Trial 27 finished with value: 8.786407164647917 and parameters: {'n_estimators': 1466, 'max_depth': 7, 'learning_rate': 0.07650222855655577, 'subsample': 0.8683090099175346, 'colsample_bytree': 0.724418466132938, 'min_child_weight': 8, 'reg_alpha': 1.5450244271507006e-08, 'reg_lambda': 0.0006970430488147792}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-12 16:00:12,413]\u001b[0m Trial 28 finished with value: 8.796067668272377 and parameters: {'n_estimators': 1155, 'max_depth': 5, 'learning_rate': 0.013616011962695742, 'subsample': 0.7955801186043828, 'colsample_bytree': 0.8081268914353479, 'min_child_weight': 5, 'reg_alpha': 0.010047954142584336, 'reg_lambda': 0.6499624054252231}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-12 16:02:13,923]\u001b[0m Trial 29 finished with value: 8.756673541122607 and parameters: {'n_estimators': 1007, 'max_depth': 6, 'learning_rate': 0.039873026786527134, 'subsample': 0.8279622366238097, 'colsample_bytree': 0.6585025654871688, 'min_child_weight': 2, 'reg_alpha': 3.043938196474693e-07, 'reg_lambda': 3.1356683978776074e-06}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n"
+     ]
+    }
+   ],
+   "source": [
+    "study = optuna.create_study(\n",
+    "    direction=\"minimize\",\n",
+    "    sampler=optuna.samplers.TPESampler(seed=CFG.RANDOM_SEED)\n",
+    ")\n",
+    "\n",
+    "study.optimize(objective, n_trials=30)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "id": "d5c01a1e",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-01-12T16:02:13.945338Z",
+     "iopub.status.busy": "2026-01-12T16:02:13.944391Z",
+     "iopub.status.idle": "2026-01-12T16:03:05.482581Z",
+     "shell.execute_reply": "2026-01-12T16:03:05.481921Z"
+    },
+    "papermill": {
+     "duration": 51.54695,
+     "end_time": "2026-01-12T16:03:05.484811",
+     "exception": false,
+     "start_time": "2026-01-12T16:02:13.937861",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "final_pipeline = Pipeline(\n",
+    "    steps=[\n",
+    "        (\"preprocess\", Preprocessor()),\n",
+    "        (\"model\", XGBRegressor(\n",
+    "            **study.best_params,\n",
+    "            objective=\"reg:squarederror\",\n",
+    "            random_state=CFG.RANDOM_SEED,\n",
+    "            n_jobs=-1\n",
+    "        ))\n",
+    "    ]\n",
+    ")\n",
+    "\n",
+    "final_pipeline.fit(X_train_raw, y_train)\n",
+    "\n",
+    "y_pred = final_pipeline.predict(test)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "id": "e92046cb",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-01-12T16:03:05.496848Z",
+     "iopub.status.busy": "2026-01-12T16:03:05.496531Z",
+     "iopub.status.idle": "2026-01-12T16:03:05.502361Z",
+     "shell.execute_reply": "2026-01-12T16:03:05.501416Z"
+    },
+    "papermill": {
+     "duration": 0.013961,
+     "end_time": "2026-01-12T16:03:05.503965",
+     "exception": false,
+     "start_time": "2026-01-12T16:03:05.490004",
      "status": "completed"
     },
     "tags": []
@@ -363,38 +715,63 @@
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "MSE: 77.46297365384952\n"
+      "Best RMSE: 8.74900260181839\n",
+      "Best params:\n",
+      "n_estimators: 1625\n",
+      "max_depth: 7\n",
+      "learning_rate: 0.022868032935380388\n",
+      "subsample: 0.7716870468962868\n",
+      "colsample_bytree: 0.7581014414297597\n",
+      "min_child_weight: 4\n",
+      "reg_alpha: 0.00022496116000185\n",
+      "reg_lambda: 0.004939392464663163\n"
      ]
     }
    ],
    "source": [
-    "# split train data into train and val\n",
-    "X_train, X_val, y_train, y_val = train_test_split(\n",
-    "    X_train_interact_feature, y_train, test_size=0.2, random_state=CFG.RANDOM_SEED\n",
-    ")\n",
-    "\n",
-    "# initial XGBClassifier\n",
-    "reg_model = XGBRegressor()\n",
-    "# fit model\n",
-    "reg_model.fit(X_train, y_train)\n",
-    "\n",
-    "# predict\n",
-    "y_pred_val = reg_model.predict(X_val)\n",
-    "\n",
-    "# eval\n",
-    "mse = mean_squared_error(y_val, y_pred_val)\n",
-    "print(f\"MSE: {mse}\")"
+    "# 最佳參數\n",
+    "print(\"Best RMSE:\", study.best_value)\n",
+    "print(\"Best params:\")\n",
+    "for k, v in study.best_params.items():\n",
+    "    print(f\"{k}: {v}\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "id": "4606a4b9",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-01-12T16:03:05.515375Z",
+     "iopub.status.busy": "2026-01-12T16:03:05.515052Z",
+     "iopub.status.idle": "2026-01-12T16:03:05.518977Z",
+     "shell.execute_reply": "2026-01-12T16:03:05.518241Z"
+    },
+    "papermill": {
+     "duration": 0.011695,
+     "end_time": "2026-01-12T16:03:05.520692",
+     "exception": false,
+     "start_time": "2026-01-12T16:03:05.508997",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "# visualize data\n",
+    "#optuna.visualization.plot_optimization_history(study)\n",
+    "#optuna.visualization.plot_param_importances(study)"
    ]
   },
   {
    "cell_type": "markdown",
-   "id": "9d4260d2",
+   "id": "ff83fe0f",
    "metadata": {
     "papermill": {
-     "duration": 0.00326,
-     "end_time": "2026-01-03T10:14:36.457194",
+     "duration": 0.004843,
+     "end_time": "2026-01-12T16:03:05.530629",
      "exception": false,
-     "start_time": "2026-01-03T10:14:36.453934",
+     "start_time": "2026-01-12T16:03:05.525786",
      "status": "completed"
     },
     "tags": []
@@ -405,53 +782,20 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 7,
-   "id": "07572207",
+   "execution_count": 12,
+   "id": "addce342",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-03T10:14:36.469255Z",
-     "iopub.status.busy": "2026-01-03T10:14:36.468777Z",
-     "iopub.status.idle": "2026-01-03T10:14:37.495538Z",
-     "shell.execute_reply": "2026-01-03T10:14:37.494674Z"
+     "iopub.execute_input": "2026-01-12T16:03:05.542002Z",
+     "iopub.status.busy": "2026-01-12T16:03:05.541701Z",
+     "iopub.status.idle": "2026-01-12T16:03:06.068301Z",
+     "shell.execute_reply": "2026-01-12T16:03:06.067579Z"
     },
     "papermill": {
-     "duration": 1.035933,
-     "end_time": "2026-01-03T10:14:37.498507",
+     "duration": 0.534829,
+     "end_time": "2026-01-12T16:03:06.070327",
      "exception": false,
-     "start_time": "2026-01-03T10:14:36.462574",
-     "status": "completed"
-    },
-    "tags": []
-   },
-   "outputs": [],
-   "source": [
-    "test_id = test[\"id\"]\n",
-    "# preprocess data\n",
-    "X_test_processed = preprocessor.transform(test)\n",
-    "# feature engineering\n",
-    "X_test_interact_feature = preprocessor.create_interaction_features(X_test_processed)\n",
-    "X_test_interact_feature.head()\n",
-    "\n",
-    "y_pred = reg_model.predict(X_test_interact_feature)\n",
-    "#y_pred_round = np.round(y_pred, 1)"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 8,
-   "id": "8cd79463",
-   "metadata": {
-    "execution": {
-     "iopub.execute_input": "2026-01-03T10:14:37.506722Z",
-     "iopub.status.busy": "2026-01-03T10:14:37.506306Z",
-     "iopub.status.idle": "2026-01-03T10:14:38.045296Z",
-     "shell.execute_reply": "2026-01-03T10:14:38.044245Z"
-    },
-    "papermill": {
-     "duration": 0.546614,
-     "end_time": "2026-01-03T10:14:38.048095",
-     "exception": false,
-     "start_time": "2026-01-03T10:14:37.501481",
+     "start_time": "2026-01-12T16:03:05.535498",
      "status": "completed"
     },
     "tags": []
@@ -459,7 +803,7 @@
    "outputs": [],
    "source": [
     "submission = pd.read_csv(CFG.sample_submission_csv)\n",
-    "\n",
+    "test_id = test[\"id\"]\n",
     "submission = pd.DataFrame({\n",
     "    'Id': test_id, \n",
     "    'exam_score': y_pred   \n",
@@ -470,20 +814,20 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 9,
-   "id": "5dbd62f1",
+   "execution_count": 13,
+   "id": "f4cd86aa",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-03T10:14:38.056543Z",
-     "iopub.status.busy": "2026-01-03T10:14:38.056099Z",
-     "iopub.status.idle": "2026-01-03T10:14:38.082287Z",
-     "shell.execute_reply": "2026-01-03T10:14:38.081175Z"
+     "iopub.execute_input": "2026-01-12T16:03:06.081866Z",
+     "iopub.status.busy": "2026-01-12T16:03:06.081561Z",
+     "iopub.status.idle": "2026-01-12T16:03:06.089540Z",
+     "shell.execute_reply": "2026-01-12T16:03:06.088780Z"
     },
     "papermill": {
-     "duration": 0.033931,
-     "end_time": "2026-01-03T10:14:38.085213",
+     "duration": 0.015958,
+     "end_time": "2026-01-12T16:03:06.091283",
      "exception": false,
-     "start_time": "2026-01-03T10:14:38.051282",
+     "start_time": "2026-01-12T16:03:06.075325",
      "status": "completed"
     },
     "tags": []
@@ -518,27 +862,27 @@
        "    <tr>\n",
        "      <th>0</th>\n",
        "      <td>630000</td>\n",
-       "      <td>71.457550</td>\n",
+       "      <td>71.302765</td>\n",
        "    </tr>\n",
        "    <tr>\n",
        "      <th>1</th>\n",
        "      <td>630001</td>\n",
-       "      <td>69.616669</td>\n",
+       "      <td>69.961716</td>\n",
        "    </tr>\n",
        "    <tr>\n",
        "      <th>2</th>\n",
        "      <td>630002</td>\n",
-       "      <td>88.374496</td>\n",
+       "      <td>87.676155</td>\n",
        "    </tr>\n",
        "    <tr>\n",
        "      <th>3</th>\n",
        "      <td>630003</td>\n",
-       "      <td>55.940994</td>\n",
+       "      <td>55.216450</td>\n",
        "    </tr>\n",
        "    <tr>\n",
        "      <th>4</th>\n",
        "      <td>630004</td>\n",
-       "      <td>46.879143</td>\n",
+       "      <td>47.592976</td>\n",
        "    </tr>\n",
        "  </tbody>\n",
        "</table>\n",
@@ -546,14 +890,14 @@
       ],
       "text/plain": [
        "       Id  exam_score\n",
-       "0  630000   71.457550\n",
-       "1  630001   69.616669\n",
-       "2  630002   88.374496\n",
-       "3  630003   55.940994\n",
-       "4  630004   46.879143"
+       "0  630000   71.302765\n",
+       "1  630001   69.961716\n",
+       "2  630002   87.676155\n",
+       "3  630003   55.216450\n",
+       "4  630004   47.592976"
       ]
      },
-     "execution_count": 9,
+     "execution_count": 13,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -598,14 +942,14 @@
   },
   "papermill": {
    "default_parameters": {},
-   "duration": 19.698065,
-   "end_time": "2026-01-03T10:14:39.214737",
+   "duration": 5551.55962,
+   "end_time": "2026-01-12T16:03:08.718049",
    "environment_variables": {},
    "exception": null,
    "input_path": "__notebook__.ipynb",
    "output_path": "__notebook__.ipynb",
    "parameters": {},
-   "start_time": "2026-01-03T10:14:19.516672",
+   "start_time": "2026-01-12T14:30:37.158429",
    "version": "2.6.0"
   }
  },
