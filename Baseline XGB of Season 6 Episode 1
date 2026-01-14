@@ -2,13 +2,13 @@
  "cells": [
   {
    "cell_type": "markdown",
-   "id": "239d9711",
+   "id": "030bd13a",
    "metadata": {
     "papermill": {
-     "duration": 0.00439,
-     "end_time": "2026-01-13T16:15:13.893322",
+     "duration": 0.004277,
+     "end_time": "2026-01-14T15:35:52.911288",
      "exception": false,
-     "start_time": "2026-01-13T16:15:13.888932",
+     "start_time": "2026-01-14T15:35:52.907011",
      "status": "completed"
     },
     "tags": []
@@ -32,13 +32,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "52fe80a4",
+   "id": "9c9e0a43",
    "metadata": {
     "papermill": {
-     "duration": 0.003165,
-     "end_time": "2026-01-13T16:15:13.899851",
+     "duration": 0.003288,
+     "end_time": "2026-01-14T15:35:52.918019",
      "exception": false,
-     "start_time": "2026-01-13T16:15:13.896686",
+     "start_time": "2026-01-14T15:35:52.914731",
      "status": "completed"
     },
     "tags": []
@@ -50,19 +50,19 @@
   {
    "cell_type": "code",
    "execution_count": 1,
-   "id": "9fcf9078",
+   "id": "c846a5a2",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-13T16:15:13.907762Z",
-     "iopub.status.busy": "2026-01-13T16:15:13.907402Z",
-     "iopub.status.idle": "2026-01-13T16:15:20.728358Z",
-     "shell.execute_reply": "2026-01-13T16:15:20.727451Z"
+     "iopub.execute_input": "2026-01-14T15:35:52.926171Z",
+     "iopub.status.busy": "2026-01-14T15:35:52.925804Z",
+     "iopub.status.idle": "2026-01-14T15:35:59.058218Z",
+     "shell.execute_reply": "2026-01-14T15:35:59.057257Z"
     },
     "papermill": {
-     "duration": 6.827549,
-     "end_time": "2026-01-13T16:15:20.730449",
+     "duration": 6.139328,
+     "end_time": "2026-01-14T15:35:59.060551",
      "exception": false,
-     "start_time": "2026-01-13T16:15:13.902900",
+     "start_time": "2026-01-14T15:35:52.921223",
      "status": "completed"
     },
     "tags": []
@@ -99,13 +99,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "383e4eb5",
+   "id": "d499deb5",
    "metadata": {
     "papermill": {
-     "duration": 0.004102,
-     "end_time": "2026-01-13T16:15:20.738049",
+     "duration": 0.003536,
+     "end_time": "2026-01-14T15:35:59.067574",
      "exception": false,
-     "start_time": "2026-01-13T16:15:20.733947",
+     "start_time": "2026-01-14T15:35:59.064038",
      "status": "completed"
     },
     "tags": []
@@ -117,19 +117,19 @@
   {
    "cell_type": "code",
    "execution_count": 2,
-   "id": "bfc1bfff",
+   "id": "3599fe03",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-13T16:15:20.746417Z",
-     "iopub.status.busy": "2026-01-13T16:15:20.745922Z",
-     "iopub.status.idle": "2026-01-13T16:15:20.751344Z",
-     "shell.execute_reply": "2026-01-13T16:15:20.750219Z"
+     "iopub.execute_input": "2026-01-14T15:35:59.077451Z",
+     "iopub.status.busy": "2026-01-14T15:35:59.076400Z",
+     "iopub.status.idle": "2026-01-14T15:35:59.082407Z",
+     "shell.execute_reply": "2026-01-14T15:35:59.080918Z"
     },
     "papermill": {
-     "duration": 0.011788,
-     "end_time": "2026-01-13T16:15:20.753113",
+     "duration": 0.013146,
+     "end_time": "2026-01-14T15:35:59.084511",
      "exception": false,
-     "start_time": "2026-01-13T16:15:20.741325",
+     "start_time": "2026-01-14T15:35:59.071365",
      "status": "completed"
     },
     "tags": []
@@ -151,19 +151,19 @@
   {
    "cell_type": "code",
    "execution_count": 3,
-   "id": "109e3baf",
+   "id": "64862873",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-13T16:15:20.761250Z",
-     "iopub.status.busy": "2026-01-13T16:15:20.760955Z",
-     "iopub.status.idle": "2026-01-13T16:15:22.348376Z",
-     "shell.execute_reply": "2026-01-13T16:15:22.347641Z"
+     "iopub.execute_input": "2026-01-14T15:35:59.093411Z",
+     "iopub.status.busy": "2026-01-14T15:35:59.092974Z",
+     "iopub.status.idle": "2026-01-14T15:36:00.829901Z",
+     "shell.execute_reply": "2026-01-14T15:36:00.828764Z"
     },
     "papermill": {
-     "duration": 1.594094,
-     "end_time": "2026-01-13T16:15:22.350447",
+     "duration": 1.744301,
+     "end_time": "2026-01-14T15:36:00.832282",
      "exception": false,
-     "start_time": "2026-01-13T16:15:20.756353",
+     "start_time": "2026-01-14T15:35:59.087981",
      "status": "completed"
     },
     "tags": []
@@ -177,19 +177,19 @@
   {
    "cell_type": "code",
    "execution_count": 4,
-   "id": "2f397679",
+   "id": "cb44d1eb",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-13T16:15:22.358772Z",
-     "iopub.status.busy": "2026-01-13T16:15:22.358055Z",
-     "iopub.status.idle": "2026-01-13T16:15:22.393162Z",
-     "shell.execute_reply": "2026-01-13T16:15:22.392287Z"
+     "iopub.execute_input": "2026-01-14T15:36:00.841180Z",
+     "iopub.status.busy": "2026-01-14T15:36:00.840455Z",
+     "iopub.status.idle": "2026-01-14T15:36:00.873734Z",
+     "shell.execute_reply": "2026-01-14T15:36:00.872848Z"
     },
     "papermill": {
-     "duration": 0.041112,
-     "end_time": "2026-01-13T16:15:22.394896",
+     "duration": 0.040277,
+     "end_time": "2026-01-14T15:36:00.875876",
      "exception": false,
-     "start_time": "2026-01-13T16:15:22.353784",
+     "start_time": "2026-01-14T15:36:00.835599",
      "status": "completed"
     },
     "tags": []
@@ -344,13 +344,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "a92384ed",
+   "id": "e359925a",
    "metadata": {
     "papermill": {
-     "duration": 0.003473,
-     "end_time": "2026-01-13T16:15:22.401929",
+     "duration": 0.003815,
+     "end_time": "2026-01-14T15:36:00.883456",
      "exception": false,
-     "start_time": "2026-01-13T16:15:22.398456",
+     "start_time": "2026-01-14T15:36:00.879641",
      "status": "completed"
     },
     "tags": []
@@ -365,19 +365,19 @@
   {
    "cell_type": "code",
    "execution_count": 5,
-   "id": "632fe1f8",
+   "id": "2d39d2e2",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-13T16:15:22.410811Z",
-     "iopub.status.busy": "2026-01-13T16:15:22.409974Z",
-     "iopub.status.idle": "2026-01-13T16:15:22.423746Z",
-     "shell.execute_reply": "2026-01-13T16:15:22.422755Z"
+     "iopub.execute_input": "2026-01-14T15:36:00.892764Z",
+     "iopub.status.busy": "2026-01-14T15:36:00.892388Z",
+     "iopub.status.idle": "2026-01-14T15:36:00.907540Z",
+     "shell.execute_reply": "2026-01-14T15:36:00.906501Z"
     },
     "papermill": {
-     "duration": 0.020103,
-     "end_time": "2026-01-13T16:15:22.425352",
+     "duration": 0.022472,
+     "end_time": "2026-01-14T15:36:00.909523",
      "exception": false,
-     "start_time": "2026-01-13T16:15:22.405249",
+     "start_time": "2026-01-14T15:36:00.887051",
      "status": "completed"
     },
     "tags": []
@@ -477,19 +477,19 @@
   {
    "cell_type": "code",
    "execution_count": 6,
-   "id": "cb2b4fcc",
+   "id": "8efd5d24",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-13T16:15:22.434002Z",
-     "iopub.status.busy": "2026-01-13T16:15:22.433229Z",
-     "iopub.status.idle": "2026-01-13T16:15:22.437631Z",
-     "shell.execute_reply": "2026-01-13T16:15:22.436913Z"
+     "iopub.execute_input": "2026-01-14T15:36:00.918760Z",
+     "iopub.status.busy": "2026-01-14T15:36:00.918379Z",
+     "iopub.status.idle": "2026-01-14T15:36:00.923291Z",
+     "shell.execute_reply": "2026-01-14T15:36:00.922292Z"
     },
     "papermill": {
-     "duration": 0.010608,
-     "end_time": "2026-01-13T16:15:22.439432",
+     "duration": 0.012168,
+     "end_time": "2026-01-14T15:36:00.925458",
      "exception": false,
-     "start_time": "2026-01-13T16:15:22.428824",
+     "start_time": "2026-01-14T15:36:00.913290",
      "status": "completed"
     },
     "tags": []
@@ -502,13 +502,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "d10edb60",
+   "id": "61b2040f",
    "metadata": {
     "papermill": {
-     "duration": 0.003254,
-     "end_time": "2026-01-13T16:15:22.446017",
+     "duration": 0.003672,
+     "end_time": "2026-01-14T15:36:00.932846",
      "exception": false,
-     "start_time": "2026-01-13T16:15:22.442763",
+     "start_time": "2026-01-14T15:36:00.929174",
      "status": "completed"
     },
     "tags": []
@@ -525,19 +525,19 @@
   {
    "cell_type": "code",
    "execution_count": 7,
-   "id": "d0440581",
+   "id": "67dabc9d",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-13T16:15:22.454101Z",
-     "iopub.status.busy": "2026-01-13T16:15:22.453800Z",
-     "iopub.status.idle": "2026-01-13T16:15:22.460439Z",
-     "shell.execute_reply": "2026-01-13T16:15:22.459632Z"
+     "iopub.execute_input": "2026-01-14T15:36:00.942919Z",
+     "iopub.status.busy": "2026-01-14T15:36:00.942030Z",
+     "iopub.status.idle": "2026-01-14T15:36:00.949490Z",
+     "shell.execute_reply": "2026-01-14T15:36:00.948570Z"
     },
     "papermill": {
-     "duration": 0.013026,
-     "end_time": "2026-01-13T16:15:22.462307",
+     "duration": 0.014902,
+     "end_time": "2026-01-14T15:36:00.951449",
      "exception": false,
-     "start_time": "2026-01-13T16:15:22.449281",
+     "start_time": "2026-01-14T15:36:00.936547",
      "status": "completed"
     },
     "tags": []
@@ -584,19 +584,19 @@
   {
    "cell_type": "code",
    "execution_count": 8,
-   "id": "bf807844",
+   "id": "f327e01d",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-13T16:15:22.470555Z",
-     "iopub.status.busy": "2026-01-13T16:15:22.470271Z",
-     "iopub.status.idle": "2026-01-13T18:52:05.381141Z",
-     "shell.execute_reply": "2026-01-13T18:52:05.380146Z"
+     "iopub.execute_input": "2026-01-14T15:36:00.960911Z",
+     "iopub.status.busy": "2026-01-14T15:36:00.960101Z",
+     "iopub.status.idle": "2026-01-14T18:24:04.146631Z",
+     "shell.execute_reply": "2026-01-14T18:24:04.145792Z"
     },
     "papermill": {
-     "duration": 9402.924409,
-     "end_time": "2026-01-13T18:52:05.390253",
+     "duration": 10083.199407,
+     "end_time": "2026-01-14T18:24:04.154543",
      "exception": false,
-     "start_time": "2026-01-13T16:15:22.465844",
+     "start_time": "2026-01-14T15:36:00.955136",
      "status": "completed"
     },
     "tags": []
@@ -606,57 +606,57 @@
      "name": "stderr",
      "output_type": "stream",
      "text": [
-      "\u001b[32m[I 2026-01-13 16:15:22,472]\u001b[0m A new study created in memory with name: no-name-99a3fb89-12dc-4f6e-9815-1b0ad9c4341c\u001b[0m\n",
-      "\u001b[32m[I 2026-01-13 16:18:49,151]\u001b[0m Trial 0 finished with value: 8.950130470595807 and parameters: {'n_estimators': 937, 'max_depth': 10, 'learning_rate': 0.08960785365368121, 'subsample': 0.8394633936788146, 'colsample_bytree': 0.6624074561769746, 'min_child_weight': 2, 'reg_alpha': 3.3323645788192616e-08, 'reg_lambda': 0.6245760287469893}. Best is trial 0 with value: 8.950130470595807.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-13 16:22:42,476]\u001b[0m Trial 1 finished with value: 8.770065009991196 and parameters: {'n_estimators': 1322, 'max_depth': 8, 'learning_rate': 0.010636066512540286, 'subsample': 0.9879639408647978, 'colsample_bytree': 0.9329770563201687, 'min_child_weight': 3, 'reg_alpha': 4.329370014459266e-07, 'reg_lambda': 4.4734294104626844e-07}. Best is trial 1 with value: 8.770065009991196.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-13 16:24:37,663]\u001b[0m Trial 2 finished with value: 8.757329529627253 and parameters: {'n_estimators': 817, 'max_depth': 7, 'learning_rate': 0.03647316284911211, 'subsample': 0.7164916560792167, 'colsample_bytree': 0.8447411578889518, 'min_child_weight': 2, 'reg_alpha': 4.258943089524393e-06, 'reg_lambda': 1.9826980964985924e-05}. Best is trial 2 with value: 8.757329529627253.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-13 16:28:08,070]\u001b[0m Trial 3 finished with value: 8.757541663382053 and parameters: {'n_estimators': 1075, 'max_depth': 9, 'learning_rate': 0.018187859051288217, 'subsample': 0.8056937753654446, 'colsample_bytree': 0.836965827544817, 'min_child_weight': 1, 'reg_alpha': 0.0029369981104377003, 'reg_lambda': 3.425445902633376e-07}. Best is trial 2 with value: 8.757329529627253.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-13 16:29:38,328]\u001b[0m Trial 4 finished with value: 9.058066854761176 and parameters: {'n_estimators': 410, 'max_depth': 10, 'learning_rate': 0.18043311207136256, 'subsample': 0.9233589392465844, 'colsample_bytree': 0.7218455076693483, 'min_child_weight': 1, 'reg_alpha': 0.014391207615728067, 'reg_lambda': 9.148975058772307e-05}. Best is trial 2 with value: 8.757329529627253.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-13 16:30:58,002]\u001b[0m Trial 5 finished with value: 8.823041954301715 and parameters: {'n_estimators': 507, 'max_depth': 6, 'learning_rate': 0.011085122517311707, 'subsample': 0.9637281608315128, 'colsample_bytree': 0.7035119926400067, 'min_child_weight': 7, 'reg_alpha': 6.388511557344611e-06, 'reg_lambda': 0.0004793052550782129}. Best is trial 2 with value: 8.757329529627253.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-13 16:32:37,045]\u001b[0m Trial 6 finished with value: 8.760576198511002 and parameters: {'n_estimators': 1229, 'max_depth': 4, 'learning_rate': 0.18258230439200238, 'subsample': 0.9100531293444458, 'colsample_bytree': 0.9757995766256756, 'min_child_weight': 9, 'reg_alpha': 0.002404915432737351, 'reg_lambda': 1.9809253750493907}. Best is trial 2 with value: 8.757329529627253.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-13 16:33:28,465]\u001b[0m Trial 7 finished with value: 8.907984271503377 and parameters: {'n_estimators': 450, 'max_depth': 4, 'learning_rate': 0.011450964268326641, 'subsample': 0.7301321323053057, 'colsample_bytree': 0.7554709158757928, 'min_child_weight': 3, 'reg_alpha': 0.28749982347407854, 'reg_lambda': 1.6247252885719427e-05}. Best is trial 2 with value: 8.757329529627253.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-13 16:35:32,194]\u001b[0m Trial 8 finished with value: 8.774622546519518 and parameters: {'n_estimators': 777, 'max_depth': 7, 'learning_rate': 0.015252697030515175, 'subsample': 0.9208787923016158, 'colsample_bytree': 0.6298202574719083, 'min_child_weight': 10, 'reg_alpha': 0.08916674715636537, 'reg_lambda': 6.143857495033091e-07}. Best is trial 2 with value: 8.757329529627253.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-13 16:36:33,292]\u001b[0m Trial 9 finished with value: 8.786469388577654 and parameters: {'n_estimators': 309, 'max_depth': 9, 'learning_rate': 0.08310795711416077, 'subsample': 0.8916028672163949, 'colsample_bytree': 0.9085081386743783, 'min_child_weight': 1, 'reg_alpha': 1.683416412018213e-05, 'reg_lambda': 1.1036250149900698e-07}. Best is trial 2 with value: 8.757329529627253.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-13 16:40:05,202]\u001b[0m Trial 10 finished with value: 8.751551060887357 and parameters: {'n_estimators': 1773, 'max_depth': 6, 'learning_rate': 0.030180553031924493, 'subsample': 0.6071847502459278, 'colsample_bytree': 0.8277250010609204, 'min_child_weight': 5, 'reg_alpha': 4.344469108550388, 'reg_lambda': 0.010039786460205676}. Best is trial 10 with value: 8.751551060887357.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-13 16:43:53,739]\u001b[0m Trial 11 finished with value: 8.750703508392224 and parameters: {'n_estimators': 1910, 'max_depth': 6, 'learning_rate': 0.030364484777630107, 'subsample': 0.6041532519630008, 'colsample_bytree': 0.83445433467569, 'min_child_weight': 5, 'reg_alpha': 4.188416507348488, 'reg_lambda': 0.008427137829973086}. Best is trial 11 with value: 8.750703508392224.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-13 16:47:14,450]\u001b[0m Trial 12 finished with value: 8.754860645484007 and parameters: {'n_estimators': 1954, 'max_depth': 5, 'learning_rate': 0.033259005086604364, 'subsample': 0.6014245292403245, 'colsample_bytree': 0.7957611591204394, 'min_child_weight': 5, 'reg_alpha': 8.964592852736434, 'reg_lambda': 0.014790975660203091}. Best is trial 11 with value: 8.750703508392224.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-13 16:51:11,162]\u001b[0m Trial 13 finished with value: 8.75061264772189 and parameters: {'n_estimators': 1984, 'max_depth': 6, 'learning_rate': 0.024795758443471035, 'subsample': 0.6039698962347247, 'colsample_bytree': 0.8604063212686378, 'min_child_weight': 6, 'reg_alpha': 9.868745464853761, 'reg_lambda': 0.018313125916897974}. Best is trial 13 with value: 8.75061264772189.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-13 16:53:08,988]\u001b[0m Trial 14 finished with value: 8.807984279207366 and parameters: {'n_estimators': 1594, 'max_depth': 3, 'learning_rate': 0.022793276266251813, 'subsample': 0.6638123593227386, 'colsample_bytree': 0.8919339318126805, 'min_child_weight': 7, 'reg_alpha': 0.6263415587377541, 'reg_lambda': 0.04394253214905615}. Best is trial 13 with value: 8.75061264772189.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-13 16:56:33,292]\u001b[0m Trial 15 finished with value: 8.750995969045647 and parameters: {'n_estimators': 2000, 'max_depth': 5, 'learning_rate': 0.056680812250788054, 'subsample': 0.6743111737417404, 'colsample_bytree': 0.7809305251510433, 'min_child_weight': 7, 'reg_alpha': 0.00016314022735956427, 'reg_lambda': 0.0012602438198154038}. Best is trial 13 with value: 8.75061264772189.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-13 16:59:13,573]\u001b[0m Trial 16 finished with value: 8.752461619286114 and parameters: {'n_estimators': 1591, 'max_depth': 5, 'learning_rate': 0.053309249936217905, 'subsample': 0.6517327282408382, 'colsample_bytree': 0.9980085299979685, 'min_child_weight': 6, 'reg_alpha': 1.4327280108234954, 'reg_lambda': 0.2818936773599518}. Best is trial 13 with value: 8.75061264772189.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-13 17:03:05,951]\u001b[0m Trial 17 finished with value: 8.752828305459934 and parameters: {'n_estimators': 1440, 'max_depth': 8, 'learning_rate': 0.024422696775104804, 'subsample': 0.754935807554969, 'colsample_bytree': 0.8813641111154343, 'min_child_weight': 4, 'reg_alpha': 0.040262466210226146, 'reg_lambda': 4.966554570452669}. Best is trial 13 with value: 8.75061264772189.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-13 17:06:39,992]\u001b[0m Trial 18 finished with value: 8.75376591647751 and parameters: {'n_estimators': 1780, 'max_depth': 6, 'learning_rate': 0.044513380330428655, 'subsample': 0.6412545650370052, 'colsample_bytree': 0.9469236812814982, 'min_child_weight': 8, 'reg_alpha': 9.863818452504152, 'reg_lambda': 0.002479139707980859}. Best is trial 13 with value: 8.75061264772189.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-13 17:08:53,425]\u001b[0m Trial 19 finished with value: 8.812666003856156 and parameters: {'n_estimators': 1796, 'max_depth': 3, 'learning_rate': 0.017317522727622218, 'subsample': 0.7174578137346916, 'colsample_bytree': 0.8658599058549207, 'min_child_weight': 6, 'reg_alpha': 0.4385329933199028, 'reg_lambda': 0.07597722560775576}. Best is trial 13 with value: 8.75061264772189.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-13 17:12:33,174]\u001b[0m Trial 20 finished with value: 8.74900260181839 and parameters: {'n_estimators': 1625, 'max_depth': 7, 'learning_rate': 0.022868032935380388, 'subsample': 0.7716870468962868, 'colsample_bytree': 0.7581014414297597, 'min_child_weight': 4, 'reg_alpha': 0.00022496116000185, 'reg_lambda': 0.004939392464663163}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-13 17:16:05,204]\u001b[0m Trial 21 finished with value: 8.749319419971398 and parameters: {'n_estimators': 1578, 'max_depth': 7, 'learning_rate': 0.027422903328062274, 'subsample': 0.782297495743992, 'colsample_bytree': 0.7458679725121594, 'min_child_weight': 4, 'reg_alpha': 0.00040519641183382776, 'reg_lambda': 0.007032817545601335}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-13 17:20:03,975]\u001b[0m Trial 22 finished with value: 8.7517627302806 and parameters: {'n_estimators': 1549, 'max_depth': 8, 'learning_rate': 0.022347612865955793, 'subsample': 0.7817169487923574, 'colsample_bytree': 0.7431112214919918, 'min_child_weight': 4, 'reg_alpha': 0.0001323396274404741, 'reg_lambda': 0.00020927676986852277}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-13 17:23:52,756]\u001b[0m Trial 23 finished with value: 8.755578070491081 and parameters: {'n_estimators': 1690, 'max_depth': 7, 'learning_rate': 0.01372401531709809, 'subsample': 0.8251323334561256, 'colsample_bytree': 0.6872276215369536, 'min_child_weight': 4, 'reg_alpha': 3.476165864326454e-05, 'reg_lambda': 0.1187343263341507}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-13 17:26:57,254]\u001b[0m Trial 24 finished with value: 8.752494921268896 and parameters: {'n_estimators': 1409, 'max_depth': 7, 'learning_rate': 0.020566861211876807, 'subsample': 0.8599468950521574, 'colsample_bytree': 0.7797424104871398, 'min_child_weight': 3, 'reg_alpha': 0.0014155659426371198, 'reg_lambda': 0.0026672170943320373}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-13 17:31:38,116]\u001b[0m Trial 25 finished with value: 8.785673260357674 and parameters: {'n_estimators': 1848, 'max_depth': 8, 'learning_rate': 0.04375049057725918, 'subsample': 0.765836702637975, 'colsample_bytree': 0.6057575681173106, 'min_child_weight': 6, 'reg_alpha': 8.24833150057588e-07, 'reg_lambda': 2.768593678489984e-05}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-13 17:36:47,185]\u001b[0m Trial 26 finished with value: 8.775631424857206 and parameters: {'n_estimators': 1655, 'max_depth': 9, 'learning_rate': 0.02606098381759018, 'subsample': 0.7015208315314028, 'colsample_bytree': 0.754485754334079, 'min_child_weight': 4, 'reg_alpha': 0.0005539202839193363, 'reg_lambda': 0.027544334881823448}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-13 17:39:52,171]\u001b[0m Trial 27 finished with value: 8.786407164647917 and parameters: {'n_estimators': 1466, 'max_depth': 7, 'learning_rate': 0.07650222855655577, 'subsample': 0.8683090099175346, 'colsample_bytree': 0.724418466132938, 'min_child_weight': 8, 'reg_alpha': 1.5450244271507006e-08, 'reg_lambda': 0.0006970430488147792}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-13 17:42:00,885]\u001b[0m Trial 28 finished with value: 8.796067668272377 and parameters: {'n_estimators': 1155, 'max_depth': 5, 'learning_rate': 0.013616011962695742, 'subsample': 0.7955801186043828, 'colsample_bytree': 0.8081268914353479, 'min_child_weight': 5, 'reg_alpha': 0.010047954142584336, 'reg_lambda': 0.6499624054252231}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-13 17:43:56,253]\u001b[0m Trial 29 finished with value: 8.756673541122607 and parameters: {'n_estimators': 1007, 'max_depth': 6, 'learning_rate': 0.039873026786527134, 'subsample': 0.8279622366238097, 'colsample_bytree': 0.6585025654871688, 'min_child_weight': 2, 'reg_alpha': 3.043938196474693e-07, 'reg_lambda': 3.1356683978776074e-06}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-13 17:45:46,159]\u001b[0m Trial 30 finished with value: 8.767077012438813 and parameters: {'n_estimators': 1310, 'max_depth': 4, 'learning_rate': 0.06120335686339847, 'subsample': 0.7455737611193313, 'colsample_bytree': 0.6724830143449021, 'min_child_weight': 2, 'reg_alpha': 1.2921398868966626e-07, 'reg_lambda': 0.7452504357539832}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-13 17:49:30,255]\u001b[0m Trial 31 finished with value: 8.751126566257222 and parameters: {'n_estimators': 1886, 'max_depth': 6, 'learning_rate': 0.029418705472871707, 'subsample': 0.6204092404168258, 'colsample_bytree': 0.8118716934663768, 'min_child_weight': 5, 'reg_alpha': 1.6778997027051952, 'reg_lambda': 0.0037669146175382012}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-13 17:54:04,411]\u001b[0m Trial 32 finished with value: 8.755093713414615 and parameters: {'n_estimators': 1992, 'max_depth': 7, 'learning_rate': 0.029160203487099808, 'subsample': 0.6716900949942163, 'colsample_bytree': 0.8644308317223982, 'min_child_weight': 4, 'reg_alpha': 0.0767153515977722, 'reg_lambda': 0.00901528217572092}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-13 17:58:42,859]\u001b[0m Trial 33 finished with value: 8.754060824331166 and parameters: {'n_estimators': 1703, 'max_depth': 8, 'learning_rate': 0.019083068914962233, 'subsample': 0.6357395214712233, 'colsample_bytree': 0.9265857501157437, 'min_child_weight': 3, 'reg_alpha': 4.9769149559237625e-05, 'reg_lambda': 1.691256138704184e-08}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-13 18:02:24,333]\u001b[0m Trial 34 finished with value: 8.750140930936201 and parameters: {'n_estimators': 1896, 'max_depth': 6, 'learning_rate': 0.03709069083065647, 'subsample': 0.697729080465497, 'colsample_bytree': 0.84858969350016, 'min_child_weight': 6, 'reg_alpha': 1.8482962605227414e-06, 'reg_lambda': 0.13327098499215817}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-13 18:06:32,558]\u001b[0m Trial 35 finished with value: 8.757163992002612 and parameters: {'n_estimators': 1845, 'max_depth': 7, 'learning_rate': 0.0366996313514455, 'subsample': 0.6982449378186886, 'colsample_bytree': 0.7776229525374949, 'min_child_weight': 6, 'reg_alpha': 2.5646136914438654e-06, 'reg_lambda': 0.18788429635050882}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-13 18:09:10,793]\u001b[0m Trial 36 finished with value: 8.77965254853488 and parameters: {'n_estimators': 1525, 'max_depth': 5, 'learning_rate': 0.016295677602119765, 'subsample': 0.7782357035943076, 'colsample_bytree': 0.8511442970640206, 'min_child_weight': 7, 'reg_alpha': 1.5546441261238067e-06, 'reg_lambda': 0.00020616703672475897}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-13 18:11:53,330]\u001b[0m Trial 37 finished with value: 8.757529182230236 and parameters: {'n_estimators': 1330, 'max_depth': 6, 'learning_rate': 0.026013513362242606, 'subsample': 0.6941750088616838, 'colsample_bytree': 0.7310882585267253, 'min_child_weight': 8, 'reg_alpha': 7.189591891263796e-08, 'reg_lambda': 0.040098441075900215}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-13 18:16:49,832]\u001b[0m Trial 38 finished with value: 8.786928054606127 and parameters: {'n_estimators': 1679, 'max_depth': 9, 'learning_rate': 0.03492045362335471, 'subsample': 0.810226930385786, 'colsample_bytree': 0.6955276526248353, 'min_child_weight': 6, 'reg_alpha': 1.0491591910252639e-05, 'reg_lambda': 2.0114126477683905}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-13 18:19:00,363]\u001b[0m Trial 39 finished with value: 8.860260380088494 and parameters: {'n_estimators': 863, 'max_depth': 8, 'learning_rate': 0.1432585126489407, 'subsample': 0.8599222361030445, 'colsample_bytree': 0.7620028828652154, 'min_child_weight': 4, 'reg_alpha': 0.009786927549879414, 'reg_lambda': 9.712566614512445}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-13 18:22:59,880]\u001b[0m Trial 40 finished with value: 8.801160785849692 and parameters: {'n_estimators': 1752, 'max_depth': 7, 'learning_rate': 0.0693386363824145, 'subsample': 0.7394020807374733, 'colsample_bytree': 0.8170643126335945, 'min_child_weight': 3, 'reg_alpha': 0.0006121496593029655, 'reg_lambda': 6.112007631403509e-05}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-13 18:26:45,832]\u001b[0m Trial 41 finished with value: 8.758959860342642 and parameters: {'n_estimators': 1933, 'max_depth': 6, 'learning_rate': 0.050739410634579325, 'subsample': 0.6208837409521272, 'colsample_bytree': 0.8378399589244641, 'min_child_weight': 5, 'reg_alpha': 0.21566771272333807, 'reg_lambda': 0.01457337472840289}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-13 18:28:15,876]\u001b[0m Trial 42 finished with value: 8.78585156827646 and parameters: {'n_estimators': 655, 'max_depth': 6, 'learning_rate': 0.020145327320479862, 'subsample': 0.718382530950453, 'colsample_bytree': 0.8506331146346741, 'min_child_weight': 5, 'reg_alpha': 1.867174301023919, 'reg_lambda': 0.0032455091175018387}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-13 18:31:57,166]\u001b[0m Trial 43 finished with value: 8.751398641063 and parameters: {'n_estimators': 1890, 'max_depth': 6, 'learning_rate': 0.02802628666129696, 'subsample': 0.6312967074175629, 'colsample_bytree': 0.899459562015184, 'min_child_weight': 6, 'reg_alpha': 0.004876034355212774, 'reg_lambda': 0.005678143530866662}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-13 18:36:10,374]\u001b[0m Trial 44 finished with value: 8.76495137473604 and parameters: {'n_estimators': 1903, 'max_depth': 7, 'learning_rate': 0.03996683289906505, 'subsample': 0.6822322702713749, 'colsample_bytree': 0.8766932422534338, 'min_child_weight': 5, 'reg_alpha': 0.03401735990816561, 'reg_lambda': 0.0013096604791781802}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-13 18:39:11,420]\u001b[0m Trial 45 finished with value: 8.756279581740749 and parameters: {'n_estimators': 1812, 'max_depth': 5, 'learning_rate': 0.03171048161856029, 'subsample': 0.6535717697629941, 'colsample_bytree': 0.7925530433316709, 'min_child_weight': 7, 'reg_alpha': 4.31661890382418e-06, 'reg_lambda': 0.02587342012004621}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-13 18:41:56,773]\u001b[0m Trial 46 finished with value: 8.777252471312984 and parameters: {'n_estimators': 1612, 'max_depth': 6, 'learning_rate': 0.10211854755494357, 'subsample': 0.96433099084837, 'colsample_bytree': 0.8305566861548989, 'min_child_weight': 4, 'reg_alpha': 3.021126663253268, 'reg_lambda': 0.23490322647453415}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-13 18:44:50,165]\u001b[0m Trial 47 finished with value: 8.778004672738982 and parameters: {'n_estimators': 1994, 'max_depth': 4, 'learning_rate': 0.02216662348578678, 'subsample': 0.6037132711173, 'colsample_bytree': 0.9188151035406307, 'min_child_weight': 5, 'reg_alpha': 0.0001329772617562575, 'reg_lambda': 0.0004950136785191164}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-13 18:47:38,132]\u001b[0m Trial 48 finished with value: 8.754584769912602 and parameters: {'n_estimators': 1728, 'max_depth': 5, 'learning_rate': 0.03442395531936535, 'subsample': 0.7608319506807278, 'colsample_bytree': 0.9535014386530635, 'min_child_weight': 7, 'reg_alpha': 0.6980199394284865, 'reg_lambda': 0.07044789967290907}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-13 18:52:05,377]\u001b[0m Trial 49 finished with value: 8.772876036719682 and parameters: {'n_estimators': 1927, 'max_depth': 7, 'learning_rate': 0.04795728823237131, 'subsample': 0.6561743151193504, 'colsample_bytree': 0.7138685957223262, 'min_child_weight': 10, 'reg_alpha': 0.15448848502780338, 'reg_lambda': 0.0011352947857487}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n"
+      "\u001b[32m[I 2026-01-14 15:36:00,963]\u001b[0m A new study created in memory with name: no-name-b453b2a8-b0d3-4b9e-ae80-624d4f4d2755\u001b[0m\n",
+      "\u001b[32m[I 2026-01-14 15:39:49,925]\u001b[0m Trial 0 finished with value: 8.950130470595807 and parameters: {'n_estimators': 937, 'max_depth': 10, 'learning_rate': 0.08960785365368121, 'subsample': 0.8394633936788146, 'colsample_bytree': 0.6624074561769746, 'min_child_weight': 2, 'reg_alpha': 3.3323645788192616e-08, 'reg_lambda': 0.6245760287469893}. Best is trial 0 with value: 8.950130470595807.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-14 15:44:01,356]\u001b[0m Trial 1 finished with value: 8.770065009991196 and parameters: {'n_estimators': 1322, 'max_depth': 8, 'learning_rate': 0.010636066512540286, 'subsample': 0.9879639408647978, 'colsample_bytree': 0.9329770563201687, 'min_child_weight': 3, 'reg_alpha': 4.329370014459266e-07, 'reg_lambda': 4.4734294104626844e-07}. Best is trial 1 with value: 8.770065009991196.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-14 15:46:06,785]\u001b[0m Trial 2 finished with value: 8.757329529627253 and parameters: {'n_estimators': 817, 'max_depth': 7, 'learning_rate': 0.03647316284911211, 'subsample': 0.7164916560792167, 'colsample_bytree': 0.8447411578889518, 'min_child_weight': 2, 'reg_alpha': 4.258943089524393e-06, 'reg_lambda': 1.9826980964985924e-05}. Best is trial 2 with value: 8.757329529627253.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-14 15:50:03,050]\u001b[0m Trial 3 finished with value: 8.757541663382053 and parameters: {'n_estimators': 1075, 'max_depth': 9, 'learning_rate': 0.018187859051288217, 'subsample': 0.8056937753654446, 'colsample_bytree': 0.836965827544817, 'min_child_weight': 1, 'reg_alpha': 0.0029369981104377003, 'reg_lambda': 3.425445902633376e-07}. Best is trial 2 with value: 8.757329529627253.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-14 15:51:42,809]\u001b[0m Trial 4 finished with value: 9.058066854761176 and parameters: {'n_estimators': 410, 'max_depth': 10, 'learning_rate': 0.18043311207136256, 'subsample': 0.9233589392465844, 'colsample_bytree': 0.7218455076693483, 'min_child_weight': 1, 'reg_alpha': 0.014391207615728067, 'reg_lambda': 9.148975058772307e-05}. Best is trial 2 with value: 8.757329529627253.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-14 15:53:08,373]\u001b[0m Trial 5 finished with value: 8.823041954301715 and parameters: {'n_estimators': 507, 'max_depth': 6, 'learning_rate': 0.011085122517311707, 'subsample': 0.9637281608315128, 'colsample_bytree': 0.7035119926400067, 'min_child_weight': 7, 'reg_alpha': 6.388511557344611e-06, 'reg_lambda': 0.0004793052550782129}. Best is trial 2 with value: 8.757329529627253.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-14 15:54:53,342]\u001b[0m Trial 6 finished with value: 8.760576198511002 and parameters: {'n_estimators': 1229, 'max_depth': 4, 'learning_rate': 0.18258230439200238, 'subsample': 0.9100531293444458, 'colsample_bytree': 0.9757995766256756, 'min_child_weight': 9, 'reg_alpha': 0.002404915432737351, 'reg_lambda': 1.9809253750493907}. Best is trial 2 with value: 8.757329529627253.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-14 15:55:46,815]\u001b[0m Trial 7 finished with value: 8.907984271503377 and parameters: {'n_estimators': 450, 'max_depth': 4, 'learning_rate': 0.011450964268326641, 'subsample': 0.7301321323053057, 'colsample_bytree': 0.7554709158757928, 'min_child_weight': 3, 'reg_alpha': 0.28749982347407854, 'reg_lambda': 1.6247252885719427e-05}. Best is trial 2 with value: 8.757329529627253.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-14 15:58:02,129]\u001b[0m Trial 8 finished with value: 8.774622546519518 and parameters: {'n_estimators': 777, 'max_depth': 7, 'learning_rate': 0.015252697030515175, 'subsample': 0.9208787923016158, 'colsample_bytree': 0.6298202574719083, 'min_child_weight': 10, 'reg_alpha': 0.08916674715636537, 'reg_lambda': 6.143857495033091e-07}. Best is trial 2 with value: 8.757329529627253.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-14 15:59:09,897]\u001b[0m Trial 9 finished with value: 8.786469388577654 and parameters: {'n_estimators': 309, 'max_depth': 9, 'learning_rate': 0.08310795711416077, 'subsample': 0.8916028672163949, 'colsample_bytree': 0.9085081386743783, 'min_child_weight': 1, 'reg_alpha': 1.683416412018213e-05, 'reg_lambda': 1.1036250149900698e-07}. Best is trial 2 with value: 8.757329529627253.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-14 16:02:56,828]\u001b[0m Trial 10 finished with value: 8.751551060887357 and parameters: {'n_estimators': 1773, 'max_depth': 6, 'learning_rate': 0.030180553031924493, 'subsample': 0.6071847502459278, 'colsample_bytree': 0.8277250010609204, 'min_child_weight': 5, 'reg_alpha': 4.344469108550388, 'reg_lambda': 0.010039786460205676}. Best is trial 10 with value: 8.751551060887357.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-14 16:07:05,079]\u001b[0m Trial 11 finished with value: 8.750703508392224 and parameters: {'n_estimators': 1910, 'max_depth': 6, 'learning_rate': 0.030364484777630107, 'subsample': 0.6041532519630008, 'colsample_bytree': 0.83445433467569, 'min_child_weight': 5, 'reg_alpha': 4.188416507348488, 'reg_lambda': 0.008427137829973086}. Best is trial 11 with value: 8.750703508392224.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-14 16:10:41,255]\u001b[0m Trial 12 finished with value: 8.754860645484007 and parameters: {'n_estimators': 1954, 'max_depth': 5, 'learning_rate': 0.033259005086604364, 'subsample': 0.6014245292403245, 'colsample_bytree': 0.7957611591204394, 'min_child_weight': 5, 'reg_alpha': 8.964592852736434, 'reg_lambda': 0.014790975660203091}. Best is trial 11 with value: 8.750703508392224.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-14 16:15:01,224]\u001b[0m Trial 13 finished with value: 8.75061264772189 and parameters: {'n_estimators': 1984, 'max_depth': 6, 'learning_rate': 0.024795758443471035, 'subsample': 0.6039698962347247, 'colsample_bytree': 0.8604063212686378, 'min_child_weight': 6, 'reg_alpha': 9.868745464853761, 'reg_lambda': 0.018313125916897974}. Best is trial 13 with value: 8.75061264772189.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-14 16:17:08,236]\u001b[0m Trial 14 finished with value: 8.807984279207366 and parameters: {'n_estimators': 1594, 'max_depth': 3, 'learning_rate': 0.022793276266251813, 'subsample': 0.6638123593227386, 'colsample_bytree': 0.8919339318126805, 'min_child_weight': 7, 'reg_alpha': 0.6263415587377541, 'reg_lambda': 0.04394253214905615}. Best is trial 13 with value: 8.75061264772189.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-14 16:20:41,349]\u001b[0m Trial 15 finished with value: 8.750995969045647 and parameters: {'n_estimators': 2000, 'max_depth': 5, 'learning_rate': 0.056680812250788054, 'subsample': 0.6743111737417404, 'colsample_bytree': 0.7809305251510433, 'min_child_weight': 7, 'reg_alpha': 0.00016314022735956427, 'reg_lambda': 0.0012602438198154038}. Best is trial 13 with value: 8.75061264772189.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-14 16:23:33,582]\u001b[0m Trial 16 finished with value: 8.752461619286114 and parameters: {'n_estimators': 1591, 'max_depth': 5, 'learning_rate': 0.053309249936217905, 'subsample': 0.6517327282408382, 'colsample_bytree': 0.9980085299979685, 'min_child_weight': 6, 'reg_alpha': 1.4327280108234954, 'reg_lambda': 0.2818936773599518}. Best is trial 13 with value: 8.75061264772189.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-14 16:27:41,243]\u001b[0m Trial 17 finished with value: 8.752828305459934 and parameters: {'n_estimators': 1440, 'max_depth': 8, 'learning_rate': 0.024422696775104804, 'subsample': 0.754935807554969, 'colsample_bytree': 0.8813641111154343, 'min_child_weight': 4, 'reg_alpha': 0.040262466210226146, 'reg_lambda': 4.966554570452669}. Best is trial 13 with value: 8.75061264772189.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-14 16:31:30,826]\u001b[0m Trial 18 finished with value: 8.75376591647751 and parameters: {'n_estimators': 1780, 'max_depth': 6, 'learning_rate': 0.044513380330428655, 'subsample': 0.6412545650370052, 'colsample_bytree': 0.9469236812814982, 'min_child_weight': 8, 'reg_alpha': 9.863818452504152, 'reg_lambda': 0.002479139707980859}. Best is trial 13 with value: 8.75061264772189.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-14 16:33:50,825]\u001b[0m Trial 19 finished with value: 8.812666003856156 and parameters: {'n_estimators': 1796, 'max_depth': 3, 'learning_rate': 0.017317522727622218, 'subsample': 0.7174578137346916, 'colsample_bytree': 0.8658599058549207, 'min_child_weight': 6, 'reg_alpha': 0.4385329933199028, 'reg_lambda': 0.07597722560775576}. Best is trial 13 with value: 8.75061264772189.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-14 16:37:46,588]\u001b[0m Trial 20 finished with value: 8.74900260181839 and parameters: {'n_estimators': 1625, 'max_depth': 7, 'learning_rate': 0.022868032935380388, 'subsample': 0.7716870468962868, 'colsample_bytree': 0.7581014414297597, 'min_child_weight': 4, 'reg_alpha': 0.00022496116000185, 'reg_lambda': 0.004939392464663163}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-14 16:41:32,370]\u001b[0m Trial 21 finished with value: 8.749319419971398 and parameters: {'n_estimators': 1578, 'max_depth': 7, 'learning_rate': 0.027422903328062274, 'subsample': 0.782297495743992, 'colsample_bytree': 0.7458679725121594, 'min_child_weight': 4, 'reg_alpha': 0.00040519641183382776, 'reg_lambda': 0.007032817545601335}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-14 16:45:55,012]\u001b[0m Trial 22 finished with value: 8.7517627302806 and parameters: {'n_estimators': 1549, 'max_depth': 8, 'learning_rate': 0.022347612865955793, 'subsample': 0.7817169487923574, 'colsample_bytree': 0.7431112214919918, 'min_child_weight': 4, 'reg_alpha': 0.0001323396274404741, 'reg_lambda': 0.00020927676986852277}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-14 16:50:10,518]\u001b[0m Trial 23 finished with value: 8.755578070491081 and parameters: {'n_estimators': 1690, 'max_depth': 7, 'learning_rate': 0.01372401531709809, 'subsample': 0.8251323334561256, 'colsample_bytree': 0.6872276215369536, 'min_child_weight': 4, 'reg_alpha': 3.476165864326454e-05, 'reg_lambda': 0.1187343263341507}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-14 16:53:35,047]\u001b[0m Trial 24 finished with value: 8.752494921268896 and parameters: {'n_estimators': 1409, 'max_depth': 7, 'learning_rate': 0.020566861211876807, 'subsample': 0.8599468950521574, 'colsample_bytree': 0.7797424104871398, 'min_child_weight': 3, 'reg_alpha': 0.0014155659426371198, 'reg_lambda': 0.0026672170943320373}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-14 16:58:37,967]\u001b[0m Trial 25 finished with value: 8.785673260357674 and parameters: {'n_estimators': 1848, 'max_depth': 8, 'learning_rate': 0.04375049057725918, 'subsample': 0.765836702637975, 'colsample_bytree': 0.6057575681173106, 'min_child_weight': 6, 'reg_alpha': 8.24833150057588e-07, 'reg_lambda': 2.768593678489984e-05}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-14 17:04:13,086]\u001b[0m Trial 26 finished with value: 8.775631424857206 and parameters: {'n_estimators': 1655, 'max_depth': 9, 'learning_rate': 0.02606098381759018, 'subsample': 0.7015208315314028, 'colsample_bytree': 0.754485754334079, 'min_child_weight': 4, 'reg_alpha': 0.0005539202839193363, 'reg_lambda': 0.027544334881823448}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-14 17:07:33,854]\u001b[0m Trial 27 finished with value: 8.786407164647917 and parameters: {'n_estimators': 1466, 'max_depth': 7, 'learning_rate': 0.07650222855655577, 'subsample': 0.8683090099175346, 'colsample_bytree': 0.724418466132938, 'min_child_weight': 8, 'reg_alpha': 1.5450244271507006e-08, 'reg_lambda': 0.0006970430488147792}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-14 17:09:51,243]\u001b[0m Trial 28 finished with value: 8.796067668272377 and parameters: {'n_estimators': 1155, 'max_depth': 5, 'learning_rate': 0.013616011962695742, 'subsample': 0.7955801186043828, 'colsample_bytree': 0.8081268914353479, 'min_child_weight': 5, 'reg_alpha': 0.010047954142584336, 'reg_lambda': 0.6499624054252231}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-14 17:11:58,641]\u001b[0m Trial 29 finished with value: 8.756673541122607 and parameters: {'n_estimators': 1007, 'max_depth': 6, 'learning_rate': 0.039873026786527134, 'subsample': 0.8279622366238097, 'colsample_bytree': 0.6585025654871688, 'min_child_weight': 2, 'reg_alpha': 3.043938196474693e-07, 'reg_lambda': 3.1356683978776074e-06}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-14 17:13:56,026]\u001b[0m Trial 30 finished with value: 8.767077012438813 and parameters: {'n_estimators': 1310, 'max_depth': 4, 'learning_rate': 0.06120335686339847, 'subsample': 0.7455737611193313, 'colsample_bytree': 0.6724830143449021, 'min_child_weight': 2, 'reg_alpha': 1.2921398868966626e-07, 'reg_lambda': 0.7452504357539832}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-14 17:17:57,674]\u001b[0m Trial 31 finished with value: 8.751126566257222 and parameters: {'n_estimators': 1886, 'max_depth': 6, 'learning_rate': 0.029418705472871707, 'subsample': 0.6204092404168258, 'colsample_bytree': 0.8118716934663768, 'min_child_weight': 5, 'reg_alpha': 1.6778997027051952, 'reg_lambda': 0.0037669146175382012}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-14 17:22:49,278]\u001b[0m Trial 32 finished with value: 8.755093713414615 and parameters: {'n_estimators': 1992, 'max_depth': 7, 'learning_rate': 0.029160203487099808, 'subsample': 0.6716900949942163, 'colsample_bytree': 0.8644308317223982, 'min_child_weight': 4, 'reg_alpha': 0.0767153515977722, 'reg_lambda': 0.00901528217572092}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-14 17:27:50,214]\u001b[0m Trial 33 finished with value: 8.754060824331166 and parameters: {'n_estimators': 1703, 'max_depth': 8, 'learning_rate': 0.019083068914962233, 'subsample': 0.6357395214712233, 'colsample_bytree': 0.9265857501157437, 'min_child_weight': 3, 'reg_alpha': 4.9769149559237625e-05, 'reg_lambda': 1.691256138704184e-08}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-14 17:31:44,527]\u001b[0m Trial 34 finished with value: 8.750140930936201 and parameters: {'n_estimators': 1896, 'max_depth': 6, 'learning_rate': 0.03709069083065647, 'subsample': 0.697729080465497, 'colsample_bytree': 0.84858969350016, 'min_child_weight': 6, 'reg_alpha': 1.8482962605227414e-06, 'reg_lambda': 0.13327098499215817}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-14 17:36:10,582]\u001b[0m Trial 35 finished with value: 8.757163992002612 and parameters: {'n_estimators': 1845, 'max_depth': 7, 'learning_rate': 0.0366996313514455, 'subsample': 0.6982449378186886, 'colsample_bytree': 0.7776229525374949, 'min_child_weight': 6, 'reg_alpha': 2.5646136914438654e-06, 'reg_lambda': 0.18788429635050882}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-14 17:38:59,881]\u001b[0m Trial 36 finished with value: 8.77965254853488 and parameters: {'n_estimators': 1525, 'max_depth': 5, 'learning_rate': 0.016295677602119765, 'subsample': 0.7782357035943076, 'colsample_bytree': 0.8511442970640206, 'min_child_weight': 7, 'reg_alpha': 1.5546441261238067e-06, 'reg_lambda': 0.00020616703672475897}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-14 17:41:52,309]\u001b[0m Trial 37 finished with value: 8.757529182230236 and parameters: {'n_estimators': 1330, 'max_depth': 6, 'learning_rate': 0.026013513362242606, 'subsample': 0.6941750088616838, 'colsample_bytree': 0.7310882585267253, 'min_child_weight': 8, 'reg_alpha': 7.189591891263796e-08, 'reg_lambda': 0.040098441075900215}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-14 17:47:09,766]\u001b[0m Trial 38 finished with value: 8.786928054606127 and parameters: {'n_estimators': 1679, 'max_depth': 9, 'learning_rate': 0.03492045362335471, 'subsample': 0.810226930385786, 'colsample_bytree': 0.6955276526248353, 'min_child_weight': 6, 'reg_alpha': 1.0491591910252639e-05, 'reg_lambda': 2.0114126477683905}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-14 17:49:32,229]\u001b[0m Trial 39 finished with value: 8.860260380088494 and parameters: {'n_estimators': 863, 'max_depth': 8, 'learning_rate': 0.1432585126489407, 'subsample': 0.8599222361030445, 'colsample_bytree': 0.7620028828652154, 'min_child_weight': 4, 'reg_alpha': 0.009786927549879414, 'reg_lambda': 9.712566614512445}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-14 17:53:43,804]\u001b[0m Trial 40 finished with value: 8.801160785849692 and parameters: {'n_estimators': 1752, 'max_depth': 7, 'learning_rate': 0.0693386363824145, 'subsample': 0.7394020807374733, 'colsample_bytree': 0.8170643126335945, 'min_child_weight': 3, 'reg_alpha': 0.0006121496593029655, 'reg_lambda': 6.112007631403509e-05}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-14 17:57:49,927]\u001b[0m Trial 41 finished with value: 8.758959860342642 and parameters: {'n_estimators': 1933, 'max_depth': 6, 'learning_rate': 0.050739410634579325, 'subsample': 0.6208837409521272, 'colsample_bytree': 0.8378399589244641, 'min_child_weight': 5, 'reg_alpha': 0.21566771272333807, 'reg_lambda': 0.01457337472840289}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-14 17:59:29,677]\u001b[0m Trial 42 finished with value: 8.78585156827646 and parameters: {'n_estimators': 655, 'max_depth': 6, 'learning_rate': 0.020145327320479862, 'subsample': 0.718382530950453, 'colsample_bytree': 0.8506331146346741, 'min_child_weight': 5, 'reg_alpha': 1.867174301023919, 'reg_lambda': 0.0032455091175018387}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-14 18:03:29,530]\u001b[0m Trial 43 finished with value: 8.751398641063 and parameters: {'n_estimators': 1890, 'max_depth': 6, 'learning_rate': 0.02802628666129696, 'subsample': 0.6312967074175629, 'colsample_bytree': 0.899459562015184, 'min_child_weight': 6, 'reg_alpha': 0.004876034355212774, 'reg_lambda': 0.005678143530866662}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-14 18:07:48,005]\u001b[0m Trial 44 finished with value: 8.76495137473604 and parameters: {'n_estimators': 1903, 'max_depth': 7, 'learning_rate': 0.03996683289906505, 'subsample': 0.6822322702713749, 'colsample_bytree': 0.8766932422534338, 'min_child_weight': 5, 'reg_alpha': 0.03401735990816561, 'reg_lambda': 0.0013096604791781802}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-14 18:10:49,390]\u001b[0m Trial 45 finished with value: 8.756279581740749 and parameters: {'n_estimators': 1812, 'max_depth': 5, 'learning_rate': 0.03171048161856029, 'subsample': 0.6535717697629941, 'colsample_bytree': 0.7925530433316709, 'min_child_weight': 7, 'reg_alpha': 4.31661890382418e-06, 'reg_lambda': 0.02587342012004621}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-14 18:13:34,511]\u001b[0m Trial 46 finished with value: 8.777252471312984 and parameters: {'n_estimators': 1612, 'max_depth': 6, 'learning_rate': 0.10211854755494357, 'subsample': 0.96433099084837, 'colsample_bytree': 0.8305566861548989, 'min_child_weight': 4, 'reg_alpha': 3.021126663253268, 'reg_lambda': 0.23490322647453415}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-14 18:16:56,187]\u001b[0m Trial 47 finished with value: 8.778004672738982 and parameters: {'n_estimators': 1994, 'max_depth': 4, 'learning_rate': 0.02216662348578678, 'subsample': 0.6037132711173, 'colsample_bytree': 0.9188151035406307, 'min_child_weight': 5, 'reg_alpha': 0.0001329772617562575, 'reg_lambda': 0.0004950136785191164}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-14 18:19:44,409]\u001b[0m Trial 48 finished with value: 8.754584769912602 and parameters: {'n_estimators': 1728, 'max_depth': 5, 'learning_rate': 0.03442395531936535, 'subsample': 0.7608319506807278, 'colsample_bytree': 0.9535014386530635, 'min_child_weight': 7, 'reg_alpha': 0.6980199394284865, 'reg_lambda': 0.07044789967290907}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-14 18:24:04,143]\u001b[0m Trial 49 finished with value: 8.772876036719682 and parameters: {'n_estimators': 1927, 'max_depth': 7, 'learning_rate': 0.04795728823237131, 'subsample': 0.6561743151193504, 'colsample_bytree': 0.7138685957223262, 'min_child_weight': 10, 'reg_alpha': 0.15448848502780338, 'reg_lambda': 0.0011352947857487}. Best is trial 20 with value: 8.74900260181839.\u001b[0m\n"
      ]
     }
    ],
@@ -672,19 +672,19 @@
   {
    "cell_type": "code",
    "execution_count": 9,
-   "id": "f979f6d5",
+   "id": "e84c5cf5",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-13T18:52:05.404492Z",
-     "iopub.status.busy": "2026-01-13T18:52:05.403663Z",
-     "iopub.status.idle": "2026-01-13T18:52:54.414956Z",
-     "shell.execute_reply": "2026-01-13T18:52:54.414238Z"
+     "iopub.execute_input": "2026-01-14T18:24:04.169243Z",
+     "iopub.status.busy": "2026-01-14T18:24:04.168865Z",
+     "iopub.status.idle": "2026-01-14T18:24:53.309817Z",
+     "shell.execute_reply": "2026-01-14T18:24:53.309159Z"
     },
     "papermill": {
-     "duration": 49.021133,
-     "end_time": "2026-01-13T18:52:54.417393",
+     "duration": 49.150458,
+     "end_time": "2026-01-14T18:24:53.312118",
      "exception": false,
-     "start_time": "2026-01-13T18:52:05.396260",
+     "start_time": "2026-01-14T18:24:04.161660",
      "status": "completed"
     },
     "tags": []
@@ -711,19 +711,19 @@
   {
    "cell_type": "code",
    "execution_count": 10,
-   "id": "e4e8fd20",
+   "id": "c285a01d",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-13T18:52:54.431366Z",
-     "iopub.status.busy": "2026-01-13T18:52:54.430773Z",
-     "iopub.status.idle": "2026-01-13T18:52:54.436741Z",
-     "shell.execute_reply": "2026-01-13T18:52:54.435893Z"
+     "iopub.execute_input": "2026-01-14T18:24:53.330296Z",
+     "iopub.status.busy": "2026-01-14T18:24:53.329939Z",
+     "iopub.status.idle": "2026-01-14T18:24:53.335167Z",
+     "shell.execute_reply": "2026-01-14T18:24:53.334361Z"
     },
     "papermill": {
-     "duration": 0.015002,
-     "end_time": "2026-01-13T18:52:54.438582",
+     "duration": 0.017112,
+     "end_time": "2026-01-14T18:24:53.336806",
      "exception": false,
-     "start_time": "2026-01-13T18:52:54.423580",
+     "start_time": "2026-01-14T18:24:53.319694",
      "status": "completed"
     },
     "tags": []
@@ -757,19 +757,19 @@
   {
    "cell_type": "code",
    "execution_count": 11,
-   "id": "fa816495",
+   "id": "e907cafc",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-13T18:52:54.452650Z",
-     "iopub.status.busy": "2026-01-13T18:52:54.452244Z",
-     "iopub.status.idle": "2026-01-13T18:52:54.456285Z",
-     "shell.execute_reply": "2026-01-13T18:52:54.455396Z"
+     "iopub.execute_input": "2026-01-14T18:24:53.350372Z",
+     "iopub.status.busy": "2026-01-14T18:24:53.349820Z",
+     "iopub.status.idle": "2026-01-14T18:24:53.353660Z",
+     "shell.execute_reply": "2026-01-14T18:24:53.352939Z"
     },
     "papermill": {
-     "duration": 0.013289,
-     "end_time": "2026-01-13T18:52:54.458115",
+     "duration": 0.012409,
+     "end_time": "2026-01-14T18:24:53.355178",
      "exception": false,
-     "start_time": "2026-01-13T18:52:54.444826",
+     "start_time": "2026-01-14T18:24:53.342769",
      "status": "completed"
     },
     "tags": []
@@ -783,13 +783,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "b961e72d",
+   "id": "8a753672",
    "metadata": {
     "papermill": {
-     "duration": 0.005775,
-     "end_time": "2026-01-13T18:52:54.469958",
+     "duration": 0.00556,
+     "end_time": "2026-01-14T18:24:53.366649",
      "exception": false,
-     "start_time": "2026-01-13T18:52:54.464183",
+     "start_time": "2026-01-14T18:24:53.361089",
      "status": "completed"
     },
     "tags": []
@@ -801,19 +801,19 @@
   {
    "cell_type": "code",
    "execution_count": 12,
-   "id": "cc14a7aa",
+   "id": "57ac3b29",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-13T18:52:54.483073Z",
-     "iopub.status.busy": "2026-01-13T18:52:54.482742Z",
-     "iopub.status.idle": "2026-01-13T18:52:54.966432Z",
-     "shell.execute_reply": "2026-01-13T18:52:54.965584Z"
+     "iopub.execute_input": "2026-01-14T18:24:53.379170Z",
+     "iopub.status.busy": "2026-01-14T18:24:53.378856Z",
+     "iopub.status.idle": "2026-01-14T18:24:53.882213Z",
+     "shell.execute_reply": "2026-01-14T18:24:53.881283Z"
     },
     "papermill": {
-     "duration": 0.492978,
-     "end_time": "2026-01-13T18:52:54.968711",
+     "duration": 0.512162,
+     "end_time": "2026-01-14T18:24:53.884262",
      "exception": false,
-     "start_time": "2026-01-13T18:52:54.475733",
+     "start_time": "2026-01-14T18:24:53.372100",
      "status": "completed"
     },
     "tags": []
@@ -833,19 +833,19 @@
   {
    "cell_type": "code",
    "execution_count": 13,
-   "id": "bf723d2d",
+   "id": "10d3522b",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-13T18:52:54.982463Z",
-     "iopub.status.busy": "2026-01-13T18:52:54.982125Z",
-     "iopub.status.idle": "2026-01-13T18:52:54.990369Z",
-     "shell.execute_reply": "2026-01-13T18:52:54.989655Z"
+     "iopub.execute_input": "2026-01-14T18:24:53.897634Z",
+     "iopub.status.busy": "2026-01-14T18:24:53.897301Z",
+     "iopub.status.idle": "2026-01-14T18:24:53.905718Z",
+     "shell.execute_reply": "2026-01-14T18:24:53.904722Z"
     },
     "papermill": {
-     "duration": 0.01706,
-     "end_time": "2026-01-13T18:52:54.991986",
+     "duration": 0.017079,
+     "end_time": "2026-01-14T18:24:53.907393",
      "exception": false,
-     "start_time": "2026-01-13T18:52:54.974926",
+     "start_time": "2026-01-14T18:24:53.890314",
      "status": "completed"
     },
     "tags": []
@@ -960,14 +960,14 @@
   },
   "papermill": {
    "default_parameters": {},
-   "duration": 9467.276498,
-   "end_time": "2026-01-13T18:52:57.616839",
+   "duration": 10147.112674,
+   "end_time": "2026-01-14T18:24:56.533171",
    "environment_variables": {},
    "exception": null,
    "input_path": "__notebook__.ipynb",
    "output_path": "__notebook__.ipynb",
    "parameters": {},
-   "start_time": "2026-01-13T16:15:10.340341",
+   "start_time": "2026-01-14T15:35:49.420497",
    "version": "2.6.0"
   }
  },
