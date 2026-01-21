@@ -2,13 +2,13 @@
  "cells": [
   {
    "cell_type": "markdown",
-   "id": "bd5deec9",
+   "id": "458817fb",
    "metadata": {
     "papermill": {
-     "duration": 0.004234,
-     "end_time": "2026-01-19T13:55:06.258847",
+     "duration": 0.003435,
+     "end_time": "2026-01-21T13:13:35.321954",
      "exception": false,
-     "start_time": "2026-01-19T13:55:06.254613",
+     "start_time": "2026-01-21T13:13:35.318519",
      "status": "completed"
     },
     "tags": []
@@ -32,13 +32,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "3910d7cc",
+   "id": "c2a48856",
    "metadata": {
     "papermill": {
-     "duration": 0.002705,
-     "end_time": "2026-01-19T13:55:06.264512",
+     "duration": 0.002498,
+     "end_time": "2026-01-21T13:13:35.327144",
      "exception": false,
-     "start_time": "2026-01-19T13:55:06.261807",
+     "start_time": "2026-01-21T13:13:35.324646",
      "status": "completed"
     },
     "tags": []
@@ -50,19 +50,19 @@
   {
    "cell_type": "code",
    "execution_count": 1,
-   "id": "a0acde7c",
+   "id": "ec0f54be",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-19T13:55:06.271889Z",
-     "iopub.status.busy": "2026-01-19T13:55:06.271591Z",
-     "iopub.status.idle": "2026-01-19T13:55:20.255555Z",
-     "shell.execute_reply": "2026-01-19T13:55:20.254915Z"
+     "iopub.execute_input": "2026-01-21T13:13:35.333242Z",
+     "iopub.status.busy": "2026-01-21T13:13:35.333008Z",
+     "iopub.status.idle": "2026-01-21T13:13:44.936940Z",
+     "shell.execute_reply": "2026-01-21T13:13:44.936175Z"
     },
     "papermill": {
-     "duration": 13.989934,
-     "end_time": "2026-01-19T13:55:20.257399",
+     "duration": 9.608901,
+     "end_time": "2026-01-21T13:13:44.938636",
      "exception": false,
-     "start_time": "2026-01-19T13:55:06.267465",
+     "start_time": "2026-01-21T13:13:35.329735",
      "status": "completed"
     },
     "tags": []
@@ -100,13 +100,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "82c15459",
+   "id": "61d92d5d",
    "metadata": {
     "papermill": {
-     "duration": 0.002986,
-     "end_time": "2026-01-19T13:55:20.263663",
+     "duration": 0.002731,
+     "end_time": "2026-01-21T13:13:44.944364",
      "exception": false,
-     "start_time": "2026-01-19T13:55:20.260677",
+     "start_time": "2026-01-21T13:13:44.941633",
      "status": "completed"
     },
     "tags": []
@@ -118,19 +118,19 @@
   {
    "cell_type": "code",
    "execution_count": 2,
-   "id": "e18222b8",
+   "id": "c3834716",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-19T13:55:20.271214Z",
-     "iopub.status.busy": "2026-01-19T13:55:20.270471Z",
-     "iopub.status.idle": "2026-01-19T13:55:20.360702Z",
-     "shell.execute_reply": "2026-01-19T13:55:20.359808Z"
+     "iopub.execute_input": "2026-01-21T13:13:44.950725Z",
+     "iopub.status.busy": "2026-01-21T13:13:44.950295Z",
+     "iopub.status.idle": "2026-01-21T13:13:45.031373Z",
+     "shell.execute_reply": "2026-01-21T13:13:45.030642Z"
     },
     "papermill": {
-     "duration": 0.095541,
-     "end_time": "2026-01-19T13:55:20.362068",
+     "duration": 0.085917,
+     "end_time": "2026-01-21T13:13:45.032847",
      "exception": false,
-     "start_time": "2026-01-19T13:55:20.266527",
+     "start_time": "2026-01-21T13:13:44.946930",
      "status": "completed"
     },
     "tags": []
@@ -161,19 +161,19 @@
   {
    "cell_type": "code",
    "execution_count": 3,
-   "id": "2eaf4092",
+   "id": "4220bf30",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-19T13:55:20.369500Z",
-     "iopub.status.busy": "2026-01-19T13:55:20.369081Z",
-     "iopub.status.idle": "2026-01-19T13:55:21.841561Z",
-     "shell.execute_reply": "2026-01-19T13:55:21.840758Z"
+     "iopub.execute_input": "2026-01-21T13:13:45.039717Z",
+     "iopub.status.busy": "2026-01-21T13:13:45.039044Z",
+     "iopub.status.idle": "2026-01-21T13:13:46.431882Z",
+     "shell.execute_reply": "2026-01-21T13:13:46.431050Z"
     },
     "papermill": {
-     "duration": 1.477948,
-     "end_time": "2026-01-19T13:55:21.843303",
+     "duration": 1.39796,
+     "end_time": "2026-01-21T13:13:46.433608",
      "exception": false,
-     "start_time": "2026-01-19T13:55:20.365355",
+     "start_time": "2026-01-21T13:13:45.035648",
      "status": "completed"
     },
     "tags": []
@@ -187,19 +187,19 @@
   {
    "cell_type": "code",
    "execution_count": 4,
-   "id": "e90eb944",
+   "id": "47f40764",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-19T13:55:21.850889Z",
-     "iopub.status.busy": "2026-01-19T13:55:21.850383Z",
-     "iopub.status.idle": "2026-01-19T13:55:21.881067Z",
-     "shell.execute_reply": "2026-01-19T13:55:21.880309Z"
+     "iopub.execute_input": "2026-01-21T13:13:46.440506Z",
+     "iopub.status.busy": "2026-01-21T13:13:46.440054Z",
+     "iopub.status.idle": "2026-01-21T13:13:46.465255Z",
+     "shell.execute_reply": "2026-01-21T13:13:46.464658Z"
     },
     "papermill": {
-     "duration": 0.035961,
-     "end_time": "2026-01-19T13:55:21.882502",
+     "duration": 0.030099,
+     "end_time": "2026-01-21T13:13:46.466588",
      "exception": false,
-     "start_time": "2026-01-19T13:55:21.846541",
+     "start_time": "2026-01-21T13:13:46.436489",
      "status": "completed"
     },
     "tags": []
@@ -354,13 +354,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "f4342432",
+   "id": "0a1ada84",
    "metadata": {
     "papermill": {
-     "duration": 0.00311,
-     "end_time": "2026-01-19T13:55:21.888706",
+     "duration": 0.00285,
+     "end_time": "2026-01-21T13:13:46.472471",
      "exception": false,
-     "start_time": "2026-01-19T13:55:21.885596",
+     "start_time": "2026-01-21T13:13:46.469621",
      "status": "completed"
     },
     "tags": []
@@ -375,19 +375,19 @@
   {
    "cell_type": "code",
    "execution_count": 5,
-   "id": "4d11d53b",
+   "id": "05ccb214",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-19T13:55:21.895735Z",
-     "iopub.status.busy": "2026-01-19T13:55:21.895493Z",
-     "iopub.status.idle": "2026-01-19T13:55:21.906566Z",
-     "shell.execute_reply": "2026-01-19T13:55:21.905890Z"
+     "iopub.execute_input": "2026-01-21T13:13:46.479202Z",
+     "iopub.status.busy": "2026-01-21T13:13:46.478970Z",
+     "iopub.status.idle": "2026-01-21T13:13:46.489566Z",
+     "shell.execute_reply": "2026-01-21T13:13:46.489008Z"
     },
     "papermill": {
-     "duration": 0.016305,
-     "end_time": "2026-01-19T13:55:21.907987",
+     "duration": 0.015557,
+     "end_time": "2026-01-21T13:13:46.490782",
      "exception": false,
-     "start_time": "2026-01-19T13:55:21.891682",
+     "start_time": "2026-01-21T13:13:46.475225",
      "status": "completed"
     },
     "tags": []
@@ -489,19 +489,19 @@
   {
    "cell_type": "code",
    "execution_count": 6,
-   "id": "47e27e2a",
+   "id": "7c1e8808",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-19T13:55:21.914957Z",
-     "iopub.status.busy": "2026-01-19T13:55:21.914721Z",
-     "iopub.status.idle": "2026-01-19T13:55:21.917863Z",
-     "shell.execute_reply": "2026-01-19T13:55:21.917293Z"
+     "iopub.execute_input": "2026-01-21T13:13:46.497186Z",
+     "iopub.status.busy": "2026-01-21T13:13:46.496968Z",
+     "iopub.status.idle": "2026-01-21T13:13:46.500275Z",
+     "shell.execute_reply": "2026-01-21T13:13:46.499692Z"
     },
     "papermill": {
-     "duration": 0.008368,
-     "end_time": "2026-01-19T13:55:21.919370",
+     "duration": 0.008017,
+     "end_time": "2026-01-21T13:13:46.501598",
      "exception": false,
-     "start_time": "2026-01-19T13:55:21.911002",
+     "start_time": "2026-01-21T13:13:46.493581",
      "status": "completed"
     },
     "tags": []
@@ -514,13 +514,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "f96320ec",
+   "id": "c1ec5b73",
    "metadata": {
     "papermill": {
-     "duration": 0.0031,
-     "end_time": "2026-01-19T13:55:21.925435",
+     "duration": 0.002738,
+     "end_time": "2026-01-21T13:13:46.507101",
      "exception": false,
-     "start_time": "2026-01-19T13:55:21.922335",
+     "start_time": "2026-01-21T13:13:46.504363",
      "status": "completed"
     },
     "tags": []
@@ -537,19 +537,19 @@
   {
    "cell_type": "code",
    "execution_count": 7,
-   "id": "c7120ec5",
+   "id": "29fb50ee",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-19T13:55:21.932782Z",
-     "iopub.status.busy": "2026-01-19T13:55:21.932126Z",
-     "iopub.status.idle": "2026-01-19T13:55:21.937807Z",
-     "shell.execute_reply": "2026-01-19T13:55:21.937139Z"
+     "iopub.execute_input": "2026-01-21T13:13:46.513932Z",
+     "iopub.status.busy": "2026-01-21T13:13:46.513408Z",
+     "iopub.status.idle": "2026-01-21T13:13:46.518699Z",
+     "shell.execute_reply": "2026-01-21T13:13:46.518132Z"
     },
     "papermill": {
-     "duration": 0.010883,
-     "end_time": "2026-01-19T13:55:21.939179",
+     "duration": 0.009938,
+     "end_time": "2026-01-21T13:13:46.519905",
      "exception": false,
-     "start_time": "2026-01-19T13:55:21.928296",
+     "start_time": "2026-01-21T13:13:46.509967",
      "status": "completed"
     },
     "tags": []
@@ -587,7 +587,7 @@
     "        pipeline,\n",
     "        X_train_raw,\n",
     "        y_train,\n",
-    "        cv=4,\n",
+    "        cv=CFG.N_FOLDS,\n",
     "        scoring=\"neg_root_mean_squared_error\",\n",
     "        n_jobs=-1\n",
     "    )\n",
@@ -598,23 +598,19 @@
   {
    "cell_type": "code",
    "execution_count": 8,
-   "id": "d81e0cae",
+   "id": "4d4547bd",
    "metadata": {
-    "collapsed": true,
     "execution": {
-     "iopub.execute_input": "2026-01-19T13:55:21.945797Z",
-     "iopub.status.busy": "2026-01-19T13:55:21.945580Z",
-     "iopub.status.idle": "2026-01-19T14:16:35.549195Z",
-     "shell.execute_reply": "2026-01-19T14:16:35.548284Z"
-    },
-    "jupyter": {
-     "outputs_hidden": true
+     "iopub.execute_input": "2026-01-21T13:13:46.526502Z",
+     "iopub.status.busy": "2026-01-21T13:13:46.526063Z",
+     "iopub.status.idle": "2026-01-21T13:46:18.355163Z",
+     "shell.execute_reply": "2026-01-21T13:46:18.354568Z"
     },
     "papermill": {
-     "duration": 1273.608773,
-     "end_time": "2026-01-19T14:16:35.550738",
+     "duration": 1951.838482,
+     "end_time": "2026-01-21T13:46:18.361159",
      "exception": false,
-     "start_time": "2026-01-19T13:55:21.941965",
+     "start_time": "2026-01-21T13:13:46.522677",
      "status": "completed"
     },
     "tags": []
@@ -624,8 +620,8 @@
      "name": "stderr",
      "output_type": "stream",
      "text": [
-      "\u001b[32m[I 2026-01-19 13:55:21,947]\u001b[0m A new study created in memory with name: no-name-5297aba9-5d41-4b6f-9399-65dfcf4512c6\u001b[0m\n",
-      "/usr/local/lib/python3.12/dist-packages/xgboost/core.py:774: UserWarning: [13:56:28] WARNING: /workspace/src/common/error_msg.cc:41: Falling back to prediction using DMatrix due to mismatched devices. This might lead to higher memory usage and slower performance. XGBoost is running on: cuda:0, while the input data is on: cpu.\n",
+      "\u001b[32m[I 2026-01-21 13:13:46,527]\u001b[0m A new study created in memory with name: no-name-2e412842-14a6-4935-ab71-24f904517137\u001b[0m\n",
+      "/usr/local/lib/python3.12/dist-packages/xgboost/core.py:774: UserWarning: [13:14:53] WARNING: /workspace/src/common/error_msg.cc:41: Falling back to prediction using DMatrix due to mismatched devices. This might lead to higher memory usage and slower performance. XGBoost is running on: cuda:0, while the input data is on: cpu.\n",
       "Potential solutions:\n",
       "- Use a data structure that matches the device ordinal in the booster.\n",
       "- Set the device for booster before call to inplace_predict.\n",
@@ -633,7 +629,7 @@
       "This warning will only be shown once.\n",
       "\n",
       "  return func(**kwargs)\n",
-      "/usr/local/lib/python3.12/dist-packages/xgboost/core.py:774: UserWarning: [13:56:28] WARNING: /workspace/src/common/error_msg.cc:41: Falling back to prediction using DMatrix due to mismatched devices. This might lead to higher memory usage and slower performance. XGBoost is running on: cuda:0, while the input data is on: cpu.\n",
+      "/usr/local/lib/python3.12/dist-packages/xgboost/core.py:774: UserWarning: [13:14:53] WARNING: /workspace/src/common/error_msg.cc:41: Falling back to prediction using DMatrix due to mismatched devices. This might lead to higher memory usage and slower performance. XGBoost is running on: cuda:0, while the input data is on: cpu.\n",
       "Potential solutions:\n",
       "- Use a data structure that matches the device ordinal in the booster.\n",
       "- Set the device for booster before call to inplace_predict.\n",
@@ -641,7 +637,7 @@
       "This warning will only be shown once.\n",
       "\n",
       "  return func(**kwargs)\n",
-      "/usr/local/lib/python3.12/dist-packages/xgboost/core.py:774: UserWarning: [13:56:28] WARNING: /workspace/src/common/error_msg.cc:41: Falling back to prediction using DMatrix due to mismatched devices. This might lead to higher memory usage and slower performance. XGBoost is running on: cuda:0, while the input data is on: cpu.\n",
+      "/usr/local/lib/python3.12/dist-packages/xgboost/core.py:774: UserWarning: [13:14:53] WARNING: /workspace/src/common/error_msg.cc:41: Falling back to prediction using DMatrix due to mismatched devices. This might lead to higher memory usage and slower performance. XGBoost is running on: cuda:0, while the input data is on: cpu.\n",
       "Potential solutions:\n",
       "- Use a data structure that matches the device ordinal in the booster.\n",
       "- Set the device for booster before call to inplace_predict.\n",
@@ -649,7 +645,7 @@
       "This warning will only be shown once.\n",
       "\n",
       "  return func(**kwargs)\n",
-      "/usr/local/lib/python3.12/dist-packages/xgboost/core.py:774: UserWarning: [13:56:28] WARNING: /workspace/src/common/error_msg.cc:41: Falling back to prediction using DMatrix due to mismatched devices. This might lead to higher memory usage and slower performance. XGBoost is running on: cuda:0, while the input data is on: cpu.\n",
+      "/usr/local/lib/python3.12/dist-packages/xgboost/core.py:774: UserWarning: [13:14:53] WARNING: /workspace/src/common/error_msg.cc:41: Falling back to prediction using DMatrix due to mismatched devices. This might lead to higher memory usage and slower performance. XGBoost is running on: cuda:0, while the input data is on: cpu.\n",
       "Potential solutions:\n",
       "- Use a data structure that matches the device ordinal in the booster.\n",
       "- Set the device for booster before call to inplace_predict.\n",
@@ -657,36 +653,36 @@
       "This warning will only be shown once.\n",
       "\n",
       "  return func(**kwargs)\n",
-      "\u001b[32m[I 2026-01-19 13:56:28,816]\u001b[0m Trial 0 finished with value: 8.951415939477181 and parameters: {'n_estimators': 937, 'max_depth': 10, 'learning_rate': 0.08960785365368121, 'subsample': 0.7993292420985183, 'colsample_bytree': 0.5780093202212182, 'min_child_weight': 2, 'reg_alpha': 3.3323645788192616e-08, 'reg_lambda': 0.6245760287469893}. Best is trial 0 with value: 8.951415939477181.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-19 13:57:26,179]\u001b[0m Trial 1 finished with value: 8.773307611524094 and parameters: {'n_estimators': 1322, 'max_depth': 8, 'learning_rate': 0.010636066512540286, 'subsample': 0.9849549260809971, 'colsample_bytree': 0.9162213204002109, 'min_child_weight': 3, 'reg_alpha': 4.329370014459266e-07, 'reg_lambda': 4.4734294104626844e-07}. Best is trial 1 with value: 8.773307611524094.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-19 13:57:55,317]\u001b[0m Trial 2 finished with value: 8.763387066932342 and parameters: {'n_estimators': 817, 'max_depth': 7, 'learning_rate': 0.03647316284911211, 'subsample': 0.645614570099021, 'colsample_bytree': 0.8059264473611898, 'min_child_weight': 2, 'reg_alpha': 4.258943089524393e-06, 'reg_lambda': 1.9826980964985924e-05}. Best is trial 2 with value: 8.763387066932342.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-19 13:58:54,426]\u001b[0m Trial 3 finished with value: 8.76214522480277 and parameters: {'n_estimators': 1075, 'max_depth': 9, 'learning_rate': 0.018187859051288217, 'subsample': 0.7571172192068059, 'colsample_bytree': 0.7962072844310213, 'min_child_weight': 1, 'reg_alpha': 0.0029369981104377003, 'reg_lambda': 3.425445902633376e-07}. Best is trial 3 with value: 8.76214522480277.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-19 13:59:24,582]\u001b[0m Trial 4 finished with value: 9.063016395663414 and parameters: {'n_estimators': 410, 'max_depth': 10, 'learning_rate': 0.18043311207136256, 'subsample': 0.9041986740582306, 'colsample_bytree': 0.6523068845866853, 'min_child_weight': 1, 'reg_alpha': 0.014391207615728067, 'reg_lambda': 9.148975058772307e-05}. Best is trial 3 with value: 8.76214522480277.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-19 13:59:42,452]\u001b[0m Trial 5 finished with value: 8.824798808643365 and parameters: {'n_estimators': 507, 'max_depth': 6, 'learning_rate': 0.011085122517311707, 'subsample': 0.954660201039391, 'colsample_bytree': 0.6293899908000085, 'min_child_weight': 7, 'reg_alpha': 6.388511557344611e-06, 'reg_lambda': 0.0004793052550782129}. Best is trial 3 with value: 8.76214522480277.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-19 14:00:07,988]\u001b[0m Trial 6 finished with value: 8.767161788197596 and parameters: {'n_estimators': 1229, 'max_depth': 4, 'learning_rate': 0.18258230439200238, 'subsample': 0.8875664116805573, 'colsample_bytree': 0.9697494707820946, 'min_child_weight': 9, 'reg_alpha': 0.002404915432737351, 'reg_lambda': 1.9809253750493907}. Best is trial 3 with value: 8.76214522480277.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-19 14:00:20,630]\u001b[0m Trial 7 finished with value: 8.906128376462554 and parameters: {'n_estimators': 450, 'max_depth': 4, 'learning_rate': 0.011450964268326641, 'subsample': 0.6626651653816322, 'colsample_bytree': 0.6943386448447411, 'min_child_weight': 3, 'reg_alpha': 0.28749982347407854, 'reg_lambda': 1.6247252885719427e-05}. Best is trial 3 with value: 8.76214522480277.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-19 14:00:49,877]\u001b[0m Trial 8 finished with value: 8.77825411835397 and parameters: {'n_estimators': 777, 'max_depth': 7, 'learning_rate': 0.015252697030515175, 'subsample': 0.9010984903770198, 'colsample_bytree': 0.5372753218398854, 'min_child_weight': 10, 'reg_alpha': 0.08916674715636537, 'reg_lambda': 6.143857495033091e-07}. Best is trial 3 with value: 8.76214522480277.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-19 14:01:09,421]\u001b[0m Trial 9 finished with value: 8.79805705653968 and parameters: {'n_estimators': 309, 'max_depth': 9, 'learning_rate': 0.08310795711416077, 'subsample': 0.8645035840204937, 'colsample_bytree': 0.8856351733429728, 'min_child_weight': 1, 'reg_alpha': 1.683416412018213e-05, 'reg_lambda': 1.1036250149900698e-07}. Best is trial 3 with value: 8.76214522480277.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-19 14:02:00,685]\u001b[0m Trial 10 finished with value: 8.757362834048276 and parameters: {'n_estimators': 1868, 'max_depth': 6, 'learning_rate': 0.02513734458845406, 'subsample': 0.5089809378074097, 'colsample_bytree': 0.7828065453407016, 'min_child_weight': 5, 'reg_alpha': 4.344469108550388, 'reg_lambda': 1.2784194237583907e-08}. Best is trial 10 with value: 8.757362834048276.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-19 14:02:43,739]\u001b[0m Trial 11 finished with value: 8.765328166992887 and parameters: {'n_estimators': 1830, 'max_depth': 5, 'learning_rate': 0.026365703773854398, 'subsample': 0.5085930751344793, 'colsample_bytree': 0.7849598833322474, 'min_child_weight': 5, 'reg_alpha': 7.587120682342015, 'reg_lambda': 1.2536269325652231e-08}. Best is trial 10 with value: 8.757362834048276.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-19 14:03:38,364]\u001b[0m Trial 12 finished with value: 8.758282008155305 and parameters: {'n_estimators': 1985, 'max_depth': 6, 'learning_rate': 0.02225171016411916, 'subsample': 0.503283560939651, 'colsample_bytree': 0.8265015800721067, 'min_child_weight': 5, 'reg_alpha': 9.156386757209491, 'reg_lambda': 0.007483948702276161}. Best is trial 10 with value: 8.757362834048276.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-19 14:04:32,923]\u001b[0m Trial 13 finished with value: 8.757351247697125 and parameters: {'n_estimators': 1986, 'max_depth': 6, 'learning_rate': 0.028435494649170216, 'subsample': 0.504902872681397, 'colsample_bytree': 0.7242729582256223, 'min_child_weight': 6, 'reg_alpha': 9.868745464853761, 'reg_lambda': 0.016756638283609248}. Best is trial 13 with value: 8.757351247697125.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-19 14:05:00,919]\u001b[0m Trial 14 finished with value: 8.789279378803604 and parameters: {'n_estimators': 1598, 'max_depth': 3, 'learning_rate': 0.048612728407273466, 'subsample': 0.5797654491534232, 'colsample_bytree': 0.7210134538072666, 'min_child_weight': 7, 'reg_alpha': 0.6255688317185157, 'reg_lambda': 0.03219086506377499}. Best is trial 13 with value: 8.757351247697125.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-19 14:05:39,327]\u001b[0m Trial 15 finished with value: 8.76090227781225 and parameters: {'n_estimators': 1622, 'max_depth': 5, 'learning_rate': 0.03966680020441262, 'subsample': 0.5928650434894713, 'colsample_bytree': 0.730445357055035, 'min_child_weight': 7, 'reg_alpha': 0.00016097275579289827, 'reg_lambda': 0.009745849636897735}. Best is trial 13 with value: 8.757351247697125.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-19 14:06:16,648]\u001b[0m Trial 16 finished with value: 8.762583082449936 and parameters: {'n_estimators': 1595, 'max_depth': 5, 'learning_rate': 0.06051256321768739, 'subsample': 0.5646473035492882, 'colsample_bytree': 0.8805304594988682, 'min_child_weight': 6, 'reg_alpha': 1.4318951998429506, 'reg_lambda': 0.10229359002810792}. Best is trial 13 with value: 8.757351247697125.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-19 14:07:34,814]\u001b[0m Trial 17 finished with value: 8.771196850925948 and parameters: {'n_estimators': 1986, 'max_depth': 8, 'learning_rate': 0.03050779215869766, 'subsample': 0.6928119354573563, 'colsample_bytree': 0.6553447098489982, 'min_child_weight': 4, 'reg_alpha': 0.040262466210226146, 'reg_lambda': 0.000667954359808675}. Best is trial 13 with value: 8.757351247697125.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-19 14:08:24,204]\u001b[0m Trial 18 finished with value: 8.762355272452293 and parameters: {'n_estimators': 1780, 'max_depth': 6, 'learning_rate': 0.01830368667646075, 'subsample': 0.5514679674687517, 'colsample_bytree': 0.745507954486344, 'min_child_weight': 8, 'reg_alpha': 1.7313986699184591, 'reg_lambda': 6.682694832575419}. Best is trial 13 with value: 8.757351247697125.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-19 14:08:48,664]\u001b[0m Trial 19 finished with value: 8.791818796513722 and parameters: {'n_estimators': 1386, 'max_depth': 3, 'learning_rate': 0.05618990727743403, 'subsample': 0.6462566899855204, 'colsample_bytree': 0.5976806617545125, 'min_child_weight': 6, 'reg_alpha': 0.0007576681230466948, 'reg_lambda': 0.002240796166722783}. Best is trial 13 with value: 8.757351247697125.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-19 14:09:46,578]\u001b[0m Trial 20 finished with value: 8.75785787817714 and parameters: {'n_estimators': 1784, 'max_depth': 7, 'learning_rate': 0.030241420350470272, 'subsample': 0.7136182330812915, 'colsample_bytree': 0.849021899665701, 'min_child_weight': 4, 'reg_alpha': 0.10526316205413053, 'reg_lambda': 3.959627457035505e-06}. Best is trial 13 with value: 8.757351247697125.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-19 14:10:45,629]\u001b[0m Trial 21 finished with value: 8.755793984284614 and parameters: {'n_estimators': 1791, 'max_depth': 7, 'learning_rate': 0.029272420392886873, 'subsample': 0.7268267932501222, 'colsample_bytree': 0.8384980369023396, 'min_child_weight': 4, 'reg_alpha': 9.540802369759723, 'reg_lambda': 4.593292927114143e-06}. Best is trial 21 with value: 8.755793984284614.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-19 14:11:46,068]\u001b[0m Trial 22 finished with value: 8.759480365755737 and parameters: {'n_estimators': 1462, 'max_depth': 8, 'learning_rate': 0.022595591922071962, 'subsample': 0.8149271154876796, 'colsample_bytree': 0.9750866147991147, 'min_child_weight': 4, 'reg_alpha': 8.174456948613049, 'reg_lambda': 2.1963362887982542e-08}. Best is trial 21 with value: 8.755793984284614.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-19 14:12:36,700]\u001b[0m Trial 23 finished with value: 8.757345040998121 and parameters: {'n_estimators': 1846, 'max_depth': 6, 'learning_rate': 0.03559352367252768, 'subsample': 0.6103979188500401, 'colsample_bytree': 0.7748918846675976, 'min_child_weight': 5, 'reg_alpha': 0.7634167976549879, 'reg_lambda': 4.693736686647251e-06}. Best is trial 21 with value: 8.755793984284614.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-19 14:13:32,439]\u001b[0m Trial 24 finished with value: 8.819363206102635 and parameters: {'n_estimators': 1686, 'max_depth': 7, 'learning_rate': 0.07401529969557558, 'subsample': 0.6141539070566988, 'colsample_bytree': 0.6932661956409322, 'min_child_weight': 6, 'reg_alpha': 0.3117844227356625, 'reg_lambda': 3.725821313266571e-06}. Best is trial 21 with value: 8.755793984284614.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-19 14:14:18,670]\u001b[0m Trial 25 finished with value: 8.757224534579215 and parameters: {'n_estimators': 1999, 'max_depth': 5, 'learning_rate': 0.03533759142022126, 'subsample': 0.7336149243723737, 'colsample_bytree': 0.8477562534349009, 'min_child_weight': 3, 'reg_alpha': 0.9097924854066338, 'reg_lambda': 5.319562007657141e-05}. Best is trial 21 with value: 8.755793984284614.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-19 14:14:52,757]\u001b[0m Trial 26 finished with value: 8.76410123474544 and parameters: {'n_estimators': 1709, 'max_depth': 4, 'learning_rate': 0.12077250858915572, 'subsample': 0.745692798800003, 'colsample_bytree': 0.9232072289057628, 'min_child_weight': 3, 'reg_alpha': 0.017380961322626506, 'reg_lambda': 7.138117523739518e-05}. Best is trial 21 with value: 8.755793984284614.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-19 14:15:28,396]\u001b[0m Trial 27 finished with value: 8.759068792565518 and parameters: {'n_estimators': 1500, 'max_depth': 5, 'learning_rate': 0.05324761767989167, 'subsample': 0.7886608036150532, 'colsample_bytree': 0.8456187295990553, 'min_child_weight': 4, 'reg_alpha': 1.1145941249206295, 'reg_lambda': 3.144753928188062e-06}. Best is trial 21 with value: 8.755793984284614.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-19 14:16:12,403]\u001b[0m Trial 28 finished with value: 8.757706888292734 and parameters: {'n_estimators': 1887, 'max_depth': 5, 'learning_rate': 0.037801528582310076, 'subsample': 0.7177107980119118, 'colsample_bytree': 0.8799767894119798, 'min_child_weight': 2, 'reg_alpha': 0.008929536797745276, 'reg_lambda': 9.212898497411586e-05}. Best is trial 21 with value: 8.755793984284614.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-19 14:16:35,545]\u001b[0m Trial 29 finished with value: 8.783532836119434 and parameters: {'n_estimators': 1060, 'max_depth': 4, 'learning_rate': 0.041810196811613964, 'subsample': 0.8238327378242031, 'colsample_bytree': 0.7672585872641438, 'min_child_weight': 2, 'reg_alpha': 0.0001132741666833449, 'reg_lambda': 1.4171389919342518e-05}. Best is trial 21 with value: 8.755793984284614.\u001b[0m\n"
+      "\u001b[32m[I 2026-01-21 13:15:07,952]\u001b[0m Trial 0 finished with value: 8.93620269801541 and parameters: {'n_estimators': 937, 'max_depth': 10, 'learning_rate': 0.08960785365368121, 'subsample': 0.7993292420985183, 'colsample_bytree': 0.5780093202212182, 'min_child_weight': 2, 'reg_alpha': 3.3323645788192616e-08, 'reg_lambda': 0.6245760287469893}. Best is trial 0 with value: 8.93620269801541.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-21 13:16:17,961]\u001b[0m Trial 1 finished with value: 8.770638099775912 and parameters: {'n_estimators': 1322, 'max_depth': 8, 'learning_rate': 0.010636066512540286, 'subsample': 0.9849549260809971, 'colsample_bytree': 0.9162213204002109, 'min_child_weight': 3, 'reg_alpha': 4.329370014459266e-07, 'reg_lambda': 4.4734294104626844e-07}. Best is trial 1 with value: 8.770638099775912.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-21 13:16:53,472]\u001b[0m Trial 2 finished with value: 8.76232847647799 and parameters: {'n_estimators': 817, 'max_depth': 7, 'learning_rate': 0.03647316284911211, 'subsample': 0.645614570099021, 'colsample_bytree': 0.8059264473611898, 'min_child_weight': 2, 'reg_alpha': 4.258943089524393e-06, 'reg_lambda': 1.9826980964985924e-05}. Best is trial 2 with value: 8.76232847647799.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-21 13:18:05,956]\u001b[0m Trial 3 finished with value: 8.758812150338716 and parameters: {'n_estimators': 1075, 'max_depth': 9, 'learning_rate': 0.018187859051288217, 'subsample': 0.7571172192068059, 'colsample_bytree': 0.7962072844310213, 'min_child_weight': 1, 'reg_alpha': 0.0029369981104377003, 'reg_lambda': 3.425445902633376e-07}. Best is trial 3 with value: 8.758812150338716.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-21 13:18:43,901]\u001b[0m Trial 4 finished with value: 9.03826244388407 and parameters: {'n_estimators': 410, 'max_depth': 10, 'learning_rate': 0.18043311207136256, 'subsample': 0.9041986740582306, 'colsample_bytree': 0.6523068845866853, 'min_child_weight': 1, 'reg_alpha': 0.014391207615728067, 'reg_lambda': 9.148975058772307e-05}. Best is trial 3 with value: 8.758812150338716.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-21 13:19:05,873]\u001b[0m Trial 5 finished with value: 8.82444544484457 and parameters: {'n_estimators': 507, 'max_depth': 6, 'learning_rate': 0.011085122517311707, 'subsample': 0.954660201039391, 'colsample_bytree': 0.6293899908000085, 'min_child_weight': 7, 'reg_alpha': 6.388511557344611e-06, 'reg_lambda': 0.0004793052550782129}. Best is trial 3 with value: 8.758812150338716.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-21 13:19:35,983]\u001b[0m Trial 6 finished with value: 8.762264931530147 and parameters: {'n_estimators': 1229, 'max_depth': 4, 'learning_rate': 0.18258230439200238, 'subsample': 0.8875664116805573, 'colsample_bytree': 0.9697494707820946, 'min_child_weight': 9, 'reg_alpha': 0.002404915432737351, 'reg_lambda': 1.9809253750493907}. Best is trial 3 with value: 8.758812150338716.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-21 13:19:51,477]\u001b[0m Trial 7 finished with value: 8.905184453723566 and parameters: {'n_estimators': 450, 'max_depth': 4, 'learning_rate': 0.011450964268326641, 'subsample': 0.6626651653816322, 'colsample_bytree': 0.6943386448447411, 'min_child_weight': 3, 'reg_alpha': 0.28749982347407854, 'reg_lambda': 1.6247252885719427e-05}. Best is trial 3 with value: 8.758812150338716.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-21 13:20:27,197]\u001b[0m Trial 8 finished with value: 8.776519447592507 and parameters: {'n_estimators': 777, 'max_depth': 7, 'learning_rate': 0.015252697030515175, 'subsample': 0.9010984903770198, 'colsample_bytree': 0.5372753218398854, 'min_child_weight': 10, 'reg_alpha': 0.08916674715636537, 'reg_lambda': 6.143857495033091e-07}. Best is trial 3 with value: 8.758812150338716.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-21 13:20:51,858]\u001b[0m Trial 9 finished with value: 8.791921455168607 and parameters: {'n_estimators': 309, 'max_depth': 9, 'learning_rate': 0.08310795711416077, 'subsample': 0.8645035840204937, 'colsample_bytree': 0.8856351733429728, 'min_child_weight': 1, 'reg_alpha': 1.683416412018213e-05, 'reg_lambda': 1.1036250149900698e-07}. Best is trial 3 with value: 8.758812150338716.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-21 13:21:53,294]\u001b[0m Trial 10 finished with value: 8.755762103384479 and parameters: {'n_estimators': 1868, 'max_depth': 6, 'learning_rate': 0.02513734458845406, 'subsample': 0.5089809378074097, 'colsample_bytree': 0.7828065453407016, 'min_child_weight': 5, 'reg_alpha': 4.344469108550388, 'reg_lambda': 1.2784194237583907e-08}. Best is trial 10 with value: 8.755762103384479.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-21 13:22:44,106]\u001b[0m Trial 11 finished with value: 8.763602293450528 and parameters: {'n_estimators': 1830, 'max_depth': 5, 'learning_rate': 0.026365703773854398, 'subsample': 0.5085930751344793, 'colsample_bytree': 0.7849598833322474, 'min_child_weight': 5, 'reg_alpha': 7.587120682342015, 'reg_lambda': 1.2536269325652231e-08}. Best is trial 10 with value: 8.755762103384479.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-21 13:23:48,214]\u001b[0m Trial 12 finished with value: 8.755730127693019 and parameters: {'n_estimators': 1985, 'max_depth': 6, 'learning_rate': 0.02225171016411916, 'subsample': 0.503283560939651, 'colsample_bytree': 0.8265015800721067, 'min_child_weight': 5, 'reg_alpha': 9.156386757209491, 'reg_lambda': 0.007483948702276161}. Best is trial 12 with value: 8.755730127693019.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-21 13:24:52,395]\u001b[0m Trial 13 finished with value: 8.753994875578913 and parameters: {'n_estimators': 1986, 'max_depth': 6, 'learning_rate': 0.028435494649170216, 'subsample': 0.504902872681397, 'colsample_bytree': 0.7242729582256223, 'min_child_weight': 6, 'reg_alpha': 9.868745464853761, 'reg_lambda': 0.016756638283609248}. Best is trial 13 with value: 8.753994875578913.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-21 13:25:23,917]\u001b[0m Trial 14 finished with value: 8.790821890212426 and parameters: {'n_estimators': 1587, 'max_depth': 3, 'learning_rate': 0.044332580107209384, 'subsample': 0.5874188622287926, 'colsample_bytree': 0.7142386048520458, 'min_child_weight': 7, 'reg_alpha': 0.6074782243615471, 'reg_lambda': 0.015758067941701443}. Best is trial 13 with value: 8.753994875578913.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-21 13:26:18,606]\u001b[0m Trial 15 finished with value: 8.758646762959174 and parameters: {'n_estimators': 2000, 'max_depth': 5, 'learning_rate': 0.0636206219785753, 'subsample': 0.5840842709170048, 'colsample_bytree': 0.8620313930247292, 'min_child_weight': 7, 'reg_alpha': 9.45037842436589, 'reg_lambda': 0.019356204030329876}. Best is trial 13 with value: 8.753994875578913.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-21 13:27:03,144]\u001b[0m Trial 16 finished with value: 8.764642547342625 and parameters: {'n_estimators': 1583, 'max_depth': 5, 'learning_rate': 0.027228031944155778, 'subsample': 0.5837264937028799, 'colsample_bytree': 0.9983813146210843, 'min_child_weight': 6, 'reg_alpha': 0.060137121676944086, 'reg_lambda': 0.016245609911070345}. Best is trial 13 with value: 8.753994875578913.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-21 13:28:20,977]\u001b[0m Trial 17 finished with value: 8.750900245673574 and parameters: {'n_estimators': 1595, 'max_depth': 8, 'learning_rate': 0.018805919287232947, 'subsample': 0.6899355162910942, 'colsample_bytree': 0.7261047586048985, 'min_child_weight': 4, 'reg_alpha': 0.00033163390156361534, 'reg_lambda': 0.0012972610018336865}. Best is trial 17 with value: 8.750900245673574.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-21 13:29:39,133]\u001b[0m Trial 18 finished with value: 8.783350967903875 and parameters: {'n_estimators': 1621, 'max_depth': 8, 'learning_rate': 0.04212670053766945, 'subsample': 0.6890636089615132, 'colsample_bytree': 0.7180499167861399, 'min_child_weight': 4, 'reg_alpha': 0.0006961273852462093, 'reg_lambda': 0.17634752176572732}. Best is trial 17 with value: 8.750900245673574.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-21 13:30:46,693]\u001b[0m Trial 19 finished with value: 8.751705464690323 and parameters: {'n_estimators': 1351, 'max_depth': 8, 'learning_rate': 0.017317522727622218, 'subsample': 0.7299931044372592, 'colsample_bytree': 0.644941171417189, 'min_child_weight': 8, 'reg_alpha': 1.3689201077279095e-08, 'reg_lambda': 0.0008050280370218641}. Best is trial 17 with value: 8.750900245673574.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-21 13:31:55,818]\u001b[0m Trial 20 finished with value: 8.752753860169525 and parameters: {'n_estimators': 1377, 'max_depth': 8, 'learning_rate': 0.015292844895358967, 'subsample': 0.7416145419745023, 'colsample_bytree': 0.6091330191487015, 'min_child_weight': 9, 'reg_alpha': 8.15621309421382e-05, 'reg_lambda': 0.000764180383064087}. Best is trial 17 with value: 8.750900245673574.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-21 13:33:05,866]\u001b[0m Trial 21 finished with value: 8.753054537335673 and parameters: {'n_estimators': 1393, 'max_depth': 8, 'learning_rate': 0.014242530342040628, 'subsample': 0.7298595221890555, 'colsample_bytree': 0.6152165943488817, 'min_child_weight': 9, 'reg_alpha': 5.201483093717346e-05, 'reg_lambda': 0.0012679317598184223}. Best is trial 17 with value: 8.750900245673574.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-21 13:34:35,727]\u001b[0m Trial 22 finished with value: 8.748096981686475 and parameters: {'n_estimators': 1453, 'max_depth': 9, 'learning_rate': 0.01819450527813029, 'subsample': 0.8149271154876796, 'colsample_bytree': 0.5214259936218977, 'min_child_weight': 8, 'reg_alpha': 0.00015299452559238094, 'reg_lambda': 0.0015644308287124332}. Best is trial 22 with value: 8.748096981686475.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-21 13:36:08,586]\u001b[0m Trial 23 finished with value: 8.750216268544957 and parameters: {'n_estimators': 1522, 'max_depth': 9, 'learning_rate': 0.021411907840401777, 'subsample': 0.8203082183491407, 'colsample_bytree': 0.5307532714102643, 'min_child_weight': 8, 'reg_alpha': 3.3921736996170706e-08, 'reg_lambda': 6.818828220189241e-05}. Best is trial 22 with value: 8.748096981686475.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-21 13:37:49,678]\u001b[0m Trial 24 finished with value: 8.750811697244897 and parameters: {'n_estimators': 1679, 'max_depth': 9, 'learning_rate': 0.02030622519537168, 'subsample': 0.8106452018417594, 'colsample_bytree': 0.5114294375194237, 'min_child_weight': 8, 'reg_alpha': 3.099211102392938e-07, 'reg_lambda': 3.8923226201207206e-05}. Best is trial 22 with value: 8.748096981686475.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-21 13:39:30,411]\u001b[0m Trial 25 finished with value: 8.778229266127564 and parameters: {'n_estimators': 1711, 'max_depth': 9, 'learning_rate': 0.035496662066619104, 'subsample': 0.8389921364475589, 'colsample_bytree': 0.5050742057955246, 'min_child_weight': 8, 'reg_alpha': 2.0076596893114756e-07, 'reg_lambda': 5.7824070749391376e-06}. Best is trial 22 with value: 8.748096981686475.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-21 13:41:22,437]\u001b[0m Trial 26 finished with value: 8.878287633827473 and parameters: {'n_estimators': 1480, 'max_depth': 10, 'learning_rate': 0.05451431032507088, 'subsample': 0.8077834580598263, 'colsample_bytree': 0.5497238887986761, 'min_child_weight': 10, 'reg_alpha': 5.39337692342734e-07, 'reg_lambda': 5.505850044836728e-05}. Best is trial 22 with value: 8.748096981686475.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-21 13:43:07,602]\u001b[0m Trial 27 finished with value: 8.752732507929005 and parameters: {'n_estimators': 1752, 'max_depth': 9, 'learning_rate': 0.02055149313579281, 'subsample': 0.7901767233309864, 'colsample_bytree': 0.5004277088432257, 'min_child_weight': 8, 'reg_alpha': 9.881113185814322e-08, 'reg_lambda': 3.812440683135759e-06}. Best is trial 22 with value: 8.748096981686475.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-21 13:44:32,614]\u001b[0m Trial 28 finished with value: 8.777968167191023 and parameters: {'n_estimators': 1069, 'max_depth': 10, 'learning_rate': 0.031927984070726785, 'subsample': 0.8382836707899606, 'colsample_bytree': 0.569514426638738, 'min_child_weight': 8, 'reg_alpha': 1.4207329738625744e-06, 'reg_lambda': 0.00012975988337813924}. Best is trial 22 with value: 8.748096981686475.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-21 13:46:18,352]\u001b[0m Trial 29 finished with value: 8.753338650485507 and parameters: {'n_estimators': 1205, 'max_depth': 10, 'learning_rate': 0.013064791025461864, 'subsample': 0.7821985500114433, 'colsample_bytree': 0.585246540623044, 'min_child_weight': 7, 'reg_alpha': 7.586710350807279e-08, 'reg_lambda': 0.12836943076255267}. Best is trial 22 with value: 8.748096981686475.\u001b[0m\n"
      ]
     }
    ],
@@ -703,19 +699,19 @@
   {
    "cell_type": "code",
    "execution_count": 9,
-   "id": "a7112425",
+   "id": "c07ced37",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-19T14:16:35.560982Z",
-     "iopub.status.busy": "2026-01-19T14:16:35.560701Z",
-     "iopub.status.idle": "2026-01-19T14:16:35.565749Z",
-     "shell.execute_reply": "2026-01-19T14:16:35.564900Z"
+     "iopub.execute_input": "2026-01-21T13:46:18.370405Z",
+     "iopub.status.busy": "2026-01-21T13:46:18.370161Z",
+     "iopub.status.idle": "2026-01-21T13:46:18.374897Z",
+     "shell.execute_reply": "2026-01-21T13:46:18.374133Z"
     },
     "papermill": {
-     "duration": 0.011768,
-     "end_time": "2026-01-19T14:16:35.567217",
+     "duration": 0.010983,
+     "end_time": "2026-01-21T13:46:18.376240",
      "exception": false,
-     "start_time": "2026-01-19T14:16:35.555449",
+     "start_time": "2026-01-21T13:46:18.365257",
      "status": "completed"
     },
     "tags": []
@@ -725,16 +721,16 @@
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "Best RMSE: 8.755793984284614\n",
+      "Best RMSE: 8.748096981686475\n",
       "Best params:\n",
-      "n_estimators: 1791\n",
-      "max_depth: 7\n",
-      "learning_rate: 0.029272420392886873\n",
-      "subsample: 0.7268267932501222\n",
-      "colsample_bytree: 0.8384980369023396\n",
-      "min_child_weight: 4\n",
-      "reg_alpha: 9.540802369759723\n",
-      "reg_lambda: 4.593292927114143e-06\n"
+      "n_estimators: 1453\n",
+      "max_depth: 9\n",
+      "learning_rate: 0.01819450527813029\n",
+      "subsample: 0.8149271154876796\n",
+      "colsample_bytree: 0.5214259936218977\n",
+      "min_child_weight: 8\n",
+      "reg_alpha: 0.00015299452559238094\n",
+      "reg_lambda: 0.0015644308287124332\n"
      ]
     }
    ],
@@ -748,13 +744,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "4ae3f53a",
+   "id": "a289353d",
    "metadata": {
     "papermill": {
-     "duration": 0.004212,
-     "end_time": "2026-01-19T14:16:35.576026",
+     "duration": 0.004018,
+     "end_time": "2026-01-21T13:46:18.384375",
      "exception": false,
-     "start_time": "2026-01-19T14:16:35.571814",
+     "start_time": "2026-01-21T13:46:18.380357",
      "status": "completed"
     },
     "tags": []
@@ -768,19 +764,19 @@
   {
    "cell_type": "code",
    "execution_count": 10,
-   "id": "98137ca2",
+   "id": "bd67c97c",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-19T14:16:35.585805Z",
-     "iopub.status.busy": "2026-01-19T14:16:35.585583Z",
-     "iopub.status.idle": "2026-01-19T14:16:35.588999Z",
-     "shell.execute_reply": "2026-01-19T14:16:35.588292Z"
+     "iopub.execute_input": "2026-01-21T13:46:18.393762Z",
+     "iopub.status.busy": "2026-01-21T13:46:18.393228Z",
+     "iopub.status.idle": "2026-01-21T13:46:18.396240Z",
+     "shell.execute_reply": "2026-01-21T13:46:18.395719Z"
     },
     "papermill": {
-     "duration": 0.0102,
-     "end_time": "2026-01-19T14:16:35.590457",
+     "duration": 0.009055,
+     "end_time": "2026-01-21T13:46:18.397527",
      "exception": false,
-     "start_time": "2026-01-19T14:16:35.580257",
+     "start_time": "2026-01-21T13:46:18.388472",
      "status": "completed"
     },
     "tags": []
@@ -806,19 +802,19 @@
   {
    "cell_type": "code",
    "execution_count": 11,
-   "id": "71a38d38",
+   "id": "c13c1723",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-19T14:16:35.600399Z",
-     "iopub.status.busy": "2026-01-19T14:16:35.600137Z",
-     "iopub.status.idle": "2026-01-19T14:16:35.603201Z",
-     "shell.execute_reply": "2026-01-19T14:16:35.602679Z"
+     "iopub.execute_input": "2026-01-21T13:46:18.406859Z",
+     "iopub.status.busy": "2026-01-21T13:46:18.406316Z",
+     "iopub.status.idle": "2026-01-21T13:46:18.409585Z",
+     "shell.execute_reply": "2026-01-21T13:46:18.408921Z"
     },
     "papermill": {
-     "duration": 0.009796,
-     "end_time": "2026-01-19T14:16:35.604712",
+     "duration": 0.009332,
+     "end_time": "2026-01-21T13:46:18.410934",
      "exception": false,
-     "start_time": "2026-01-19T14:16:35.594916",
+     "start_time": "2026-01-21T13:46:18.401602",
      "status": "completed"
     },
     "tags": []
@@ -840,19 +836,19 @@
   {
    "cell_type": "code",
    "execution_count": 12,
-   "id": "b0c8b5df",
+   "id": "da421e7b",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-19T14:16:35.614440Z",
-     "iopub.status.busy": "2026-01-19T14:16:35.614210Z",
-     "iopub.status.idle": "2026-01-19T14:16:35.620918Z",
-     "shell.execute_reply": "2026-01-19T14:16:35.620254Z"
+     "iopub.execute_input": "2026-01-21T13:46:18.420178Z",
+     "iopub.status.busy": "2026-01-21T13:46:18.419808Z",
+     "iopub.status.idle": "2026-01-21T13:46:18.426188Z",
+     "shell.execute_reply": "2026-01-21T13:46:18.425473Z"
     },
     "papermill": {
-     "duration": 0.013272,
-     "end_time": "2026-01-19T14:16:35.622405",
+     "duration": 0.012561,
+     "end_time": "2026-01-21T13:46:18.427508",
      "exception": false,
-     "start_time": "2026-01-19T14:16:35.609133",
+     "start_time": "2026-01-21T13:46:18.414947",
      "status": "completed"
     },
     "tags": []
@@ -904,19 +900,19 @@
   {
    "cell_type": "code",
    "execution_count": 13,
-   "id": "530e0d29",
+   "id": "846f9507",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-19T14:16:35.632458Z",
-     "iopub.status.busy": "2026-01-19T14:16:35.632192Z",
-     "iopub.status.idle": "2026-01-19T14:21:33.544744Z",
-     "shell.execute_reply": "2026-01-19T14:21:33.544088Z"
+     "iopub.execute_input": "2026-01-21T13:46:18.436413Z",
+     "iopub.status.busy": "2026-01-21T13:46:18.436195Z",
+     "iopub.status.idle": "2026-01-21T13:50:57.779648Z",
+     "shell.execute_reply": "2026-01-21T13:50:57.778835Z"
     },
     "papermill": {
-     "duration": 297.919746,
-     "end_time": "2026-01-19T14:21:33.546740",
+     "duration": 279.34972,
+     "end_time": "2026-01-21T13:50:57.781304",
      "exception": false,
-     "start_time": "2026-01-19T14:16:35.626994",
+     "start_time": "2026-01-21T13:46:18.431584",
      "status": "completed"
     },
     "tags": []
@@ -926,13 +922,13 @@
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "Fold 1 RMSE: 76.40437\n",
-      "Fold 2 RMSE: 76.51458\n",
-      "Fold 3 RMSE: 76.37320\n",
-      "Fold 4 RMSE: 76.69427\n",
-      "Fold 5 RMSE: 77.05927\n",
+      "Fold 1 RMSE: 76.38011\n",
+      "Fold 2 RMSE: 76.44758\n",
+      "Fold 3 RMSE: 76.37258\n",
+      "Fold 4 RMSE: 76.66908\n",
+      "Fold 5 RMSE: 77.00021\n",
       "\n",
-      "Overall CV RMSE: 76.60914 +/- 0.25156\n"
+      "Overall CV RMSE: 76.57391 +/- 0.23868\n"
      ]
     }
    ],
@@ -940,7 +936,7 @@
     "# run OOF with best parameter\n",
     "best_params = study.best_params\n",
     "oof_train, final_test_preds = run_cv_and_predict(X_train_raw, y_train, test, best_params)\n",
-    "\n",
+    "final_test_preds = np.round(final_test_preds,2)\n",
     "# submission\n",
     "submission = pd.DataFrame({\n",
     "    'id': test['id'],\n",
@@ -952,19 +948,19 @@
   {
    "cell_type": "code",
    "execution_count": 14,
-   "id": "76f250fe",
+   "id": "64dc01cf",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-19T14:21:33.557861Z",
-     "iopub.status.busy": "2026-01-19T14:21:33.557575Z",
-     "iopub.status.idle": "2026-01-19T14:21:33.564686Z",
-     "shell.execute_reply": "2026-01-19T14:21:33.564020Z"
+     "iopub.execute_input": "2026-01-21T13:50:57.792147Z",
+     "iopub.status.busy": "2026-01-21T13:50:57.791530Z",
+     "iopub.status.idle": "2026-01-21T13:50:57.798601Z",
+     "shell.execute_reply": "2026-01-21T13:50:57.797923Z"
     },
     "papermill": {
-     "duration": 0.01443,
-     "end_time": "2026-01-19T14:21:33.566297",
+     "duration": 0.014204,
+     "end_time": "2026-01-21T13:50:57.799964",
      "exception": false,
-     "start_time": "2026-01-19T14:21:33.551867",
+     "start_time": "2026-01-21T13:50:57.785760",
      "status": "completed"
     },
     "tags": []
@@ -999,27 +995,27 @@
        "    <tr>\n",
        "      <th>0</th>\n",
        "      <td>630000</td>\n",
-       "      <td>71.781084</td>\n",
+       "      <td>71.10</td>\n",
        "    </tr>\n",
        "    <tr>\n",
        "      <th>1</th>\n",
        "      <td>630001</td>\n",
-       "      <td>70.720030</td>\n",
+       "      <td>70.84</td>\n",
        "    </tr>\n",
        "    <tr>\n",
        "      <th>2</th>\n",
        "      <td>630002</td>\n",
-       "      <td>87.717228</td>\n",
+       "      <td>87.08</td>\n",
        "    </tr>\n",
        "    <tr>\n",
        "      <th>3</th>\n",
        "      <td>630003</td>\n",
-       "      <td>55.956739</td>\n",
+       "      <td>55.36</td>\n",
        "    </tr>\n",
        "    <tr>\n",
        "      <th>4</th>\n",
        "      <td>630004</td>\n",
-       "      <td>47.049323</td>\n",
+       "      <td>47.84</td>\n",
        "    </tr>\n",
        "  </tbody>\n",
        "</table>\n",
@@ -1027,11 +1023,11 @@
       ],
       "text/plain": [
        "       id  exam_score\n",
-       "0  630000   71.781084\n",
-       "1  630001   70.720030\n",
-       "2  630002   87.717228\n",
-       "3  630003   55.956739\n",
-       "4  630004   47.049323"
+       "0  630000       71.10\n",
+       "1  630001       70.84\n",
+       "2  630002       87.08\n",
+       "3  630003       55.36\n",
+       "4  630004       47.84"
       ]
      },
      "execution_count": 14,
@@ -1079,14 +1075,14 @@
   },
   "papermill": {
    "default_parameters": {},
-   "duration": 1593.75512,
-   "end_time": "2026-01-19T14:21:36.289716",
+   "duration": 2247.977379,
+   "end_time": "2026-01-21T13:51:00.522053",
    "environment_variables": {},
    "exception": null,
    "input_path": "__notebook__.ipynb",
    "output_path": "__notebook__.ipynb",
    "parameters": {},
-   "start_time": "2026-01-19T13:55:02.534596",
+   "start_time": "2026-01-21T13:13:32.544674",
    "version": "2.6.0"
   }
  },
