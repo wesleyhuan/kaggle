@@ -2,13 +2,13 @@
  "cells": [
   {
    "cell_type": "markdown",
-   "id": "109665c8",
+   "id": "986aa4bb",
    "metadata": {
     "papermill": {
-     "duration": 0.004327,
-     "end_time": "2026-01-25T13:37:12.301446",
+     "duration": 0.004422,
+     "end_time": "2026-01-26T15:09:15.770209",
      "exception": false,
-     "start_time": "2026-01-25T13:37:12.297119",
+     "start_time": "2026-01-26T15:09:15.765787",
      "status": "completed"
     },
     "tags": []
@@ -32,13 +32,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "b9a3bd03",
+   "id": "ed8b85ba",
    "metadata": {
     "papermill": {
-     "duration": 0.002908,
-     "end_time": "2026-01-25T13:37:12.307365",
+     "duration": 0.003375,
+     "end_time": "2026-01-26T15:09:15.777181",
      "exception": false,
-     "start_time": "2026-01-25T13:37:12.304457",
+     "start_time": "2026-01-26T15:09:15.773806",
      "status": "completed"
     },
     "tags": []
@@ -50,19 +50,19 @@
   {
    "cell_type": "code",
    "execution_count": 1,
-   "id": "31c6b15b",
+   "id": "a472b7c9",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-25T13:37:12.314414Z",
-     "iopub.status.busy": "2026-01-25T13:37:12.314125Z",
-     "iopub.status.idle": "2026-01-25T13:37:21.351358Z",
-     "shell.execute_reply": "2026-01-25T13:37:21.350665Z"
+     "iopub.execute_input": "2026-01-26T15:09:15.785450Z",
+     "iopub.status.busy": "2026-01-26T15:09:15.784891Z",
+     "iopub.status.idle": "2026-01-26T15:09:29.603014Z",
+     "shell.execute_reply": "2026-01-26T15:09:29.602228Z"
     },
     "papermill": {
-     "duration": 9.04287,
-     "end_time": "2026-01-25T13:37:21.353241",
+     "duration": 13.824263,
+     "end_time": "2026-01-26T15:09:29.604838",
      "exception": false,
-     "start_time": "2026-01-25T13:37:12.310371",
+     "start_time": "2026-01-26T15:09:15.780575",
      "status": "completed"
     },
     "tags": []
@@ -95,18 +95,21 @@
     "from sklearn.pipeline import Pipeline\n",
     "from sklearn.model_selection import KFold, cross_val_score\n",
     "from sklearn.base import BaseEstimator, TransformerMixin\n",
-    "import torch"
+    "import torch\n",
+    "\n",
+    "import lightgbm as lgb\n",
+    "from lightgbm import LGBMRegressor"
    ]
   },
   {
    "cell_type": "markdown",
-   "id": "9a7d5eb5",
+   "id": "31d890c0",
    "metadata": {
     "papermill": {
-     "duration": 0.002984,
-     "end_time": "2026-01-25T13:37:21.359334",
+     "duration": 0.004209,
+     "end_time": "2026-01-26T15:09:29.612825",
      "exception": false,
-     "start_time": "2026-01-25T13:37:21.356350",
+     "start_time": "2026-01-26T15:09:29.608616",
      "status": "completed"
     },
     "tags": []
@@ -118,19 +121,19 @@
   {
    "cell_type": "code",
    "execution_count": 2,
-   "id": "d97959ed",
+   "id": "d352c7c6",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-25T13:37:21.366833Z",
-     "iopub.status.busy": "2026-01-25T13:37:21.366440Z",
-     "iopub.status.idle": "2026-01-25T13:37:21.450599Z",
-     "shell.execute_reply": "2026-01-25T13:37:21.449575Z"
+     "iopub.execute_input": "2026-01-26T15:09:29.621110Z",
+     "iopub.status.busy": "2026-01-26T15:09:29.620586Z",
+     "iopub.status.idle": "2026-01-26T15:09:29.705055Z",
+     "shell.execute_reply": "2026-01-26T15:09:29.704403Z"
     },
     "papermill": {
-     "duration": 0.08956,
-     "end_time": "2026-01-25T13:37:21.451987",
+     "duration": 0.090161,
+     "end_time": "2026-01-26T15:09:29.706479",
      "exception": false,
-     "start_time": "2026-01-25T13:37:21.362427",
+     "start_time": "2026-01-26T15:09:29.616318",
      "status": "completed"
     },
     "tags": []
@@ -161,19 +164,19 @@
   {
    "cell_type": "code",
    "execution_count": 3,
-   "id": "135acc8e",
+   "id": "242b9ede",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-25T13:37:21.459262Z",
-     "iopub.status.busy": "2026-01-25T13:37:21.458993Z",
-     "iopub.status.idle": "2026-01-25T13:37:23.323643Z",
-     "shell.execute_reply": "2026-01-25T13:37:23.323002Z"
+     "iopub.execute_input": "2026-01-26T15:09:29.715036Z",
+     "iopub.status.busy": "2026-01-26T15:09:29.714625Z",
+     "iopub.status.idle": "2026-01-26T15:09:31.250964Z",
+     "shell.execute_reply": "2026-01-26T15:09:31.250135Z"
     },
     "papermill": {
-     "duration": 1.870233,
-     "end_time": "2026-01-25T13:37:23.325357",
+     "duration": 1.542491,
+     "end_time": "2026-01-26T15:09:31.252718",
      "exception": false,
-     "start_time": "2026-01-25T13:37:21.455124",
+     "start_time": "2026-01-26T15:09:29.710227",
      "status": "completed"
     },
     "tags": []
@@ -187,19 +190,19 @@
   {
    "cell_type": "code",
    "execution_count": 4,
-   "id": "c98151ed",
+   "id": "9eef6eec",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-25T13:37:23.332951Z",
-     "iopub.status.busy": "2026-01-25T13:37:23.332691Z",
-     "iopub.status.idle": "2026-01-25T13:37:23.358634Z",
-     "shell.execute_reply": "2026-01-25T13:37:23.358002Z"
+     "iopub.execute_input": "2026-01-26T15:09:31.261562Z",
+     "iopub.status.busy": "2026-01-26T15:09:31.260935Z",
+     "iopub.status.idle": "2026-01-26T15:09:31.287007Z",
+     "shell.execute_reply": "2026-01-26T15:09:31.286424Z"
     },
     "papermill": {
-     "duration": 0.031353,
-     "end_time": "2026-01-25T13:37:23.359945",
+     "duration": 0.031704,
+     "end_time": "2026-01-26T15:09:31.288265",
      "exception": false,
-     "start_time": "2026-01-25T13:37:23.328592",
+     "start_time": "2026-01-26T15:09:31.256561",
      "status": "completed"
     },
     "tags": []
@@ -354,13 +357,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "24e23496",
+   "id": "e87e06f3",
    "metadata": {
     "papermill": {
-     "duration": 0.003112,
-     "end_time": "2026-01-25T13:37:23.366510",
+     "duration": 0.003715,
+     "end_time": "2026-01-26T15:09:31.296746",
      "exception": false,
-     "start_time": "2026-01-25T13:37:23.363398",
+     "start_time": "2026-01-26T15:09:31.293031",
      "status": "completed"
     },
     "tags": []
@@ -375,19 +378,19 @@
   {
    "cell_type": "code",
    "execution_count": 5,
-   "id": "9b89958f",
+   "id": "355f2b0b",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-25T13:37:23.374296Z",
-     "iopub.status.busy": "2026-01-25T13:37:23.374011Z",
-     "iopub.status.idle": "2026-01-25T13:37:23.384762Z",
-     "shell.execute_reply": "2026-01-25T13:37:23.384232Z"
+     "iopub.execute_input": "2026-01-26T15:09:31.305837Z",
+     "iopub.status.busy": "2026-01-26T15:09:31.305614Z",
+     "iopub.status.idle": "2026-01-26T15:09:31.317349Z",
+     "shell.execute_reply": "2026-01-26T15:09:31.316779Z"
     },
     "papermill": {
-     "duration": 0.016417,
-     "end_time": "2026-01-25T13:37:23.386056",
+     "duration": 0.018218,
+     "end_time": "2026-01-26T15:09:31.318909",
      "exception": false,
-     "start_time": "2026-01-25T13:37:23.369639",
+     "start_time": "2026-01-26T15:09:31.300691",
      "status": "completed"
     },
     "tags": []
@@ -489,19 +492,19 @@
   {
    "cell_type": "code",
    "execution_count": 6,
-   "id": "adb8e9d4",
+   "id": "f2e385eb",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-25T13:37:23.393562Z",
-     "iopub.status.busy": "2026-01-25T13:37:23.393347Z",
-     "iopub.status.idle": "2026-01-25T13:37:23.396665Z",
-     "shell.execute_reply": "2026-01-25T13:37:23.396020Z"
+     "iopub.execute_input": "2026-01-26T15:09:31.327525Z",
+     "iopub.status.busy": "2026-01-26T15:09:31.326891Z",
+     "iopub.status.idle": "2026-01-26T15:09:31.330078Z",
+     "shell.execute_reply": "2026-01-26T15:09:31.329618Z"
     },
     "papermill": {
-     "duration": 0.008684,
-     "end_time": "2026-01-25T13:37:23.397975",
+     "duration": 0.009024,
+     "end_time": "2026-01-26T15:09:31.331601",
      "exception": false,
-     "start_time": "2026-01-25T13:37:23.389291",
+     "start_time": "2026-01-26T15:09:31.322577",
      "status": "completed"
     },
     "tags": []
@@ -514,13 +517,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "0fa28f5d",
+   "id": "4a6d3322",
    "metadata": {
     "papermill": {
-     "duration": 0.002976,
-     "end_time": "2026-01-25T13:37:23.404344",
+     "duration": 0.003663,
+     "end_time": "2026-01-26T15:09:31.338973",
      "exception": false,
-     "start_time": "2026-01-25T13:37:23.401368",
+     "start_time": "2026-01-26T15:09:31.335310",
      "status": "completed"
     },
     "tags": []
@@ -537,26 +540,26 @@
   {
    "cell_type": "code",
    "execution_count": 7,
-   "id": "8af20819",
+   "id": "ac2885d6",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-25T13:37:23.411986Z",
-     "iopub.status.busy": "2026-01-25T13:37:23.411592Z",
-     "iopub.status.idle": "2026-01-25T13:37:23.416846Z",
-     "shell.execute_reply": "2026-01-25T13:37:23.416256Z"
+     "iopub.execute_input": "2026-01-26T15:09:31.347540Z",
+     "iopub.status.busy": "2026-01-26T15:09:31.346866Z",
+     "iopub.status.idle": "2026-01-26T15:09:31.351929Z",
+     "shell.execute_reply": "2026-01-26T15:09:31.351477Z"
     },
     "papermill": {
-     "duration": 0.010669,
-     "end_time": "2026-01-25T13:37:23.418246",
+     "duration": 0.010647,
+     "end_time": "2026-01-26T15:09:31.353232",
      "exception": false,
-     "start_time": "2026-01-25T13:37:23.407577",
+     "start_time": "2026-01-26T15:09:31.342585",
      "status": "completed"
     },
     "tags": []
    },
    "outputs": [],
    "source": [
-    "def objective(trial):\n",
+    "def XGB_objective(trial):\n",
     "\n",
     "    model_params = {\n",
     "        \"n_estimators\": trial.suggest_int(\"n_estimators\", 300, 2000),\n",
@@ -598,23 +601,23 @@
   {
    "cell_type": "code",
    "execution_count": 8,
-   "id": "95323c37",
+   "id": "5f6802bc",
    "metadata": {
     "collapsed": true,
     "execution": {
-     "iopub.execute_input": "2026-01-25T13:37:23.426553Z",
-     "iopub.status.busy": "2026-01-25T13:37:23.426335Z",
-     "iopub.status.idle": "2026-01-25T14:10:18.137129Z",
-     "shell.execute_reply": "2026-01-25T14:10:18.136321Z"
+     "iopub.execute_input": "2026-01-26T15:09:31.361880Z",
+     "iopub.status.busy": "2026-01-26T15:09:31.361329Z",
+     "iopub.status.idle": "2026-01-26T15:42:07.246138Z",
+     "shell.execute_reply": "2026-01-26T15:42:07.245386Z"
     },
     "jupyter": {
      "outputs_hidden": true
     },
     "papermill": {
-     "duration": 1974.721407,
-     "end_time": "2026-01-25T14:10:18.143153",
+     "duration": 1955.895612,
+     "end_time": "2026-01-26T15:42:07.252586",
      "exception": false,
-     "start_time": "2026-01-25T13:37:23.421746",
+     "start_time": "2026-01-26T15:09:31.356974",
      "status": "completed"
     },
     "tags": []
@@ -624,8 +627,8 @@
      "name": "stderr",
      "output_type": "stream",
      "text": [
-      "\u001b[32m[I 2026-01-25 13:37:23,428]\u001b[0m A new study created in memory with name: no-name-50973954-16fb-4031-b60b-86390c2db3d1\u001b[0m\n",
-      "/usr/local/lib/python3.12/dist-packages/xgboost/core.py:774: UserWarning: [13:38:30] WARNING: /workspace/src/common/error_msg.cc:41: Falling back to prediction using DMatrix due to mismatched devices. This might lead to higher memory usage and slower performance. XGBoost is running on: cuda:0, while the input data is on: cpu.\n",
+      "\u001b[32m[I 2026-01-26 15:09:31,363]\u001b[0m A new study created in memory with name: no-name-899f3a02-29f8-4c29-8d5a-7bf0da9e1f52\u001b[0m\n",
+      "/usr/local/lib/python3.12/dist-packages/xgboost/core.py:774: UserWarning: [15:10:38] WARNING: /workspace/src/common/error_msg.cc:41: Falling back to prediction using DMatrix due to mismatched devices. This might lead to higher memory usage and slower performance. XGBoost is running on: cuda:0, while the input data is on: cpu.\n",
       "Potential solutions:\n",
       "- Use a data structure that matches the device ordinal in the booster.\n",
       "- Set the device for booster before call to inplace_predict.\n",
@@ -633,7 +636,7 @@
       "This warning will only be shown once.\n",
       "\n",
       "  return func(**kwargs)\n",
-      "/usr/local/lib/python3.12/dist-packages/xgboost/core.py:774: UserWarning: [13:38:30] WARNING: /workspace/src/common/error_msg.cc:41: Falling back to prediction using DMatrix due to mismatched devices. This might lead to higher memory usage and slower performance. XGBoost is running on: cuda:0, while the input data is on: cpu.\n",
+      "/usr/local/lib/python3.12/dist-packages/xgboost/core.py:774: UserWarning: [15:10:38] WARNING: /workspace/src/common/error_msg.cc:41: Falling back to prediction using DMatrix due to mismatched devices. This might lead to higher memory usage and slower performance. XGBoost is running on: cuda:0, while the input data is on: cpu.\n",
       "Potential solutions:\n",
       "- Use a data structure that matches the device ordinal in the booster.\n",
       "- Set the device for booster before call to inplace_predict.\n",
@@ -641,7 +644,7 @@
       "This warning will only be shown once.\n",
       "\n",
       "  return func(**kwargs)\n",
-      "/usr/local/lib/python3.12/dist-packages/xgboost/core.py:774: UserWarning: [13:38:30] WARNING: /workspace/src/common/error_msg.cc:41: Falling back to prediction using DMatrix due to mismatched devices. This might lead to higher memory usage and slower performance. XGBoost is running on: cuda:0, while the input data is on: cpu.\n",
+      "/usr/local/lib/python3.12/dist-packages/xgboost/core.py:774: UserWarning: [15:10:38] WARNING: /workspace/src/common/error_msg.cc:41: Falling back to prediction using DMatrix due to mismatched devices. This might lead to higher memory usage and slower performance. XGBoost is running on: cuda:0, while the input data is on: cpu.\n",
       "Potential solutions:\n",
       "- Use a data structure that matches the device ordinal in the booster.\n",
       "- Set the device for booster before call to inplace_predict.\n",
@@ -649,7 +652,7 @@
       "This warning will only be shown once.\n",
       "\n",
       "  return func(**kwargs)\n",
-      "/usr/local/lib/python3.12/dist-packages/xgboost/core.py:774: UserWarning: [13:38:30] WARNING: /workspace/src/common/error_msg.cc:41: Falling back to prediction using DMatrix due to mismatched devices. This might lead to higher memory usage and slower performance. XGBoost is running on: cuda:0, while the input data is on: cpu.\n",
+      "/usr/local/lib/python3.12/dist-packages/xgboost/core.py:774: UserWarning: [15:10:38] WARNING: /workspace/src/common/error_msg.cc:41: Falling back to prediction using DMatrix due to mismatched devices. This might lead to higher memory usage and slower performance. XGBoost is running on: cuda:0, while the input data is on: cpu.\n",
       "Potential solutions:\n",
       "- Use a data structure that matches the device ordinal in the booster.\n",
       "- Set the device for booster before call to inplace_predict.\n",
@@ -657,65 +660,65 @@
       "This warning will only be shown once.\n",
       "\n",
       "  return func(**kwargs)\n",
-      "\u001b[32m[I 2026-01-25 13:38:45,492]\u001b[0m Trial 0 finished with value: 8.93620269801541 and parameters: {'n_estimators': 937, 'max_depth': 10, 'learning_rate': 0.08960785365368121, 'subsample': 0.7993292420985183, 'colsample_bytree': 0.5780093202212182, 'min_child_weight': 2, 'reg_alpha': 3.3323645788192616e-08, 'reg_lambda': 0.6245760287469893}. Best is trial 0 with value: 8.93620269801541.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-25 13:39:55,721]\u001b[0m Trial 1 finished with value: 8.770638099775912 and parameters: {'n_estimators': 1322, 'max_depth': 8, 'learning_rate': 0.010636066512540286, 'subsample': 0.9849549260809971, 'colsample_bytree': 0.9162213204002109, 'min_child_weight': 3, 'reg_alpha': 4.329370014459266e-07, 'reg_lambda': 4.4734294104626844e-07}. Best is trial 1 with value: 8.770638099775912.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-25 13:40:30,997]\u001b[0m Trial 2 finished with value: 8.76232847647799 and parameters: {'n_estimators': 817, 'max_depth': 7, 'learning_rate': 0.03647316284911211, 'subsample': 0.645614570099021, 'colsample_bytree': 0.8059264473611898, 'min_child_weight': 2, 'reg_alpha': 4.258943089524393e-06, 'reg_lambda': 1.9826980964985924e-05}. Best is trial 2 with value: 8.76232847647799.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-25 13:41:43,912]\u001b[0m Trial 3 finished with value: 8.758812150338716 and parameters: {'n_estimators': 1075, 'max_depth': 9, 'learning_rate': 0.018187859051288217, 'subsample': 0.7571172192068059, 'colsample_bytree': 0.7962072844310213, 'min_child_weight': 1, 'reg_alpha': 0.0029369981104377003, 'reg_lambda': 3.425445902633376e-07}. Best is trial 3 with value: 8.758812150338716.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-25 13:42:22,066]\u001b[0m Trial 4 finished with value: 9.03826244388407 and parameters: {'n_estimators': 410, 'max_depth': 10, 'learning_rate': 0.18043311207136256, 'subsample': 0.9041986740582306, 'colsample_bytree': 0.6523068845866853, 'min_child_weight': 1, 'reg_alpha': 0.014391207615728067, 'reg_lambda': 9.148975058772307e-05}. Best is trial 3 with value: 8.758812150338716.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-25 13:42:45,511]\u001b[0m Trial 5 finished with value: 8.82444544484457 and parameters: {'n_estimators': 507, 'max_depth': 6, 'learning_rate': 0.011085122517311707, 'subsample': 0.954660201039391, 'colsample_bytree': 0.6293899908000085, 'min_child_weight': 7, 'reg_alpha': 6.388511557344611e-06, 'reg_lambda': 0.0004793052550782129}. Best is trial 3 with value: 8.758812150338716.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-25 13:43:16,847]\u001b[0m Trial 6 finished with value: 8.762264931530147 and parameters: {'n_estimators': 1229, 'max_depth': 4, 'learning_rate': 0.18258230439200238, 'subsample': 0.8875664116805573, 'colsample_bytree': 0.9697494707820946, 'min_child_weight': 9, 'reg_alpha': 0.002404915432737351, 'reg_lambda': 1.9809253750493907}. Best is trial 3 with value: 8.758812150338716.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-25 13:43:31,684]\u001b[0m Trial 7 finished with value: 8.905184453723566 and parameters: {'n_estimators': 450, 'max_depth': 4, 'learning_rate': 0.011450964268326641, 'subsample': 0.6626651653816322, 'colsample_bytree': 0.6943386448447411, 'min_child_weight': 3, 'reg_alpha': 0.28749982347407854, 'reg_lambda': 1.6247252885719427e-05}. Best is trial 3 with value: 8.758812150338716.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-25 13:44:08,219]\u001b[0m Trial 8 finished with value: 8.776519447592507 and parameters: {'n_estimators': 777, 'max_depth': 7, 'learning_rate': 0.015252697030515175, 'subsample': 0.9010984903770198, 'colsample_bytree': 0.5372753218398854, 'min_child_weight': 10, 'reg_alpha': 0.08916674715636537, 'reg_lambda': 6.143857495033091e-07}. Best is trial 3 with value: 8.758812150338716.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-25 13:44:33,373]\u001b[0m Trial 9 finished with value: 8.791921455168607 and parameters: {'n_estimators': 309, 'max_depth': 9, 'learning_rate': 0.08310795711416077, 'subsample': 0.8645035840204937, 'colsample_bytree': 0.8856351733429728, 'min_child_weight': 1, 'reg_alpha': 1.683416412018213e-05, 'reg_lambda': 1.1036250149900698e-07}. Best is trial 3 with value: 8.758812150338716.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-25 13:45:35,593]\u001b[0m Trial 10 finished with value: 8.755762103384479 and parameters: {'n_estimators': 1868, 'max_depth': 6, 'learning_rate': 0.02513734458845406, 'subsample': 0.5089809378074097, 'colsample_bytree': 0.7828065453407016, 'min_child_weight': 5, 'reg_alpha': 4.344469108550388, 'reg_lambda': 1.2784194237583907e-08}. Best is trial 10 with value: 8.755762103384479.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-25 13:46:27,796]\u001b[0m Trial 11 finished with value: 8.763602293450528 and parameters: {'n_estimators': 1830, 'max_depth': 5, 'learning_rate': 0.026365703773854398, 'subsample': 0.5085930751344793, 'colsample_bytree': 0.7849598833322474, 'min_child_weight': 5, 'reg_alpha': 7.587120682342015, 'reg_lambda': 1.2536269325652231e-08}. Best is trial 10 with value: 8.755762103384479.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-25 13:47:33,173]\u001b[0m Trial 12 finished with value: 8.755730127693019 and parameters: {'n_estimators': 1985, 'max_depth': 6, 'learning_rate': 0.02225171016411916, 'subsample': 0.503283560939651, 'colsample_bytree': 0.8265015800721067, 'min_child_weight': 5, 'reg_alpha': 9.156386757209491, 'reg_lambda': 0.007483948702276161}. Best is trial 12 with value: 8.755730127693019.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-25 13:48:38,193]\u001b[0m Trial 13 finished with value: 8.753994875578913 and parameters: {'n_estimators': 1986, 'max_depth': 6, 'learning_rate': 0.028435494649170216, 'subsample': 0.504902872681397, 'colsample_bytree': 0.7242729582256223, 'min_child_weight': 6, 'reg_alpha': 9.868745464853761, 'reg_lambda': 0.016756638283609248}. Best is trial 13 with value: 8.753994875578913.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-25 13:49:10,769]\u001b[0m Trial 14 finished with value: 8.790821890212426 and parameters: {'n_estimators': 1587, 'max_depth': 3, 'learning_rate': 0.044332580107209384, 'subsample': 0.5874188622287926, 'colsample_bytree': 0.7142386048520458, 'min_child_weight': 7, 'reg_alpha': 0.6074782243615471, 'reg_lambda': 0.015758067941701443}. Best is trial 13 with value: 8.753994875578913.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-25 13:50:07,069]\u001b[0m Trial 15 finished with value: 8.758646762959174 and parameters: {'n_estimators': 2000, 'max_depth': 5, 'learning_rate': 0.0636206219785753, 'subsample': 0.5840842709170048, 'colsample_bytree': 0.8620313930247292, 'min_child_weight': 7, 'reg_alpha': 9.45037842436589, 'reg_lambda': 0.019356204030329876}. Best is trial 13 with value: 8.753994875578913.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-25 13:50:51,739]\u001b[0m Trial 16 finished with value: 8.764642547342625 and parameters: {'n_estimators': 1583, 'max_depth': 5, 'learning_rate': 0.027228031944155778, 'subsample': 0.5837264937028799, 'colsample_bytree': 0.9983813146210843, 'min_child_weight': 6, 'reg_alpha': 0.060137121676944086, 'reg_lambda': 0.016245609911070345}. Best is trial 13 with value: 8.753994875578913.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-25 13:52:10,541]\u001b[0m Trial 17 finished with value: 8.750900245673574 and parameters: {'n_estimators': 1595, 'max_depth': 8, 'learning_rate': 0.018805919287232947, 'subsample': 0.6899355162910942, 'colsample_bytree': 0.7261047586048985, 'min_child_weight': 4, 'reg_alpha': 0.00033163390156361534, 'reg_lambda': 0.0012972610018336865}. Best is trial 17 with value: 8.750900245673574.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-25 13:53:28,587]\u001b[0m Trial 18 finished with value: 8.783350967903875 and parameters: {'n_estimators': 1621, 'max_depth': 8, 'learning_rate': 0.04212670053766945, 'subsample': 0.6890636089615132, 'colsample_bytree': 0.7180499167861399, 'min_child_weight': 4, 'reg_alpha': 0.0006961273852462093, 'reg_lambda': 0.17634752176572732}. Best is trial 17 with value: 8.750900245673574.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-25 13:54:36,978]\u001b[0m Trial 19 finished with value: 8.751705464690323 and parameters: {'n_estimators': 1351, 'max_depth': 8, 'learning_rate': 0.017317522727622218, 'subsample': 0.7299931044372592, 'colsample_bytree': 0.644941171417189, 'min_child_weight': 8, 'reg_alpha': 1.3689201077279095e-08, 'reg_lambda': 0.0008050280370218641}. Best is trial 17 with value: 8.750900245673574.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-25 13:55:46,826]\u001b[0m Trial 20 finished with value: 8.752753860169525 and parameters: {'n_estimators': 1377, 'max_depth': 8, 'learning_rate': 0.015292844895358967, 'subsample': 0.7416145419745023, 'colsample_bytree': 0.6091330191487015, 'min_child_weight': 9, 'reg_alpha': 8.15621309421382e-05, 'reg_lambda': 0.000764180383064087}. Best is trial 17 with value: 8.750900245673574.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-25 13:56:57,303]\u001b[0m Trial 21 finished with value: 8.753054537335673 and parameters: {'n_estimators': 1393, 'max_depth': 8, 'learning_rate': 0.014242530342040628, 'subsample': 0.7298595221890555, 'colsample_bytree': 0.6152165943488817, 'min_child_weight': 9, 'reg_alpha': 5.201483093717346e-05, 'reg_lambda': 0.0012679317598184223}. Best is trial 17 with value: 8.750900245673574.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-25 13:58:28,259]\u001b[0m Trial 22 finished with value: 8.748096981686475 and parameters: {'n_estimators': 1453, 'max_depth': 9, 'learning_rate': 0.01819450527813029, 'subsample': 0.8149271154876796, 'colsample_bytree': 0.5214259936218977, 'min_child_weight': 8, 'reg_alpha': 0.00015299452559238094, 'reg_lambda': 0.0015644308287124332}. Best is trial 22 with value: 8.748096981686475.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-25 14:00:01,489]\u001b[0m Trial 23 finished with value: 8.750216268544957 and parameters: {'n_estimators': 1522, 'max_depth': 9, 'learning_rate': 0.021411907840401777, 'subsample': 0.8203082183491407, 'colsample_bytree': 0.5307532714102643, 'min_child_weight': 8, 'reg_alpha': 3.3921736996170706e-08, 'reg_lambda': 6.818828220189241e-05}. Best is trial 22 with value: 8.748096981686475.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-25 14:01:43,547]\u001b[0m Trial 24 finished with value: 8.750811697244897 and parameters: {'n_estimators': 1679, 'max_depth': 9, 'learning_rate': 0.02030622519537168, 'subsample': 0.8106452018417594, 'colsample_bytree': 0.5114294375194237, 'min_child_weight': 8, 'reg_alpha': 3.099211102392938e-07, 'reg_lambda': 3.8923226201207206e-05}. Best is trial 22 with value: 8.748096981686475.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-25 14:03:25,276]\u001b[0m Trial 25 finished with value: 8.778229266127564 and parameters: {'n_estimators': 1711, 'max_depth': 9, 'learning_rate': 0.035496662066619104, 'subsample': 0.8389921364475589, 'colsample_bytree': 0.5050742057955246, 'min_child_weight': 8, 'reg_alpha': 2.0076596893114756e-07, 'reg_lambda': 5.7824070749391376e-06}. Best is trial 22 with value: 8.748096981686475.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-25 14:05:18,079]\u001b[0m Trial 26 finished with value: 8.878287633827473 and parameters: {'n_estimators': 1480, 'max_depth': 10, 'learning_rate': 0.05451431032507088, 'subsample': 0.8077834580598263, 'colsample_bytree': 0.5497238887986761, 'min_child_weight': 10, 'reg_alpha': 5.39337692342734e-07, 'reg_lambda': 5.505850044836728e-05}. Best is trial 22 with value: 8.748096981686475.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-25 14:07:04,830]\u001b[0m Trial 27 finished with value: 8.752732507929005 and parameters: {'n_estimators': 1752, 'max_depth': 9, 'learning_rate': 0.02055149313579281, 'subsample': 0.7901767233309864, 'colsample_bytree': 0.5004277088432257, 'min_child_weight': 8, 'reg_alpha': 9.881113185814322e-08, 'reg_lambda': 3.812440683135759e-06}. Best is trial 22 with value: 8.748096981686475.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-25 14:08:30,985]\u001b[0m Trial 28 finished with value: 8.777968167191023 and parameters: {'n_estimators': 1069, 'max_depth': 10, 'learning_rate': 0.031927984070726785, 'subsample': 0.8382836707899606, 'colsample_bytree': 0.569514426638738, 'min_child_weight': 8, 'reg_alpha': 1.4207329738625744e-06, 'reg_lambda': 0.00012975988337813924}. Best is trial 22 with value: 8.748096981686475.\u001b[0m\n",
-      "\u001b[32m[I 2026-01-25 14:10:18,133]\u001b[0m Trial 29 finished with value: 8.753338650485507 and parameters: {'n_estimators': 1205, 'max_depth': 10, 'learning_rate': 0.013064791025461864, 'subsample': 0.7821985500114433, 'colsample_bytree': 0.585246540623044, 'min_child_weight': 7, 'reg_alpha': 7.586710350807279e-08, 'reg_lambda': 0.12836943076255267}. Best is trial 22 with value: 8.748096981686475.\u001b[0m\n"
+      "\u001b[32m[I 2026-01-26 15:10:52,803]\u001b[0m Trial 0 finished with value: 8.93620269801541 and parameters: {'n_estimators': 937, 'max_depth': 10, 'learning_rate': 0.08960785365368121, 'subsample': 0.7993292420985183, 'colsample_bytree': 0.5780093202212182, 'min_child_weight': 2, 'reg_alpha': 3.3323645788192616e-08, 'reg_lambda': 0.6245760287469893}. Best is trial 0 with value: 8.93620269801541.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-26 15:12:02,858]\u001b[0m Trial 1 finished with value: 8.770638099775912 and parameters: {'n_estimators': 1322, 'max_depth': 8, 'learning_rate': 0.010636066512540286, 'subsample': 0.9849549260809971, 'colsample_bytree': 0.9162213204002109, 'min_child_weight': 3, 'reg_alpha': 4.329370014459266e-07, 'reg_lambda': 4.4734294104626844e-07}. Best is trial 1 with value: 8.770638099775912.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-26 15:12:36,915]\u001b[0m Trial 2 finished with value: 8.76232847647799 and parameters: {'n_estimators': 817, 'max_depth': 7, 'learning_rate': 0.03647316284911211, 'subsample': 0.645614570099021, 'colsample_bytree': 0.8059264473611898, 'min_child_weight': 2, 'reg_alpha': 4.258943089524393e-06, 'reg_lambda': 1.9826980964985924e-05}. Best is trial 2 with value: 8.76232847647799.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-26 15:13:49,240]\u001b[0m Trial 3 finished with value: 8.758812150338716 and parameters: {'n_estimators': 1075, 'max_depth': 9, 'learning_rate': 0.018187859051288217, 'subsample': 0.7571172192068059, 'colsample_bytree': 0.7962072844310213, 'min_child_weight': 1, 'reg_alpha': 0.0029369981104377003, 'reg_lambda': 3.425445902633376e-07}. Best is trial 3 with value: 8.758812150338716.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-26 15:14:26,417]\u001b[0m Trial 4 finished with value: 9.03826244388407 and parameters: {'n_estimators': 410, 'max_depth': 10, 'learning_rate': 0.18043311207136256, 'subsample': 0.9041986740582306, 'colsample_bytree': 0.6523068845866853, 'min_child_weight': 1, 'reg_alpha': 0.014391207615728067, 'reg_lambda': 9.148975058772307e-05}. Best is trial 3 with value: 8.758812150338716.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-26 15:14:47,282]\u001b[0m Trial 5 finished with value: 8.82444544484457 and parameters: {'n_estimators': 507, 'max_depth': 6, 'learning_rate': 0.011085122517311707, 'subsample': 0.954660201039391, 'colsample_bytree': 0.6293899908000085, 'min_child_weight': 7, 'reg_alpha': 6.388511557344611e-06, 'reg_lambda': 0.0004793052550782129}. Best is trial 3 with value: 8.758812150338716.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-26 15:15:17,654]\u001b[0m Trial 6 finished with value: 8.762264931530147 and parameters: {'n_estimators': 1229, 'max_depth': 4, 'learning_rate': 0.18258230439200238, 'subsample': 0.8875664116805573, 'colsample_bytree': 0.9697494707820946, 'min_child_weight': 9, 'reg_alpha': 0.002404915432737351, 'reg_lambda': 1.9809253750493907}. Best is trial 3 with value: 8.758812150338716.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-26 15:15:33,129]\u001b[0m Trial 7 finished with value: 8.905184453723566 and parameters: {'n_estimators': 450, 'max_depth': 4, 'learning_rate': 0.011450964268326641, 'subsample': 0.6626651653816322, 'colsample_bytree': 0.6943386448447411, 'min_child_weight': 3, 'reg_alpha': 0.28749982347407854, 'reg_lambda': 1.6247252885719427e-05}. Best is trial 3 with value: 8.758812150338716.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-26 15:16:08,685]\u001b[0m Trial 8 finished with value: 8.776519447592507 and parameters: {'n_estimators': 777, 'max_depth': 7, 'learning_rate': 0.015252697030515175, 'subsample': 0.9010984903770198, 'colsample_bytree': 0.5372753218398854, 'min_child_weight': 10, 'reg_alpha': 0.08916674715636537, 'reg_lambda': 6.143857495033091e-07}. Best is trial 3 with value: 8.758812150338716.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-26 15:16:32,627]\u001b[0m Trial 9 finished with value: 8.791921455168607 and parameters: {'n_estimators': 309, 'max_depth': 9, 'learning_rate': 0.08310795711416077, 'subsample': 0.8645035840204937, 'colsample_bytree': 0.8856351733429728, 'min_child_weight': 1, 'reg_alpha': 1.683416412018213e-05, 'reg_lambda': 1.1036250149900698e-07}. Best is trial 3 with value: 8.758812150338716.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-26 15:17:34,203]\u001b[0m Trial 10 finished with value: 8.755762103384479 and parameters: {'n_estimators': 1868, 'max_depth': 6, 'learning_rate': 0.02513734458845406, 'subsample': 0.5089809378074097, 'colsample_bytree': 0.7828065453407016, 'min_child_weight': 5, 'reg_alpha': 4.344469108550388, 'reg_lambda': 1.2784194237583907e-08}. Best is trial 10 with value: 8.755762103384479.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-26 15:18:25,768]\u001b[0m Trial 11 finished with value: 8.763602293450528 and parameters: {'n_estimators': 1830, 'max_depth': 5, 'learning_rate': 0.026365703773854398, 'subsample': 0.5085930751344793, 'colsample_bytree': 0.7849598833322474, 'min_child_weight': 5, 'reg_alpha': 7.587120682342015, 'reg_lambda': 1.2536269325652231e-08}. Best is trial 10 with value: 8.755762103384479.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-26 15:19:30,824]\u001b[0m Trial 12 finished with value: 8.755730127693019 and parameters: {'n_estimators': 1985, 'max_depth': 6, 'learning_rate': 0.02225171016411916, 'subsample': 0.503283560939651, 'colsample_bytree': 0.8265015800721067, 'min_child_weight': 5, 'reg_alpha': 9.156386757209491, 'reg_lambda': 0.007483948702276161}. Best is trial 12 with value: 8.755730127693019.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-26 15:20:35,626]\u001b[0m Trial 13 finished with value: 8.753994875578913 and parameters: {'n_estimators': 1986, 'max_depth': 6, 'learning_rate': 0.028435494649170216, 'subsample': 0.504902872681397, 'colsample_bytree': 0.7242729582256223, 'min_child_weight': 6, 'reg_alpha': 9.868745464853761, 'reg_lambda': 0.016756638283609248}. Best is trial 13 with value: 8.753994875578913.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-26 15:21:07,695]\u001b[0m Trial 14 finished with value: 8.790821890212426 and parameters: {'n_estimators': 1587, 'max_depth': 3, 'learning_rate': 0.044332580107209384, 'subsample': 0.5874188622287926, 'colsample_bytree': 0.7142386048520458, 'min_child_weight': 7, 'reg_alpha': 0.6074782243615471, 'reg_lambda': 0.015758067941701443}. Best is trial 13 with value: 8.753994875578913.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-26 15:22:02,226]\u001b[0m Trial 15 finished with value: 8.758646762959174 and parameters: {'n_estimators': 2000, 'max_depth': 5, 'learning_rate': 0.0636206219785753, 'subsample': 0.5840842709170048, 'colsample_bytree': 0.8620313930247292, 'min_child_weight': 7, 'reg_alpha': 9.45037842436589, 'reg_lambda': 0.019356204030329876}. Best is trial 13 with value: 8.753994875578913.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-26 15:22:46,905]\u001b[0m Trial 16 finished with value: 8.764642547342625 and parameters: {'n_estimators': 1583, 'max_depth': 5, 'learning_rate': 0.027228031944155778, 'subsample': 0.5837264937028799, 'colsample_bytree': 0.9983813146210843, 'min_child_weight': 6, 'reg_alpha': 0.060137121676944086, 'reg_lambda': 0.016245609911070345}. Best is trial 13 with value: 8.753994875578913.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-26 15:24:05,658]\u001b[0m Trial 17 finished with value: 8.750900245673574 and parameters: {'n_estimators': 1595, 'max_depth': 8, 'learning_rate': 0.018805919287232947, 'subsample': 0.6899355162910942, 'colsample_bytree': 0.7261047586048985, 'min_child_weight': 4, 'reg_alpha': 0.00033163390156361534, 'reg_lambda': 0.0012972610018336865}. Best is trial 17 with value: 8.750900245673574.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-26 15:25:23,974]\u001b[0m Trial 18 finished with value: 8.783350967903875 and parameters: {'n_estimators': 1621, 'max_depth': 8, 'learning_rate': 0.04212670053766945, 'subsample': 0.6890636089615132, 'colsample_bytree': 0.7180499167861399, 'min_child_weight': 4, 'reg_alpha': 0.0006961273852462093, 'reg_lambda': 0.17634752176572732}. Best is trial 17 with value: 8.750900245673574.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-26 15:26:31,741]\u001b[0m Trial 19 finished with value: 8.751705464690323 and parameters: {'n_estimators': 1351, 'max_depth': 8, 'learning_rate': 0.017317522727622218, 'subsample': 0.7299931044372592, 'colsample_bytree': 0.644941171417189, 'min_child_weight': 8, 'reg_alpha': 1.3689201077279095e-08, 'reg_lambda': 0.0008050280370218641}. Best is trial 17 with value: 8.750900245673574.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-26 15:27:41,278]\u001b[0m Trial 20 finished with value: 8.752753860169525 and parameters: {'n_estimators': 1377, 'max_depth': 8, 'learning_rate': 0.015292844895358967, 'subsample': 0.7416145419745023, 'colsample_bytree': 0.6091330191487015, 'min_child_weight': 9, 'reg_alpha': 8.15621309421382e-05, 'reg_lambda': 0.000764180383064087}. Best is trial 17 with value: 8.750900245673574.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-26 15:28:52,058]\u001b[0m Trial 21 finished with value: 8.753054537335673 and parameters: {'n_estimators': 1393, 'max_depth': 8, 'learning_rate': 0.014242530342040628, 'subsample': 0.7298595221890555, 'colsample_bytree': 0.6152165943488817, 'min_child_weight': 9, 'reg_alpha': 5.201483093717346e-05, 'reg_lambda': 0.0012679317598184223}. Best is trial 17 with value: 8.750900245673574.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-26 15:30:22,664]\u001b[0m Trial 22 finished with value: 8.748096981686475 and parameters: {'n_estimators': 1453, 'max_depth': 9, 'learning_rate': 0.01819450527813029, 'subsample': 0.8149271154876796, 'colsample_bytree': 0.5214259936218977, 'min_child_weight': 8, 'reg_alpha': 0.00015299452559238094, 'reg_lambda': 0.0015644308287124332}. Best is trial 22 with value: 8.748096981686475.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-26 15:31:55,326]\u001b[0m Trial 23 finished with value: 8.750216268544957 and parameters: {'n_estimators': 1522, 'max_depth': 9, 'learning_rate': 0.021411907840401777, 'subsample': 0.8203082183491407, 'colsample_bytree': 0.5307532714102643, 'min_child_weight': 8, 'reg_alpha': 3.3921736996170706e-08, 'reg_lambda': 6.818828220189241e-05}. Best is trial 22 with value: 8.748096981686475.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-26 15:33:37,074]\u001b[0m Trial 24 finished with value: 8.750811697244897 and parameters: {'n_estimators': 1679, 'max_depth': 9, 'learning_rate': 0.02030622519537168, 'subsample': 0.8106452018417594, 'colsample_bytree': 0.5114294375194237, 'min_child_weight': 8, 'reg_alpha': 3.099211102392938e-07, 'reg_lambda': 3.8923226201207206e-05}. Best is trial 22 with value: 8.748096981686475.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-26 15:35:18,071]\u001b[0m Trial 25 finished with value: 8.778229266127564 and parameters: {'n_estimators': 1711, 'max_depth': 9, 'learning_rate': 0.035496662066619104, 'subsample': 0.8389921364475589, 'colsample_bytree': 0.5050742057955246, 'min_child_weight': 8, 'reg_alpha': 2.0076596893114756e-07, 'reg_lambda': 5.7824070749391376e-06}. Best is trial 22 with value: 8.748096981686475.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-26 15:37:10,311]\u001b[0m Trial 26 finished with value: 8.878287633827473 and parameters: {'n_estimators': 1480, 'max_depth': 10, 'learning_rate': 0.05451431032507088, 'subsample': 0.8077834580598263, 'colsample_bytree': 0.5497238887986761, 'min_child_weight': 10, 'reg_alpha': 5.39337692342734e-07, 'reg_lambda': 5.505850044836728e-05}. Best is trial 22 with value: 8.748096981686475.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-26 15:38:55,405]\u001b[0m Trial 27 finished with value: 8.752732507929005 and parameters: {'n_estimators': 1752, 'max_depth': 9, 'learning_rate': 0.02055149313579281, 'subsample': 0.7901767233309864, 'colsample_bytree': 0.5004277088432257, 'min_child_weight': 8, 'reg_alpha': 9.881113185814322e-08, 'reg_lambda': 3.812440683135759e-06}. Best is trial 22 with value: 8.748096981686475.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-26 15:40:21,164]\u001b[0m Trial 28 finished with value: 8.777968167191023 and parameters: {'n_estimators': 1069, 'max_depth': 10, 'learning_rate': 0.031927984070726785, 'subsample': 0.8382836707899606, 'colsample_bytree': 0.569514426638738, 'min_child_weight': 8, 'reg_alpha': 1.4207329738625744e-06, 'reg_lambda': 0.00012975988337813924}. Best is trial 22 with value: 8.748096981686475.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-26 15:42:07,242]\u001b[0m Trial 29 finished with value: 8.753338650485507 and parameters: {'n_estimators': 1205, 'max_depth': 10, 'learning_rate': 0.013064791025461864, 'subsample': 0.7821985500114433, 'colsample_bytree': 0.585246540623044, 'min_child_weight': 7, 'reg_alpha': 7.586710350807279e-08, 'reg_lambda': 0.12836943076255267}. Best is trial 22 with value: 8.748096981686475.\u001b[0m\n"
      ]
     }
    ],
    "source": [
-    "study = optuna.create_study(\n",
+    "XGB_study = optuna.create_study(\n",
     "    direction=\"minimize\",\n",
     "    sampler=optuna.samplers.TPESampler(seed=CFG.RANDOM_SEED)\n",
     ")\n",
     "\n",
     "# use Optuna to find best parameter\n",
-    "study.optimize(objective, n_trials=30)"
+    "XGB_study.optimize(XGB_objective, n_trials=30)"
    ]
   },
   {
    "cell_type": "code",
    "execution_count": 9,
-   "id": "02ab5417",
+   "id": "9cb28263",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-25T14:10:18.153497Z",
-     "iopub.status.busy": "2026-01-25T14:10:18.153249Z",
-     "iopub.status.idle": "2026-01-25T14:10:18.158296Z",
-     "shell.execute_reply": "2026-01-25T14:10:18.157600Z"
+     "iopub.execute_input": "2026-01-26T15:42:07.263394Z",
+     "iopub.status.busy": "2026-01-26T15:42:07.263141Z",
+     "iopub.status.idle": "2026-01-26T15:42:07.268045Z",
+     "shell.execute_reply": "2026-01-26T15:42:07.267257Z"
     },
     "papermill": {
-     "duration": 0.011639,
-     "end_time": "2026-01-25T14:10:18.159663",
+     "duration": 0.01186,
+     "end_time": "2026-01-26T15:42:07.269344",
      "exception": false,
-     "start_time": "2026-01-25T14:10:18.148024",
+     "start_time": "2026-01-26T15:42:07.257484",
      "status": "completed"
     },
     "tags": []
@@ -725,8 +728,8 @@
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "Best RMSE: 8.748096981686475\n",
-      "Best params:\n",
+      "Best XGB RMSE: 8.748096981686475\n",
+      "Best XGB params:\n",
       "n_estimators: 1453\n",
       "max_depth: 9\n",
       "learning_rate: 0.01819450527813029\n",
@@ -739,22 +742,617 @@
     }
    ],
    "source": [
-    "# 最佳參數\n",
-    "print(\"Best RMSE:\", study.best_value)\n",
-    "print(\"Best params:\")\n",
-    "for k, v in study.best_params.items():\n",
+    "# XGB best parameter\n",
+    "print(\"Best XGB RMSE:\", XGB_study.best_value)\n",
+    "print(\"Best XGB params:\")\n",
+    "for k, v in XGB_study.best_params.items():\n",
     "    print(f\"{k}: {v}\")"
    ]
   },
   {
    "cell_type": "markdown",
-   "id": "ea6a7b01",
+   "id": "360332c7",
    "metadata": {
     "papermill": {
-     "duration": 0.004714,
-     "end_time": "2026-01-25T14:10:18.168658",
+     "duration": 0.004971,
+     "end_time": "2026-01-26T15:42:07.279521",
      "exception": false,
-     "start_time": "2026-01-25T14:10:18.163944",
+     "start_time": "2026-01-26T15:42:07.274550",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "# LightGBM optuna"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "id": "f7432f68",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-01-26T15:42:07.291108Z",
+     "iopub.status.busy": "2026-01-26T15:42:07.290609Z",
+     "iopub.status.idle": "2026-01-26T15:42:07.296590Z",
+     "shell.execute_reply": "2026-01-26T15:42:07.295927Z"
+    },
+    "papermill": {
+     "duration": 0.01326,
+     "end_time": "2026-01-26T15:42:07.297973",
+     "exception": false,
+     "start_time": "2026-01-26T15:42:07.284713",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "def lgbm_objective(trial):\n",
+    "    params = {\n",
+    "        \"n_estimators\": 2000,\n",
+    "        \"learning_rate\": trial.suggest_float(\"learning_rate\", 0.005, 0.1, log=True),\n",
+    "        \"num_leaves\": trial.suggest_int(\"num_leaves\", 20, 3000), # LGBM 核心參數\n",
+    "        \"max_depth\": trial.suggest_int(\"max_depth\", 3, 12),\n",
+    "        \"min_child_samples\": trial.suggest_int(\"min_child_samples\", 5, 100), # 類似 min_child_weight\n",
+    "        \"subsample\": trial.suggest_float(\"subsample\", 0.5, 1.0),\n",
+    "        \"colsample_bytree\": trial.suggest_float(\"colsample_bytree\", 0.5, 1.0),\n",
+    "        \"reg_alpha\": trial.suggest_float(\"reg_alpha\", 1e-8, 10.0, log=True),\n",
+    "        \"reg_lambda\": trial.suggest_float(\"reg_lambda\", 1e-8, 10.0, log=True),\n",
+    "        \"verbosity\": -1 # 減少輸出的訊息\n",
+    "    }\n",
+    "    \n",
+    "    # 這裡同樣可以使用我們之前寫的 run_cv_and_predict 邏輯\n",
+    "    # 或者簡單使用 cross_val_score\n",
+    "    pipeline = Pipeline(steps=[\n",
+    "        (\"preprocess\", Preprocessor()),\n",
+    "        (\"model\", LGBMRegressor(**params, random_state=CFG.RANDOM_SEED))\n",
+    "    ])\n",
+    "    \n",
+    "    scores = cross_val_score(\n",
+    "        pipeline, X_train_raw, y_train, \n",
+    "        cv=CFG.N_FOLDS, \n",
+    "        scoring=\"neg_root_mean_squared_error\"\n",
+    "    )\n",
+    "    return -scores.mean()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "id": "22e0b785",
+   "metadata": {
+    "collapsed": true,
+    "execution": {
+     "iopub.execute_input": "2026-01-26T15:42:07.308762Z",
+     "iopub.status.busy": "2026-01-26T15:42:07.308548Z",
+     "iopub.status.idle": "2026-01-26T16:41:35.768835Z",
+     "shell.execute_reply": "2026-01-26T16:41:35.768225Z"
+    },
+    "jupyter": {
+     "outputs_hidden": true
+    },
+    "papermill": {
+     "duration": 3568.473293,
+     "end_time": "2026-01-26T16:41:35.776210",
+     "exception": false,
+     "start_time": "2026-01-26T15:42:07.302917",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "\u001b[32m[I 2026-01-26 15:42:07,310]\u001b[0m A new study created in memory with name: no-name-2890e602-bb68-4b84-b818-d4fbadf45a5d\u001b[0m\n",
+      "\u001b[32m[I 2026-01-26 15:50:14,054]\u001b[0m Trial 0 finished with value: 8.760943842158444 and parameters: {'learning_rate': 0.015355286838886862, 'num_leaves': 2854, 'max_depth': 10, 'min_child_samples': 62, 'subsample': 0.5780093202212182, 'colsample_bytree': 0.5779972601681014, 'reg_alpha': 3.3323645788192616e-08, 'reg_lambda': 0.6245760287469893}. Best is trial 0 with value: 8.760943842158444.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-26 15:52:48,837]\u001b[0m Trial 1 finished with value: 8.795274255358883 and parameters: {'learning_rate': 0.03027182927734624, 'num_leaves': 2130, 'max_depth': 3, 'min_child_samples': 98, 'subsample': 0.9162213204002109, 'colsample_bytree': 0.6061695553391381, 'reg_alpha': 4.329370014459266e-07, 'reg_lambda': 4.4734294104626844e-07}. Best is trial 0 with value: 8.760943842158444.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-26 15:58:10,941]\u001b[0m Trial 2 finished with value: 8.757258980185743 and parameters: {'learning_rate': 0.012439367209907218, 'num_leaves': 1584, 'max_depth': 7, 'min_child_samples': 32, 'subsample': 0.8059264473611898, 'colsample_bytree': 0.569746930326021, 'reg_alpha': 4.258943089524393e-06, 'reg_lambda': 1.9826980964985924e-05}. Best is trial 2 with value: 8.757258980185743.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-26 16:01:13,942]\u001b[0m Trial 3 finished with value: 8.786843767340795 and parameters: {'learning_rate': 0.019603369861210685, 'num_leaves': 2360, 'max_depth': 4, 'min_child_samples': 54, 'subsample': 0.7962072844310213, 'colsample_bytree': 0.5232252063599989, 'reg_alpha': 0.0029369981104377003, 'reg_lambda': 3.425445902633376e-07}. Best is trial 2 with value: 8.757258980185743.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-26 16:14:40,907]\u001b[0m Trial 4 finished with value: 8.764580843962742 and parameters: {'learning_rate': 0.0060758085133366885, 'num_leaves': 2848, 'max_depth': 12, 'min_child_samples': 82, 'subsample': 0.6523068845866853, 'colsample_bytree': 0.5488360570031919, 'reg_alpha': 0.014391207615728067, 'reg_lambda': 9.148975058772307e-05}. Best is trial 2 with value: 8.757258980185743.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-26 16:17:27,842]\u001b[0m Trial 5 finished with value: 8.839291740731507 and parameters: {'learning_rate': 0.007206848764305203, 'num_leaves': 1496, 'max_depth': 3, 'min_child_samples': 92, 'subsample': 0.6293899908000085, 'colsample_bytree': 0.831261142176991, 'reg_alpha': 6.388511557344611e-06, 'reg_lambda': 0.0004793052550782129}. Best is trial 2 with value: 8.757258980185743.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-26 16:25:36,847]\u001b[0m Trial 6 finished with value: 8.807853678424532 and parameters: {'learning_rate': 0.025719142025384646, 'num_leaves': 571, 'max_depth': 12, 'min_child_samples': 79, 'subsample': 0.9697494707820946, 'colsample_bytree': 0.9474136752138245, 'reg_alpha': 0.002404915432737351, 'reg_lambda': 1.9809253750493907}. Best is trial 2 with value: 8.757258980185743.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-26 16:28:24,180]\u001b[0m Trial 7 finished with value: 8.843012028363374 and parameters: {'learning_rate': 0.006517805612564439, 'num_leaves': 604, 'max_depth': 3, 'min_child_samples': 36, 'subsample': 0.6943386448447411, 'colsample_bytree': 0.6356745158869479, 'reg_alpha': 0.28749982347407854, 'reg_lambda': 1.6247252885719427e-05}. Best is trial 2 with value: 8.757258980185743.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-26 16:31:41,063]\u001b[0m Trial 8 finished with value: 8.804764341998986 and parameters: {'learning_rate': 0.011600433752378412, 'num_leaves': 1637, 'max_depth': 4, 'min_child_samples': 82, 'subsample': 0.5372753218398854, 'colsample_bytree': 0.9934434683002586, 'reg_alpha': 0.08916674715636537, 'reg_lambda': 6.143857495033091e-07}. Best is trial 2 with value: 8.757258980185743.\u001b[0m\n",
+      "\u001b[32m[I 2026-01-26 16:41:35,765]\u001b[0m Trial 9 finished with value: 8.758170573331688 and parameters: {'learning_rate': 0.0050834018700114374, 'num_leaves': 2450, 'max_depth': 10, 'min_child_samples': 74, 'subsample': 0.8856351733429728, 'colsample_bytree': 0.5370223258670452, 'reg_alpha': 1.683416412018213e-05, 'reg_lambda': 1.1036250149900698e-07}. Best is trial 2 with value: 8.757258980185743.\u001b[0m\n"
+     ]
+    }
+   ],
+   "source": [
+    "lgbm_study = optuna.create_study(\n",
+    "    direction=\"minimize\",\n",
+    "    sampler=optuna.samplers.TPESampler(seed=CFG.RANDOM_SEED)\n",
+    ")\n",
+    "\n",
+    "# use Optuna to find best parameter\n",
+    "lgbm_study.optimize(lgbm_objective, n_trials=10)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "id": "045a14e8",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-01-26T16:41:35.788041Z",
+     "iopub.status.busy": "2026-01-26T16:41:35.787800Z",
+     "iopub.status.idle": "2026-01-26T16:41:35.792239Z",
+     "shell.execute_reply": "2026-01-26T16:41:35.791647Z"
+    },
+    "papermill": {
+     "duration": 0.011986,
+     "end_time": "2026-01-26T16:41:35.793492",
+     "exception": false,
+     "start_time": "2026-01-26T16:41:35.781506",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Best lgbm RMSE: 8.757258980185743\n",
+      "Best lgbm params:\n",
+      "learning_rate: 0.012439367209907218\n",
+      "num_leaves: 1584\n",
+      "max_depth: 7\n",
+      "min_child_samples: 32\n",
+      "subsample: 0.8059264473611898\n",
+      "colsample_bytree: 0.569746930326021\n",
+      "reg_alpha: 4.258943089524393e-06\n",
+      "reg_lambda: 1.9826980964985924e-05\n"
+     ]
+    }
+   ],
+   "source": [
+    "# XGB best parameter\n",
+    "print(\"Best lgbm RMSE:\", lgbm_study.best_value)\n",
+    "print(\"Best lgbm params:\")\n",
+    "for k, v in lgbm_study.best_params.items():\n",
+    "    print(f\"{k}: {v}\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "8028a9ac",
+   "metadata": {
+    "papermill": {
+     "duration": 0.005381,
+     "end_time": "2026-01-26T16:41:35.804320",
+     "exception": false,
+     "start_time": "2026-01-26T16:41:35.798939",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "# Submission\n",
+    "\n",
+    "2026/01/19 Out-of-Fold (OOF)\n",
+    "2026/01/25 lightGBM model"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "id": "9cb09d4e",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-01-26T16:41:35.816030Z",
+     "iopub.status.busy": "2026-01-26T16:41:35.815805Z",
+     "iopub.status.idle": "2026-01-26T16:41:35.822025Z",
+     "shell.execute_reply": "2026-01-26T16:41:35.821367Z"
+    },
+    "papermill": {
+     "duration": 0.013709,
+     "end_time": "2026-01-26T16:41:35.823340",
+     "exception": false,
+     "start_time": "2026-01-26T16:41:35.809631",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "def run_cv_and_predict(X, y, test_df, params):\n",
+    "    kf = KFold(n_splits=CFG.N_FOLDS, shuffle=True, random_state=CFG.RANDOM_SEED)\n",
+    "    \n",
+    "    # Storage for OOF and Test predictions\n",
+    "    oof_preds = np.zeros(len(X))\n",
+    "    test_preds = np.zeros(len(test_df))\n",
+    "    scores = []\n",
+    "\n",
+    "    for fold, (train_idx, val_idx) in enumerate(kf.split(X, y)):\n",
+    "        X_train, X_val = X.iloc[train_idx], X.iloc[val_idx]\n",
+    "        y_train, y_val = y.iloc[train_idx], y.iloc[val_idx]\n",
+    "\n",
+    "        # Preprocess inside the fold to prevent leakage\n",
+    "        preprocessor = Preprocessor()\n",
+    "        X_train_proc = preprocessor.fit_transform(X_train)\n",
+    "        X_val_proc = preprocessor.transform(X_val)\n",
+    "        X_test_proc = preprocessor.transform(test_df)\n",
+    "\n",
+    "        # Initialize Model\n",
+    "        model = XGBRegressor(**params, random_state=CFG.RANDOM_SEED, n_jobs=-1)\n",
+    "\n",
+    "        # Fit with Early Stopping\n",
+    "        model.fit(\n",
+    "            X_train_proc, y_train,\n",
+    "            eval_set=[(X_val_proc, y_val)],\n",
+    "            verbose=False\n",
+    "        )\n",
+    "\n",
+    "        # Predict\n",
+    "        val_preds = model.predict(X_val_proc)\n",
+    "        oof_preds[val_idx] = val_preds\n",
+    "        test_preds += model.predict(X_test_proc) / CFG.N_FOLDS\n",
+    "\n",
+    "        # Score the fold\n",
+    "        fold_rmse = mean_squared_error(y_val, val_preds)\n",
+    "        scores.append(fold_rmse)\n",
+    "        print(f\"Fold {fold+1} RMSE: {fold_rmse:.5f}\")\n",
+    "\n",
+    "    print(f\"\\nOverall CV RMSE: {np.mean(scores):.5f} +/- {np.std(scores):.5f}\")\n",
+    "    return oof_preds, test_preds\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "id": "04bf2831",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-01-26T16:41:35.834960Z",
+     "iopub.status.busy": "2026-01-26T16:41:35.834745Z",
+     "iopub.status.idle": "2026-01-26T16:41:35.838950Z",
+     "shell.execute_reply": "2026-01-26T16:41:35.838378Z"
+    },
+    "papermill": {
+     "duration": 0.011606,
+     "end_time": "2026-01-26T16:41:35.840250",
+     "exception": false,
+     "start_time": "2026-01-26T16:41:35.828644",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "\"best_params = study.best_params\\noof_train, final_test_preds = run_cv_and_predict(X_train_raw, y_train, test, best_params)\\n\\n# submission\\nsubmission = pd.DataFrame({\\n    'id': test['id'],\\n    'exam_score': final_test_preds\\n})\\nsubmission.to_csv('submission.csv', index=False)\""
+      ]
+     },
+     "execution_count": 14,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# run OOF with best parameter\n",
+    "'''best_params = study.best_params\n",
+    "oof_train, final_test_preds = run_cv_and_predict(X_train_raw, y_train, test, best_params)\n",
+    "\n",
+    "# submission\n",
+    "submission = pd.DataFrame({\n",
+    "    'id': test['id'],\n",
+    "    'exam_score': final_test_preds\n",
+    "})\n",
+    "submission.to_csv('submission.csv', index=False)'''"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "id": "5945689a",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-01-26T16:41:35.852172Z",
+     "iopub.status.busy": "2026-01-26T16:41:35.851946Z",
+     "iopub.status.idle": "2026-01-26T16:41:35.857976Z",
+     "shell.execute_reply": "2026-01-26T16:41:35.857300Z"
+    },
+    "papermill": {
+     "duration": 0.013628,
+     "end_time": "2026-01-26T16:41:35.859334",
+     "exception": false,
+     "start_time": "2026-01-26T16:41:35.845706",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "def run_cv_LGBM_predict(X, y, test_df, params):\n",
+    "    kf = KFold(n_splits=CFG.N_FOLDS, shuffle=True, random_state=CFG.RANDOM_SEED)\n",
+    "    \n",
+    "    # Storage for OOF and Test predictions\n",
+    "    oof_preds = np.zeros(len(X))\n",
+    "    test_preds = np.zeros(len(test_df))\n",
+    "    scores = []\n",
+    "\n",
+    "    for fold, (train_idx, val_idx) in enumerate(kf.split(X, y)):\n",
+    "        X_train, X_val = X.iloc[train_idx], X.iloc[val_idx]\n",
+    "        y_train, y_val = y.iloc[train_idx], y.iloc[val_idx]\n",
+    "\n",
+    "        # Preprocess inside the fold to prevent leakage\n",
+    "        preprocessor = Preprocessor()\n",
+    "        X_train_proc = preprocessor.fit_transform(X_train)\n",
+    "        X_val_proc = preprocessor.transform(X_val)\n",
+    "        X_test_proc = preprocessor.transform(test_df)\n",
+    "\n",
+    "        # Initialize Model\n",
+    "        model = LGBMRegressor(**params, random_state=CFG.RANDOM_SEED, n_jobs=-1)\n",
+    "\n",
+    "        # Fit with Early Stopping\n",
+    "        model.fit(\n",
+    "            X_train_proc, y_train,\n",
+    "            eval_set=[(X_val_proc, y_val)],\n",
+    "            verbose=False\n",
+    "        )\n",
+    "\n",
+    "        # Predict\n",
+    "        val_preds = model.predict(X_val_proc)\n",
+    "        oof_preds[val_idx] = val_preds\n",
+    "        test_preds += model.predict(X_test_proc) / CFG.N_FOLDS\n",
+    "\n",
+    "        # Score the fold\n",
+    "        fold_rmse = mean_squared_error(y_val, val_preds)\n",
+    "        scores.append(fold_rmse)\n",
+    "        print(f\"Fold {fold+1} RMSE: {fold_rmse:.5f}\")\n",
+    "\n",
+    "    print(f\"\\nOverall CV RMSE: {np.mean(scores):.5f} +/- {np.std(scores):.5f}\")\n",
+    "    return oof_preds, test_preds\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "id": "8aecb372",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-01-26T16:41:35.871769Z",
+     "iopub.status.busy": "2026-01-26T16:41:35.871551Z",
+     "iopub.status.idle": "2026-01-26T16:46:37.293503Z",
+     "shell.execute_reply": "2026-01-26T16:46:37.292875Z"
+    },
+    "papermill": {
+     "duration": 301.430156,
+     "end_time": "2026-01-26T16:46:37.295178",
+     "exception": false,
+     "start_time": "2026-01-26T16:41:35.865022",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Fold 1 RMSE: 76.38011\n",
+      "Fold 2 RMSE: 76.44758\n",
+      "Fold 3 RMSE: 76.37258\n",
+      "Fold 4 RMSE: 76.66908\n",
+      "Fold 5 RMSE: 77.00021\n",
+      "\n",
+      "Overall CV RMSE: 76.57391 +/- 0.23868\n"
+     ]
+    },
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "/usr/local/lib/python3.12/dist-packages/xgboost/training.py:199: UserWarning: [16:46:11] WARNING: /workspace/src/learner.cc:790: \n",
+      "Parameters: { \"min_child_samples\", \"num_leaves\" } are not used.\n",
+      "\n",
+      "  bst.update(dtrain, iteration=i, fobj=obj)\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Fold 1 RMSE: 116.63965\n"
+     ]
+    },
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "/usr/local/lib/python3.12/dist-packages/xgboost/training.py:199: UserWarning: [16:46:16] WARNING: /workspace/src/learner.cc:790: \n",
+      "Parameters: { \"min_child_samples\", \"num_leaves\" } are not used.\n",
+      "\n",
+      "  bst.update(dtrain, iteration=i, fobj=obj)\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Fold 2 RMSE: 117.08518\n"
+     ]
+    },
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "/usr/local/lib/python3.12/dist-packages/xgboost/training.py:199: UserWarning: [16:46:22] WARNING: /workspace/src/learner.cc:790: \n",
+      "Parameters: { \"min_child_samples\", \"num_leaves\" } are not used.\n",
+      "\n",
+      "  bst.update(dtrain, iteration=i, fobj=obj)\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Fold 3 RMSE: 116.97657\n"
+     ]
+    },
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "/usr/local/lib/python3.12/dist-packages/xgboost/training.py:199: UserWarning: [16:46:27] WARNING: /workspace/src/learner.cc:790: \n",
+      "Parameters: { \"min_child_samples\", \"num_leaves\" } are not used.\n",
+      "\n",
+      "  bst.update(dtrain, iteration=i, fobj=obj)\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Fold 4 RMSE: 117.90047\n"
+     ]
+    },
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "/usr/local/lib/python3.12/dist-packages/xgboost/training.py:199: UserWarning: [16:46:33] WARNING: /workspace/src/learner.cc:790: \n",
+      "Parameters: { \"min_child_samples\", \"num_leaves\" } are not used.\n",
+      "\n",
+      "  bst.update(dtrain, iteration=i, fobj=obj)\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Fold 5 RMSE: 118.12225\n",
+      "\n",
+      "Overall CV RMSE: 117.34482 +/- 0.56805\n"
+     ]
+    }
+   ],
+   "source": [
+    "# 假設你跑完了兩個模型的 run_cv_and_predict\n",
+    "# run OOF with best parameter\n",
+    "xgb_best_params = XGB_study.best_params\n",
+    "oof_train, xgb_test_preds = run_cv_and_predict(X_train_raw, y_train, test, xgb_best_params)\n",
+    "\n",
+    "lgbm_best_params = lgbm_study.best_params\n",
+    "oof_train, lgbm_test_preds = run_cv_and_predict(X_train_raw, y_train, test, lgbm_best_params)\n",
+    "\n",
+    "# simple 50% 50% prediction\n",
+    "final_submission_preds = (0.5 * xgb_test_preds) + (0.5 * lgbm_test_preds)\n",
+    "\n",
+    "submission = pd.DataFrame({\n",
+    "    'id': test['id'],\n",
+    "    'exam_score': final_submission_preds\n",
+    "})\n",
+    "submission.to_csv('ensemble_submission.csv', index=False)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "id": "9165f0d9",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-01-26T16:46:37.309237Z",
+     "iopub.status.busy": "2026-01-26T16:46:37.308730Z",
+     "iopub.status.idle": "2026-01-26T16:46:37.315292Z",
+     "shell.execute_reply": "2026-01-26T16:46:37.314609Z"
+    },
+    "papermill": {
+     "duration": 0.014976,
+     "end_time": "2026-01-26T16:46:37.316696",
+     "exception": false,
+     "start_time": "2026-01-26T16:46:37.301720",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>id</th>\n",
+       "      <th>exam_score</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>630000</td>\n",
+       "      <td>70.077011</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>630001</td>\n",
+       "      <td>68.554895</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>630002</td>\n",
+       "      <td>83.274988</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>630003</td>\n",
+       "      <td>55.924674</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4</th>\n",
+       "      <td>630004</td>\n",
+       "      <td>49.851175</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "       id  exam_score\n",
+       "0  630000   70.077011\n",
+       "1  630001   68.554895\n",
+       "2  630002   83.274988\n",
+       "3  630003   55.924674\n",
+       "4  630004   49.851175"
+      ]
+     },
+     "execution_count": 17,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "submission.head()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "7bc1b8d0",
+   "metadata": {
+    "papermill": {
+     "duration": 0.005917,
+     "end_time": "2026-01-26T16:46:37.328741",
+     "exception": false,
+     "start_time": "2026-01-26T16:46:37.322824",
      "status": "completed"
     },
     "tags": []
@@ -765,20 +1363,20 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 10,
-   "id": "de41a828",
+   "execution_count": 18,
+   "id": "7361f3ac",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-25T14:10:18.178446Z",
-     "iopub.status.busy": "2026-01-25T14:10:18.178226Z",
-     "iopub.status.idle": "2026-01-25T14:11:00.103121Z",
-     "shell.execute_reply": "2026-01-25T14:11:00.102426Z"
+     "iopub.execute_input": "2026-01-26T16:46:37.341842Z",
+     "iopub.status.busy": "2026-01-26T16:46:37.341396Z",
+     "iopub.status.idle": "2026-01-26T16:47:16.700767Z",
+     "shell.execute_reply": "2026-01-26T16:47:16.700134Z"
     },
     "papermill": {
-     "duration": 41.936667,
-     "end_time": "2026-01-25T14:11:00.109630",
+     "duration": 39.37453,
+     "end_time": "2026-01-26T16:47:16.709287",
      "exception": false,
-     "start_time": "2026-01-25T14:10:18.172963",
+     "start_time": "2026-01-26T16:46:37.334757",
      "status": "completed"
     },
     "tags": []
@@ -1270,7 +1868,7 @@
        "                              num_parallel_tree=None, ...))])"
       ]
      },
-     "execution_count": 10,
+     "execution_count": 18,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -1281,7 +1879,7 @@
     "    steps=[\n",
     "        (\"preprocess\", Preprocessor()),\n",
     "        (\"model\", XGBRegressor(\n",
-    "            **study.best_params,\n",
+    "            **XGB_study.best_params,\n",
     "            objective=\"reg:squarederror\",\n",
     "            random_state=CFG.RANDOM_SEED,\n",
     "            n_jobs=-1\n",
@@ -1294,20 +1892,20 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 11,
-   "id": "b21e4a4f",
+   "execution_count": 19,
+   "id": "0bef082d",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-01-25T14:11:00.120965Z",
-     "iopub.status.busy": "2026-01-25T14:11:00.120249Z",
-     "iopub.status.idle": "2026-01-25T14:11:01.594702Z",
-     "shell.execute_reply": "2026-01-25T14:11:01.594097Z"
+     "iopub.execute_input": "2026-01-26T16:47:16.723668Z",
+     "iopub.status.busy": "2026-01-26T16:47:16.723083Z",
+     "iopub.status.idle": "2026-01-26T16:47:18.040578Z",
+     "shell.execute_reply": "2026-01-26T16:47:18.039865Z"
     },
     "papermill": {
-     "duration": 1.481748,
-     "end_time": "2026-01-25T14:11:01.596217",
+     "duration": 1.326313,
+     "end_time": "2026-01-26T16:47:18.042029",
      "exception": false,
-     "start_time": "2026-01-25T14:11:00.114469",
+     "start_time": "2026-01-26T16:47:16.715716",
      "status": "completed"
     },
     "tags": []
@@ -1317,7 +1915,7 @@
      "name": "stderr",
      "output_type": "stream",
      "text": [
-      "/tmp/ipykernel_23/2409590950.py:10: FutureWarning: \n",
+      "/tmp/ipykernel_24/2409590950.py:10: FutureWarning: \n",
       "\n",
       "Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.\n",
       "\n",
@@ -1359,14 +1957,59 @@
    ]
   },
   {
+   "cell_type": "code",
+   "execution_count": 20,
+   "id": "75d28dca",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-01-26T16:47:18.057856Z",
+     "iopub.status.busy": "2026-01-26T16:47:18.057331Z",
+     "iopub.status.idle": "2026-01-26T16:47:18.061588Z",
+     "shell.execute_reply": "2026-01-26T16:47:18.060914Z"
+    },
+    "papermill": {
+     "duration": 0.013434,
+     "end_time": "2026-01-26T16:47:18.062925",
+     "exception": false,
+     "start_time": "2026-01-26T16:47:18.049491",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'y_pred = final_pipeline.predict(test)\\n\\nsubmission = pd.read_csv(CFG.sample_submission_csv)\\ntest_id = test[\"id\"]\\nsubmission = pd.DataFrame({\\n    \\'Id\\': test_id, \\n    \\'exam_score\\': y_pred   \\n})\\n\\nsubmission.to_csv(\\'submission.csv\\', index=False)'"
+      ]
+     },
+     "execution_count": 20,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "'''y_pred = final_pipeline.predict(test)\n",
+    "\n",
+    "submission = pd.read_csv(CFG.sample_submission_csv)\n",
+    "test_id = test[\"id\"]\n",
+    "submission = pd.DataFrame({\n",
+    "    'Id': test_id, \n",
+    "    'exam_score': y_pred   \n",
+    "})\n",
+    "\n",
+    "submission.to_csv('submission.csv', index=False)'''"
+   ]
+  },
+  {
    "cell_type": "markdown",
-   "id": "93d13ac0",
+   "id": "097493a7",
    "metadata": {
     "papermill": {
-     "duration": 0.005523,
-     "end_time": "2026-01-25T14:11:01.607627",
+     "duration": 0.006924,
+     "end_time": "2026-01-26T16:47:18.076789",
      "exception": false,
-     "start_time": "2026-01-25T14:11:01.602104",
+     "start_time": "2026-01-26T16:47:18.069865",
      "status": "completed"
     },
     "tags": []
@@ -1375,265 +2018,6 @@
     "Feature importance shows that most important feature is study hours.\n",
     "And some extra feature is also important study_method_hour, Total_effort, Facility_rating_attendance and sleep_hour_quality.\n",
     "This shows create_interaction_features is useful for these feature. "
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "1232be8c",
-   "metadata": {
-    "papermill": {
-     "duration": 0.005652,
-     "end_time": "2026-01-25T14:11:01.619104",
-     "exception": false,
-     "start_time": "2026-01-25T14:11:01.613452",
-     "status": "completed"
-    },
-    "tags": []
-   },
-   "source": [
-    "# Submission\n",
-    "\n",
-    "2026/01/19 Out-of-Fold (OOF)"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 12,
-   "id": "f803547f",
-   "metadata": {
-    "execution": {
-     "iopub.execute_input": "2026-01-25T14:11:01.631437Z",
-     "iopub.status.busy": "2026-01-25T14:11:01.630763Z",
-     "iopub.status.idle": "2026-01-25T14:11:01.633865Z",
-     "shell.execute_reply": "2026-01-25T14:11:01.633399Z"
-    },
-    "papermill": {
-     "duration": 0.010879,
-     "end_time": "2026-01-25T14:11:01.635161",
-     "exception": false,
-     "start_time": "2026-01-25T14:11:01.624282",
-     "status": "completed"
-    },
-    "tags": []
-   },
-   "outputs": [],
-   "source": [
-    "#y_pred = final_pipeline.predict(test)\n",
-    "\n",
-    "#submission = pd.read_csv(CFG.sample_submission_csv)\n",
-    "#test_id = test[\"id\"]\n",
-    "#submission = pd.DataFrame({\n",
-    "#    'Id': test_id, \n",
-    "#    'exam_score': y_pred   \n",
-    "#})\n",
-    "\n",
-    "#submission.to_csv('submission.csv', index=False)"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 13,
-   "id": "5ab9a948",
-   "metadata": {
-    "execution": {
-     "iopub.execute_input": "2026-01-25T14:11:01.647151Z",
-     "iopub.status.busy": "2026-01-25T14:11:01.646899Z",
-     "iopub.status.idle": "2026-01-25T14:11:01.653451Z",
-     "shell.execute_reply": "2026-01-25T14:11:01.652771Z"
-    },
-    "papermill": {
-     "duration": 0.014068,
-     "end_time": "2026-01-25T14:11:01.654802",
-     "exception": false,
-     "start_time": "2026-01-25T14:11:01.640734",
-     "status": "completed"
-    },
-    "tags": []
-   },
-   "outputs": [],
-   "source": [
-    "def run_cv_and_predict(X, y, test_df, params):\n",
-    "    kf = KFold(n_splits=CFG.N_FOLDS, shuffle=True, random_state=CFG.RANDOM_SEED)\n",
-    "    \n",
-    "    # Storage for OOF and Test predictions\n",
-    "    oof_preds = np.zeros(len(X))\n",
-    "    test_preds = np.zeros(len(test_df))\n",
-    "    scores = []\n",
-    "\n",
-    "    for fold, (train_idx, val_idx) in enumerate(kf.split(X, y)):\n",
-    "        X_train, X_val = X.iloc[train_idx], X.iloc[val_idx]\n",
-    "        y_train, y_val = y.iloc[train_idx], y.iloc[val_idx]\n",
-    "\n",
-    "        # Preprocess inside the fold to prevent leakage\n",
-    "        preprocessor = Preprocessor()\n",
-    "        X_train_proc = preprocessor.fit_transform(X_train)\n",
-    "        X_val_proc = preprocessor.transform(X_val)\n",
-    "        X_test_proc = preprocessor.transform(test_df)\n",
-    "\n",
-    "        # Initialize Model\n",
-    "        model = XGBRegressor(**params, random_state=CFG.RANDOM_SEED, n_jobs=-1)\n",
-    "\n",
-    "        # Fit with Early Stopping\n",
-    "        model.fit(\n",
-    "            X_train_proc, y_train,\n",
-    "            eval_set=[(X_val_proc, y_val)],\n",
-    "            verbose=False\n",
-    "        )\n",
-    "\n",
-    "        # Predict\n",
-    "        val_preds = model.predict(X_val_proc)\n",
-    "        oof_preds[val_idx] = val_preds\n",
-    "        test_preds += model.predict(X_test_proc) / CFG.N_FOLDS\n",
-    "\n",
-    "        # Score the fold\n",
-    "        fold_rmse = mean_squared_error(y_val, val_preds)\n",
-    "        scores.append(fold_rmse)\n",
-    "        print(f\"Fold {fold+1} RMSE: {fold_rmse:.5f}\")\n",
-    "\n",
-    "    print(f\"\\nOverall CV RMSE: {np.mean(scores):.5f} +/- {np.std(scores):.5f}\")\n",
-    "    return oof_preds, test_preds\n"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 14,
-   "id": "a89d5445",
-   "metadata": {
-    "execution": {
-     "iopub.execute_input": "2026-01-25T14:11:01.668359Z",
-     "iopub.status.busy": "2026-01-25T14:11:01.667887Z",
-     "iopub.status.idle": "2026-01-25T14:15:57.649597Z",
-     "shell.execute_reply": "2026-01-25T14:15:57.648780Z"
-    },
-    "papermill": {
-     "duration": 295.990992,
-     "end_time": "2026-01-25T14:15:57.651359",
-     "exception": false,
-     "start_time": "2026-01-25T14:11:01.660367",
-     "status": "completed"
-    },
-    "tags": []
-   },
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "Fold 1 RMSE: 76.38011\n",
-      "Fold 2 RMSE: 76.44758\n",
-      "Fold 3 RMSE: 76.37258\n",
-      "Fold 4 RMSE: 76.66908\n",
-      "Fold 5 RMSE: 77.00021\n",
-      "\n",
-      "Overall CV RMSE: 76.57391 +/- 0.23868\n"
-     ]
-    }
-   ],
-   "source": [
-    "# run OOF with best parameter\n",
-    "best_params = study.best_params\n",
-    "oof_train, final_test_preds = run_cv_and_predict(X_train_raw, y_train, test, best_params)\n",
-    "final_test_preds = final_test_preds\n",
-    "# submission\n",
-    "submission = pd.DataFrame({\n",
-    "    'id': test['id'],\n",
-    "    'exam_score': final_test_preds # 這是 5 摺平均後的結果\n",
-    "})\n",
-    "submission.to_csv('submission.csv', index=False)"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 15,
-   "id": "e3390cc9",
-   "metadata": {
-    "execution": {
-     "iopub.execute_input": "2026-01-25T14:15:57.664415Z",
-     "iopub.status.busy": "2026-01-25T14:15:57.663753Z",
-     "iopub.status.idle": "2026-01-25T14:15:57.670985Z",
-     "shell.execute_reply": "2026-01-25T14:15:57.670243Z"
-    },
-    "papermill": {
-     "duration": 0.01497,
-     "end_time": "2026-01-25T14:15:57.672264",
-     "exception": false,
-     "start_time": "2026-01-25T14:15:57.657294",
-     "status": "completed"
-    },
-    "tags": []
-   },
-   "outputs": [
-    {
-     "data": {
-      "text/html": [
-       "<div>\n",
-       "<style scoped>\n",
-       "    .dataframe tbody tr th:only-of-type {\n",
-       "        vertical-align: middle;\n",
-       "    }\n",
-       "\n",
-       "    .dataframe tbody tr th {\n",
-       "        vertical-align: top;\n",
-       "    }\n",
-       "\n",
-       "    .dataframe thead th {\n",
-       "        text-align: right;\n",
-       "    }\n",
-       "</style>\n",
-       "<table border=\"1\" class=\"dataframe\">\n",
-       "  <thead>\n",
-       "    <tr style=\"text-align: right;\">\n",
-       "      <th></th>\n",
-       "      <th>id</th>\n",
-       "      <th>exam_score</th>\n",
-       "    </tr>\n",
-       "  </thead>\n",
-       "  <tbody>\n",
-       "    <tr>\n",
-       "      <th>0</th>\n",
-       "      <td>630000</td>\n",
-       "      <td>71.100970</td>\n",
-       "    </tr>\n",
-       "    <tr>\n",
-       "      <th>1</th>\n",
-       "      <td>630001</td>\n",
-       "      <td>70.839997</td>\n",
-       "    </tr>\n",
-       "    <tr>\n",
-       "      <th>2</th>\n",
-       "      <td>630002</td>\n",
-       "      <td>87.079767</td>\n",
-       "    </tr>\n",
-       "    <tr>\n",
-       "      <th>3</th>\n",
-       "      <td>630003</td>\n",
-       "      <td>55.359265</td>\n",
-       "    </tr>\n",
-       "    <tr>\n",
-       "      <th>4</th>\n",
-       "      <td>630004</td>\n",
-       "      <td>47.840838</td>\n",
-       "    </tr>\n",
-       "  </tbody>\n",
-       "</table>\n",
-       "</div>"
-      ],
-      "text/plain": [
-       "       id  exam_score\n",
-       "0  630000   71.100970\n",
-       "1  630001   70.839997\n",
-       "2  630002   87.079767\n",
-       "3  630003   55.359265\n",
-       "4  630004   47.840838"
-      ]
-     },
-     "execution_count": 15,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
-   "source": [
-    "submission.head()"
    ]
   }
  ],
@@ -1672,14 +2056,14 @@
   },
   "papermill": {
    "default_parameters": {},
-   "duration": 2330.791585,
-   "end_time": "2026-01-25T14:16:00.396362",
+   "duration": 5887.707726,
+   "end_time": "2026-01-26T16:47:20.801350",
    "environment_variables": {},
    "exception": null,
    "input_path": "__notebook__.ipynb",
    "output_path": "__notebook__.ipynb",
    "parameters": {},
-   "start_time": "2026-01-25T13:37:09.604777",
+   "start_time": "2026-01-26T15:09:13.093624",
    "version": "2.6.0"
   }
  },
